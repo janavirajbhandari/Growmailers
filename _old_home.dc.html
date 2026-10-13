@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap">
+<style>
+  html,body{margin:0;background:#fff}
+  a{color:#23895C}
+  a:hover{color:#072A1E}
+  details summary::-webkit-details-marker{display:none}
+  details[open] .gm-plus{transform:rotate(45deg)}
+  @keyframes gmBobA{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-12px) rotate(-3deg)}}
+  @keyframes gmBobB{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+  @keyframes gmBobC{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @keyframes gmShimmer{from{left:-40%}to{left:140%}}
+  @keyframes gmBlink{0%,100%{opacity:1}50%{opacity:.3}}
+  @keyframes gmMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes gmTabPick{0%,15%{transform:translateX(0);background:#E5484D}21%,34%{transform:translateX(100%);background:#FFB800}40%,94%{transform:translateX(200%);background:#23895C}100%{transform:translateX(0);background:#E5484D}}
+  @keyframes gmS1{0%,15%{opacity:1}19%,97%{opacity:0}100%{opacity:1}}
+  @keyframes gmS2{0%,17%{opacity:0}21%,34%{opacity:1}38%,100%{opacity:0}}
+  @keyframes gmS3{0%,36%{opacity:0}40%,94%{opacity:1}98%,100%{opacity:0}}
+  @keyframes gmMeter{0%,34%{width:68.5%}58%,100%{width:83.8%}}
+  @keyframes gmMeterA{0%,36%{opacity:1}44%,100%{opacity:0}}
+  @keyframes gmMeterB{0%,40%{opacity:0}50%,100%{opacity:1}}
+  @keyframes gmToSpam{0%,18%{background:#23895C;transform:none}26%,90%{background:#E5484D;transform:translateY(8px) rotate(-6deg)}100%{background:#23895C;transform:none}}
+  @keyframes gmToPromo{0%,42%{background:#23895C}50%,90%{background:#C3CBC7}100%{background:#23895C}}
+  @keyframes gmLeg1{0%,18%{opacity:.25}26%,100%{opacity:1}}
+  @keyframes gmLeg2{0%,42%{opacity:.25}50%,100%{opacity:1}}
+  @keyframes gmLeg3{0%,55%{opacity:.25}62%,100%{opacity:1}}
+  @keyframes gmRepDraw{0%{stroke-dashoffset:600}70%,100%{stroke-dashoffset:0}}
+  @keyframes gmLow{0%,35%{opacity:1}45%,100%{opacity:0}}
+  @keyframes gmHigh{0%,40%{opacity:0}50%,100%{opacity:1}}
+  @keyframes gmOpens{0%,20%{width:30%}55%,100%{width:86%}}
+  @keyframes gmIgnores{0%,20%{width:55%}55%,100%{width:20%}}
+  @keyframes gmReports{0%,20%{width:28%}55%,100%{width:3%}}
+  @keyframes gmStep{0%,10%{background:#fff;border-color:#D6DBD8}25%,100%{background:#23895C;border-color:#23895C}}
+  @keyframes gmStepTxt{0%,10%{color:#9AA5A0}25%,100%{color:#0B2A20}}
+  @keyframes gmSeg{0%,30%{opacity:.35;transform:scale(.96)}45%,100%{opacity:1;transform:none}}
+  @keyframes gmDormant{0%,20%{opacity:1}28%,100%{opacity:0}}
+  @keyframes gmOpened{0%,24%{opacity:0}30%,52%{opacity:1}58%,100%{opacity:0}}
+  @keyframes gmBought{0%,54%{opacity:0}60%,96%{opacity:1}100%{opacity:0}}
+  @keyframes gmUsable{0%,15%{width:38%}70%,100%{width:74%}}
+  @keyframes gmTest{0%,8%{width:0}40%,100%{width:var(--w)}}
+  @keyframes gmPassIn{0%,38%{transform:scale(0) rotate(-20deg);opacity:0}48%,100%{transform:scale(1) rotate(-8deg);opacity:1}}
+  @keyframes gmSpin{to{transform:rotate(360deg)}}
+  @keyframes gmDraw{from{stroke-dashoffset:1400}to{stroke-dashoffset:0}}
+  @keyframes gmEye{0%,90%,100%{transform:scaleY(1)}94%{transform:scaleY(.1)}}
+  @keyframes gmWakeW{0%,15%{background:#1C6E4A}35%,88%{background:#fff}100%{background:#1C6E4A}}
+  @keyframes gmTest84{0%,8%{width:0}40%,100%{width:84%}}
+  @keyframes gmTest87{0%,12%{width:0}44%,100%{width:87%}}
+  @keyframes gmTest91{0%,16%{width:0}48%,100%{width:91%}}
+  @keyframes gmToast{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+</style>
+</helmet>
+
+<div style="background:#fff;color:#4A5A54;font-family:'Manrope',sans-serif;overflow-x:clip">
+
+<dc-import name="SiteNav" active="home" hint-size="100%,58px"></dc-import>
+
+<!-- 1 · HERO -->
+<section data-screen-label="01 Hero" style="position:relative;min-height:min(calc(100svh - 58px),860px);box-sizing:border-box;display:flex;align-items:center;padding:clamp(32px,4vw,56px) 0">
+  <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,4vw,64px);align-items:center">
+    <div style="min-width:0;display:flex;flex-direction:column;align-items:flex-start">
+      <span style="display:inline-flex;align-items:center;gap:8px;background:#F3F5F2;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;color:#23895C;margin-bottom:22px"><span style="width:7px;height:7px;border-radius:999px;background:#23895C;animation:gmBlink 1s ease-in-out infinite"></span>Inbox placement for e-commerce brands</span>
+      <h1 style="margin:0 0 20px;font-weight:800;font-size:clamp(36px,4.6vw,62px);line-height:1.02;letter-spacing:-.04em;color:#0B2A20;text-wrap:balance">Get your emails out of spam &amp; promotions. Hit top-of-industry open rates. <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;letter-spacing:-.01em;color:#23895C">Guaranteed.</span></h1>
+      <p style="margin:0;font-size:clamp(17px,1.6vw,20px);line-height:1.55;color:#4A5A54;max-width:44ch;text-wrap:pretty">Your list can't convert if it never sees you. We fix inbox placement so your emails drive revenue.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:30px">
+        <a href="Contact.dc.html" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:10px;background:#0B2A20;color:#fff;text-decoration:none;font-weight:800;font-size:17px;padding:17px 28px;border-radius:999px" style-hover="background:#23895C;color:#fff"><span style="position:relative">Get the diagnosis →</span><span style="position:absolute;top:0;bottom:0;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:gmShimmer 2.4s linear infinite"></span></a>
+        <a href="Results.dc.html" style="display:inline-flex;align-items:center;gap:8px;background:#F3F5F2;color:#0B2A20;text-decoration:none;font-weight:700;font-size:16px;padding:17px 24px;border-radius:999px" style-hover="background:#E7EBE6;color:#0B2A20">See the receipts</a>
+      </div>
+      <div style="margin-top:36px;display:flex;flex-direction:column;gap:12px">
+        <span style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A9690">Pulled out of spam for</span>
+        <span style="display:flex;flex-wrap:wrap;align-items:center;gap:22px 28px">
+          <img src="assets/clients/rl.png" alt="Reimagine Love" style="height:34px;width:auto;display:block">
+          <span style="display:flex;align-items:center;gap:8px"><img src="assets/clients/pca.webp" alt="" style="height:30px;width:auto;display:block"><b style="font-size:15px;color:#0B2A20;letter-spacing:-.02em">Product Career Accelerator</b></span>
+          <span style="display:flex;align-items:center;gap:8px"><img src="assets/logos/learnwithfaiz.ico" alt="" style="height:30px;width:30px;border-radius:8px;display:block"><b style="font-size:15px;color:#0B2A20;letter-spacing:-.02em">Learn With Faiz</b></span>
+        </span>
+      </div>
+    </div>
+
+    <!-- phone inbox -->
+    <div style="position:relative;min-width:0;display:flex;justify-content:center;padding:28px 0">
+      <span aria-hidden="true" style="position:absolute;top:4%;left:6%;width:64px;height:64px;border-radius:20px;background:#FFB800;opacity:.22;animation:gmBobA 3.8s ease-in-out infinite"></span>
+      <span aria-hidden="true" style="position:absolute;bottom:6%;right:4%;width:76px;height:76px;border-radius:24px;background:#23895C;opacity:.18;animation:gmBobB 4.2s ease-in-out infinite"></span>
+      <span aria-hidden="true" style="position:absolute;top:44%;right:0;width:24px;height:24px;border-radius:99px;background:#E5484D;opacity:.22;animation:gmBobC 3.2s ease-in-out infinite"></span>
+      <div style="position:relative;width:min(100%,340px);display:flex;flex-direction:column;gap:12px"><div style="position:relative;background:#0E1311;border-radius:48px;padding:11px;box-shadow:0 50px 80px -40px rgba(11,42,32,.55)">
+        <div style="background:#fff;border-radius:38px;overflow:hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 26px 6px;font-size:14px;font-weight:700;color:#0B2A20"><span>9:41</span><span style="width:90px;height:24px;border-radius:99px;background:#0E1311"></span><span style="display:flex;gap:4px"><span style="width:16px;height:9px;border-radius:2px;background:#0B2A20"></span></span></div>
+          <div style="padding:10px 20px 4px;display:flex;justify-content:space-between;align-items:center">
+            <b style="font-size:24px;letter-spacing:-.03em;color:#0B2A20">Inbox</b>
+            <span style="display:inline-grid;font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase">
+              <span style="grid-area:1/1;justify-self:end;color:#fff;background:#E5484D;border-radius:99px;padding:5px 10px;animation:gmS1 6s ease-in-out infinite">In spam</span>
+              <span style="grid-area:1/1;justify-self:end;color:#3A2A00;background:#FFB800;border-radius:99px;padding:5px 10px;animation:gmS2 6s ease-in-out infinite">Promotions</span>
+              <span style="grid-area:1/1;justify-self:end;color:#fff;background:#23895C;border-radius:99px;padding:5px 10px;animation:gmS3 6s ease-in-out infinite">Primary ✓</span>
+            </span>
+          </div>
+          <div style="position:relative;margin:10px 16px 0;display:grid;grid-template-columns:repeat(3,1fr);background:#F3F5F2;border-radius:14px;padding:4px">
+            <span style="position:absolute;top:4px;bottom:4px;left:4px;width:calc((100% - 8px)/3);border-radius:11px;animation:gmTabPick 6s ease-in-out infinite"></span>
+            <span style="position:relative;padding:9px 0;text-align:center;font-size:12.5px;font-weight:800;color:#0B2A20">Spam</span>
+            <span style="position:relative;padding:9px 0;text-align:center;font-size:12.5px;font-weight:800;color:#0B2A20">Promotions</span>
+            <span style="position:relative;padding:9px 0;text-align:center;font-size:12.5px;font-weight:800;color:#0B2A20">Primary</span>
+          </div>
+          <div style="padding:10px 10px 4px;display:flex;flex-direction:column;gap:2px">
+            <div style="display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 10px;border-radius:14px;background:#F3F5F2">
+              <span style="width:38px;height:38px;border-radius:999px;background:#0B2A20;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">YB</span>
+              <span style="min-width:0;display:flex;flex-direction:column;gap:2px"><b style="font-size:14px;color:#0B2A20">Your Brand</b><span style="font-size:12.5px;color:#4A5A54;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">The new drop is live. 20% off ends tonight</span></span>
+              <span style="font-size:11px;font-weight:700;color:#8A9690">now</span>
+            </div>
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;padding:12px 10px;opacity:.5"><span style="width:38px;height:38px;border-radius:999px;background:#E7EBE6"></span><span style="display:flex;flex-direction:column;gap:6px"><span style="width:40%;height:8px;border-radius:9px;background:#DDE2DE"></span><span style="width:75%;height:8px;border-radius:9px;background:#EEF1ED"></span></span></div>
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;padding:12px 10px;opacity:.35"><span style="width:38px;height:38px;border-radius:999px;background:#E7EBE6"></span><span style="display:flex;flex-direction:column;gap:6px"><span style="width:32%;height:8px;border-radius:9px;background:#DDE2DE"></span><span style="width:66%;height:8px;border-radius:9px;background:#EEF1ED"></span></span></div>
+          </div>
+          <div style="margin:6px 16px 18px;background:#0B2A20;border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;color:#fff">
+            <span style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:12px;font-weight:700;color:#A9C7BA">Inbox placement</span><span style="display:inline-grid;font-size:22px;font-weight:800;letter-spacing:-.03em"><span style="grid-area:1/1;justify-self:end;color:#FFB800;animation:gmMeterA 6s ease-in-out infinite">68.5%</span><span style="grid-area:1/1;justify-self:end;color:#3BB77E;animation:gmMeterB 6s ease-in-out infinite">83.8%</span></span></span>
+            <span style="height:8px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden"><span style="display:block;height:100%;border-radius:99px;background:#3BB77E;animation:gmMeter 6s ease-in-out infinite"></span></span>
+            <span style="font-size:11.5px;font-weight:600;color:#A9C7BA">in 45 days</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #EEF1ED;border-radius:18px;padding:10px 12px 10px 10px;box-shadow:0 18px 40px -22px rgba(11,42,32,.35);animation:gmToast 4s ease-in-out infinite;min-width:0">
+        <span style="width:36px;height:36px;border-radius:99px;background:#23895C;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:18px" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16l5-5 4 4 7-8"></path></svg></span>
+        <span style="display:flex;flex-direction:column;min-width:0"><b style="font-size:14px;color:#0B2A20;letter-spacing:-.02em">22% → 68%</b><span style="font-size:12px;color:#6B7A74">opens in 30 days</span></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #EEF1ED;border-radius:18px;padding:10px 12px 10px 10px;box-shadow:0 18px 40px -22px rgba(11,42,32,.35);animation:gmToast 4.6s ease-in-out .8s infinite;min-width:0">
+        <span style="width:36px;height:36px;border-radius:99px;background:#1E88FF;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:18px" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg></span>
+        <span style="display:flex;flex-direction:column;min-width:0"><b style="font-size:14px;color:#0B2A20;letter-spacing:-.02em">50–70 sales calls/mo</b><span style="font-size:12px;color:#6B7A74">from one fixed list</span></span>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · THE PROBLEM -->
+<section data-screen-label="02 Problem" style="padding:clamp(64px,8vw,120px) 0">
+  <div style="max-width:1100px;margin:0 auto;padding:0 clamp(18px,4vw,40px);text-align:center">
+    <h2 style="margin:0 auto 18px;max-width:22ch;font-weight:800;font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-.04em;color:#0B2A20;text-wrap:balance">Everyone quotes "email marketing generates 42:1 ROI." <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;letter-spacing:-.01em;color:#23895C">Are you actually getting that?</span></h2>
+    <p style="margin:0 auto;max-width:56ch;font-size:clamp(17px,1.6vw,19px);line-height:1.6">If your emails are landing in spam and promotions, the math never works in your favor. Fix placement, and every number downstream moves.</p>
+    <div style="margin-top:clamp(32px,4vw,52px);background:#F5F5F2;border-radius:32px;padding:clamp(22px,4vw,48px);text-align:left">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:22px">
+        <b style="font-size:clamp(18px,2vw,22px);letter-spacing:-.02em;color:#0B2A20">Out of every 24 emails you send</b>
+        <span style="font-size:13px;font-weight:700;color:#8A9690">watch where they go</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(6px,1vw,12px)">
+        <sc-for list="{{ mails }}" as="m" hint-placeholder-count="24"><span style="aspect-ratio:1;border-radius:clamp(8px,1.2vw,14px);background:#23895C;display:flex;align-items:center;justify-content:center;animation:{{ m.anim }}"><svg viewBox="0 0 24 24" style="width:52%" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"></rect><path d="M3.6 6.6L12 13l8.4-6.4"></path></svg></span></sc-for>
+      </div>
+      <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px">
+        <div style="background:#fff;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:6px;animation:gmLeg1 7s ease-in-out infinite"><span style="display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;border-radius:5px;background:#E5484D"></span><b style="font-size:30px;letter-spacing:-.04em;color:#0B2A20">1 in 6</b></span><span style="font-size:15px;line-height:1.5">legitimate emails never reaches an inbox</span><span style="font-size:12px;font-weight:700;color:#8A9690">Validity, 2025</span></div>
+        <div style="background:#fff;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:6px;animation:gmLeg2 7s ease-in-out infinite"><span style="display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;border-radius:5px;background:#C3CBC7"></span><b style="font-size:30px;letter-spacing:-.04em;color:#0B2A20">1 in 4</b></span><span style="font-size:15px;line-height:1.5">Gmail users never open the Promotions tab at all</span><span style="font-size:12px;font-weight:700;color:#8A9690">industry read-rate studies</span></div>
+        <div style="background:#0B2A20;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:6px;color:#CFE3D9;animation:gmLeg3 7s ease-in-out infinite"><span style="display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;border-radius:5px;background:#3BB77E"></span><b style="font-size:30px;letter-spacing:-.04em;color:#fff">15 of 24</b></span><span style="font-size:15px;line-height:1.5">are left to earn you that 42:1.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · CREDIBILITY -->
+<section data-screen-label="03 Credibility" style="position:relative;background:#23895C;color:#fff;padding:clamp(56px,7vw,96px) 0;overflow:hidden">
+  <span aria-hidden="true" style="position:absolute;top:30px;left:4%;width:54px;height:54px;border-radius:16px;background:#FFB800;opacity:.9;animation:gmBobA 3.8s ease-in-out infinite"></span>
+  <span aria-hidden="true" style="position:absolute;bottom:36px;right:5%;width:62px;height:62px;border-radius:20px;background:#0B2A20;animation:gmBobB 4.2s ease-in-out infinite"></span>
+  <div style="position:relative;max-width:1100px;margin:0 auto;padding:0 clamp(18px,4vw,40px);text-align:center">
+    <h2 style="margin:0 auto clamp(32px,4vw,52px);max-width:20ch;font-weight:800;font-size:clamp(28px,3.6vw,46px);line-height:1.06;letter-spacing:-.04em;color:#fff">We've spent 4 years pulling emails <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;letter-spacing:-.01em">out of spam.</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:28px 0">
+      <div style="display:flex;flex-direction:column;gap:6px;padding:0 16px"><b style="font-size:clamp(40px,5vw,60px);letter-spacing:-.05em;line-height:1">20+</b><span style="font-size:15px;color:#DDF1E7">clients pulled out of spam</span></div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding:0 16px;border-left:1px solid rgba(255,255,255,.25)"><b style="font-size:clamp(40px,5vw,60px);letter-spacing:-.05em;line-height:1">~5M</b><span style="font-size:15px;color:#DDF1E7">emails managed monthly with clients</span></div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding:0 16px;border-left:1px solid rgba(255,255,255,.25)"><b style="font-size:clamp(40px,5vw,60px);letter-spacing:-.05em;line-height:1">8K–500K+</b><span style="font-size:15px;color:#DDF1E7">subscriber list sizes we manage</span></div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding:0 16px;border-left:1px solid rgba(255,255,255,.25)"><b style="font-size:clamp(26px,2.8vw,34px);letter-spacing:-.03em;line-height:1.3">US·UK·CA·AU·SG</b><span style="font-size:15px;color:#DDF1E7">where our clients are</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · WHY IT'S STILL BROKEN -->
+<section data-screen-label="04 Why broken" style="padding:clamp(64px,8vw,120px) 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px)">
+    <div style="text-align:center;max-width:820px;margin:0 auto">
+      <h2 style="margin:0 0 16px;font-weight:800;font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-.04em;color:#0B2A20;text-wrap:balance">Move beyond authentication and list cleaning. <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;letter-spacing:-.01em;color:#23895C">Real results start deeper.</span></h2>
+      <p style="margin:0 0 6px;font-size:clamp(17px,1.6vw,19px);line-height:1.6">Authentication matters. But it's the entry ticket, not the fix.</p>
+      <p style="margin:0;font-size:clamp(17px,1.6vw,19px);line-height:1.6;font-weight:800;color:#0B2A20">Four things decide where you land:</p>
+    </div>
+
+    <div style="margin-top:clamp(32px,4vw,52px);display:flex;flex-wrap:wrap;gap:20px;align-items:stretch">
+      <!-- A reputation (tall) -->
+      <div style="flex:1 1 340px;min-width:0;background:#F5F5F2;border-radius:32px;padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:26px">
+        <div style="background:#fff;border-radius:22px;padding:18px;box-shadow:0 20px 40px -30px rgba(11,42,32,.35);display:flex;flex-direction:column;gap:14px">
+          <b style="font-size:15px;color:#0B2A20">Sender reputation</b>
+          <sc-for list="{{ providers }}" as="p" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center">
+              <img src="{{ p.logo }}" alt="" style="width:28px;height:28px;border-radius:8px;display:block">
+              <span style="font-size:14.5px;font-weight:700;color:#0B2A20">{{ p.name }}</span>
+              <span style="display:inline-grid;font-size:11.5px;font-weight:800">
+                <span style="grid-area:1/1;justify-self:end;background:#E5484D;color:#fff;border-radius:99px;padding:5px 11px;animation:{{ p.low }}">Low</span>
+                <span style="grid-area:1/1;justify-self:end;background:#23895C;color:#fff;border-radius:99px;padding:5px 11px;animation:{{ p.high }}">High</span>
+              </span>
+            </div>
+          </sc-for>
+          <svg viewBox="0 0 260 90" style="width:100%;height:auto;display:block;margin-top:4px">
+            <g stroke="#EEF1ED"><line x1="0" y1="15" x2="260" y2="15"></line><line x1="0" y1="45" x2="260" y2="45"></line><line x1="0" y1="75" x2="260" y2="75"></line></g>
+            <path d="M6 80 L50 76 L96 60 L140 50 L186 30 L254 12" fill="none" stroke="#23895C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="600" style="animation:gmRepDraw 4.4s ease-in-out infinite"></path>
+          </svg>
+        </div>
+        <div style="margin-top:auto"><h3 style="margin:0 0 6px;font-size:22px;font-weight:800;letter-spacing:-.03em;color:#0B2A20">Domain &amp; IP reputation</h3><p style="margin:0;font-size:16px;line-height:1.55">The score every provider checks first.</p></div>
+      </div>
+
+      <div style="flex:1.5 1 480px;min-width:0;display:flex;flex-direction:column;gap:20px">
+        <!-- B behaviour (wide) -->
+        <div style="background:#F5F5F2;border-radius:32px;padding:clamp(20px,2.6vw,30px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px;align-items:center">
+          <div style="background:#0E1311;border-radius:22px;padding:8px;display:flex;flex-direction:column;gap:6px">
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;background:#1A201D;border-radius:16px;padding:12px">
+              <span style="width:36px;height:36px;border-radius:99px;background:#23895C;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:18px" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"></path></svg></span>
+              <span style="display:flex;flex-direction:column;gap:6px"><b style="font-size:14px;color:#fff">Opens</b><span style="height:6px;border-radius:9px;background:#2A322E"><span style="display:block;height:100%;border-radius:9px;background:#3BB77E;animation:gmOpens 4s ease-in-out infinite"></span></span></span>
+            </div>
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;background:#1A201D;border-radius:16px;padding:12px">
+              <span style="width:36px;height:36px;border-radius:99px;background:#5C6661;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:18px" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M6 12h12"></path></svg></span>
+              <span style="display:flex;flex-direction:column;gap:6px"><b style="font-size:14px;color:#fff">Ignores</b><span style="height:6px;border-radius:9px;background:#2A322E"><span style="display:block;height:100%;border-radius:9px;background:#AEB8B3;animation:gmIgnores 4s ease-in-out infinite"></span></span></span>
+            </div>
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;background:#1A201D;border-radius:16px;padding:12px">
+              <span style="width:36px;height:36px;border-radius:99px;background:#E5484D;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px">!</span>
+              <span style="display:flex;flex-direction:column;gap:6px"><b style="font-size:14px;color:#fff">Reports</b><span style="height:6px;border-radius:9px;background:#2A322E"><span style="display:block;height:100%;border-radius:9px;background:#E5484D;animation:gmReports 4s ease-in-out infinite"></span></span></span>
+            </div>
+          </div>
+          <div><h3 style="margin:0 0 6px;font-size:22px;font-weight:800;letter-spacing:-.03em;color:#0B2A20">Sending behaviour</h3><p style="margin:0;font-size:16px;line-height:1.55">Who opens, who ignores, who reports.</p></div>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:20px;flex:1">
+          <!-- C content plan -->
+          <div style="flex:1.2 1 260px;min-width:0;background:#F5F5F2;border-radius:32px;padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:22px">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:14px;padding:10px 12px;animation:gmSeg 4.5s ease-in-out infinite"><b style="font-size:13.5px;color:#0B2A20">Engaged</b><span style="font-size:12px;font-weight:800;color:#fff;background:#23895C;border-radius:99px;padding:4px 10px">3× a week</span></span>
+              <span style="display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:14px;padding:10px 12px;animation:gmSeg 4.5s ease-in-out .25s infinite"><b style="font-size:13.5px;color:#0B2A20">Warm</b><span style="font-size:12px;font-weight:800;color:#fff;background:#1E88FF;border-radius:99px;padding:4px 10px">Weekly</span></span>
+              <span style="display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:14px;padding:10px 12px;animation:gmSeg 4.5s ease-in-out .5s infinite"><b style="font-size:13.5px;color:#0B2A20">Dormant</b><span style="font-size:12px;font-weight:800;color:#fff;background:#5C6661;border-radius:99px;padding:4px 10px">Paused</span></span>
+            </div>
+            <div style="margin-top:auto"><h3 style="margin:0 0 6px;font-size:22px;font-weight:800;letter-spacing:-.03em;color:#0B2A20">Content &amp; sending plan</h3><p style="margin:0;font-size:16px;line-height:1.55">What, how often, to whom.</p></div>
+          </div>
+          <!-- D technical (short) -->
+          <div style="flex:1 1 220px;min-width:0;background:#F5F5F2;border-radius:32px;padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:22px">
+            <div style="background:#fff;border-radius:18px;padding:12px 14px;display:flex;flex-direction:column">
+              <span style="display:flex;align-items:center;gap:12px;padding:6px 0"><span style="width:16px;height:16px;border-radius:99px;border:3px solid #D6DBD8;box-sizing:border-box;animation:gmStep 4s ease-in-out infinite"></span><b style="font-size:14px;animation:gmStepTxt 4s ease-in-out infinite">SPF</b></span>
+              <span style="margin-left:7px;width:2px;height:10px;background:#E4E8E5"></span>
+              <span style="display:flex;align-items:center;gap:12px;padding:6px 0"><span style="width:16px;height:16px;border-radius:99px;border:3px solid #D6DBD8;box-sizing:border-box;animation:gmStep 4s ease-in-out .5s infinite"></span><b style="font-size:14px;animation:gmStepTxt 4s ease-in-out .5s infinite">DKIM</b></span>
+              <span style="margin-left:7px;width:2px;height:10px;background:#E4E8E5"></span>
+              <span style="display:flex;align-items:center;gap:12px;padding:6px 0"><span style="width:16px;height:16px;border-radius:99px;border:3px solid #D6DBD8;box-sizing:border-box;animation:gmStep 4s ease-in-out 1s infinite"></span><b style="font-size:14px;animation:gmStepTxt 4s ease-in-out 1s infinite">DMARC</b></span>
+            </div>
+            <div style="margin-top:auto"><h3 style="margin:0 0 6px;font-size:22px;font-weight:800;letter-spacing:-.03em;color:#0B2A20">The technical layer</h3><p style="margin:0;font-size:16px;line-height:1.55">Fundamental — and the only part most agencies do.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:clamp(36px,5vw,56px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px">
+      <b style="font-size:clamp(24px,2.8vw,34px);letter-spacing:-.04em;color:#0B2A20">All four. That's what we fix.</b>
+      <p style="margin:0;max-width:40ch;font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:clamp(19px,2vw,24px);line-height:1.4;color:#23895C">The real fix isn't to scrub every promotional word. It's to earn the reputation that lets you write like a brand.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · THE ASCENT -->
+<section data-screen-label="05 Ascent" style="background:#F5F5F2;padding:clamp(64px,8vw,120px) 0 clamp(40px,5vw,64px);overflow:hidden">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px)">
+    <div style="text-align:center;max-width:820px;margin:0 auto">
+      <span style="font-size:13px;font-weight:800;color:#23895C">What we do · The Ascent</span>
+      <h2 style="margin:12px 0 14px;font-weight:800;font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-.04em;color:#0B2A20;text-wrap:balance">From spam and promotions to Primary. <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;letter-spacing:-.01em;color:#23895C">15 fixes. Five stages. One route.</span></h2>
+      <p style="margin:0;font-size:clamp(17px,1.6vw,19px);line-height:1.6">Most stop at basecamp. We take you to the top.</p>
+    </div>
+    <div style="margin-top:clamp(32px,4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:20px;align-items:stretch">
+      <div style="min-width:0;background:#fff;border-radius:32px;padding:clamp(12px,2vw,20px);display:flex;align-items:center">
+        <svg viewBox="0 0 600 460" style="width:100%;height:auto;display:block" aria-label="Five camps on the route to the summit, the inbox">
+          <polygon points="300,440 468,130 600,330 600,440" fill="#DDE3DF"></polygon>
+          <polygon points="30,440 330,70 580,440" fill="#3BB77E"></polygon>
+          <polygon points="330,70 580,440 400,440 352,220" fill="#23895C"></polygon>
+          <polygon points="330,70 354,104 340,100 330,112 318,98 306,102" fill="#fff"></polygon>
+          <rect x="0" y="436" width="600" height="24" fill="#EDF0EC"></rect>
+          <path id="gmRoute" d="M70 436 L150 400 L128 350 L210 310 L188 262 L262 224 L244 176 L304 138 L322 104 L330 70" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="7 7" stroke-linecap="round"></path>
+          <g font-family="Manrope, sans-serif" font-weight="800" font-size="13" text-anchor="middle">
+            <circle cx="150" cy="400" r="14" fill="#0B2A20"></circle><text x="150" y="405" fill="#fff">1</text>
+            <circle cx="210" cy="310" r="14" fill="#0B2A20"></circle><text x="210" y="315" fill="#fff">2</text>
+            <circle cx="262" cy="224" r="14" fill="#0B2A20"></circle><text x="262" y="229" fill="#fff">3</text>
+            <circle cx="304" cy="138" r="14" fill="#0B2A20"></circle><text x="304" y="143" fill="#fff">4</text>
+            <circle cx="322" cy="104" r="12" fill="#0B2A20"></circle><text x="322" y="109" fill="#fff" font-size="12">5</text>
+          </g>
+          <line x1="330" y1="70" x2="330" y2="22" stroke="#0B2A20" stroke-width="3" stroke-linecap="round"></line>
+          <polygon points="332,22 372,33 332,44" fill="#FFB800"></polygon>
+          <text x="382" y="38" font-family="Manrope, sans-serif" font-weight="800" font-size="20" fill="#0B2A20">The Inbox</text>
+          <polygon points="56,436 70,414 84,436" fill="#0B2A20"></polygon>
+          <text x="96" y="430" font-family="Manrope, sans-serif" font-weight="800" font-size="12" letter-spacing="1.5" fill="#4A5A54">BASECAMP</text>
+          <circle r="8" fill="#FFB800" stroke="#fff" stroke-width="3"><animateMotion dur="7s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.8;1" calcMode="linear"><mpath href="#gmRoute"></mpath></animateMotion></circle>
+        </svg>
+      </div>
+      <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;min-width:0">
+        <sc-for list="{{ stages }}" as="s" hint-placeholder-count="5">
+          <li style="display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:center;background:#fff;border-radius:22px;padding:16px 18px">
+            <span style="width:44px;height:44px;border-radius:99px;background:#0B2A20;color:#fff;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center">{{ s.n }}</span>
+            <span style="display:flex;flex-direction:column;gap:3px"><b style="font-size:17px;letter-spacing:-.02em;color:#0B2A20">{{ s.t }}</b><span style="font-size:14.5px;line-height:1.5">{{ s.d }}</span></span>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+  </div>
+  <div style="margin-top:clamp(40px,5vw,60px);display:flex;flex-direction:column;gap:16px">
+    <span style="text-align:center;font-size:13px;font-weight:800;color:#6B7A74">Works on</span>
+    <div style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)">
+      <div style="display:flex;gap:12px;width:max-content;animation:gmMarquee 36s linear infinite">
+        <sc-for list="{{ espLoop }}" as="e" hint-placeholder-count="9"><span style="flex:0 0 auto;display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:10px 18px 10px 10px;white-space:nowrap"><img src="{{ e.logo }}" loading="lazy" alt="" style="width:28px;height:28px;border-radius:8px;display:block"><b style="font-size:15px;color:#0B2A20">{{ e.name }}</b></span></sc-for>
+        <span style="flex:0 0 auto;display:flex;align-items:center;background:#0B2A20;color:#fff;border-radius:999px;padding:10px 18px;font-weight:700;font-size:15px;white-space:nowrap">and anything else that sends email</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · OUR PROMISE -->
+<section data-screen-label="06 Promise" style="padding:clamp(64px,8vw,120px) 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px);align-items:center">
+    <div style="min-width:0">
+      <span style="font-size:13px;font-weight:800;color:#23895C">Our promise</span>
+      <h2 style="margin:12px 0 18px;font-weight:800;font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-.04em;color:#0B2A20;text-wrap:balance">Your full list, sending again. <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;letter-spacing:-.01em;color:#23895C">Your revenue, growing with it.</span></h2>
+      <p style="margin:0 0 12px;font-size:clamp(17px,1.6vw,19px);line-height:1.6">The standard advice: cut everyone who stopped opening, migrate platforms.</p>
+      <p style="margin:0 0 12px;font-size:clamp(17px,1.6vw,19px);line-height:1.6;font-weight:800;color:#0B2A20">Those subscribers aren't gone. They just stopped seeing your emails.</p>
+      <p style="margin:0;font-size:clamp(17px,1.6vw,19px);line-height:1.6">We rebuild your infrastructure and list health. The disengaged start engaging again. Your usable list grows, and revenue grows with it.</p>
+      <a href="Contact.dc.html" style="display:inline-flex;margin-top:28px;background:#0B2A20;color:#fff;text-decoration:none;font-weight:800;font-size:16px;padding:16px 26px;border-radius:999px" style-hover="background:#23895C;color:#fff">Get the diagnosis →</a>
+    </div>
+    <div style="min-width:0;background:#F5F5F2;border-radius:32px;padding:clamp(18px,2.6vw,30px)">
+      <div style="background:#fff;border-radius:24px;padding:18px;box-shadow:0 24px 48px -34px rgba(11,42,32,.4);display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 4px 10px"><b style="font-size:16px;color:#0B2A20">Your list</b><span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:#23895C"><span style="width:7px;height:7px;border-radius:99px;background:#23895C;animation:gmBlink 1s ease-in-out infinite"></span>Waking up, in waves</span></div>
+        <sc-for list="{{ subs }}" as="s" hint-placeholder-count="5">
+          <div style="display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 6px;border-top:1px solid #F0F2EF">
+            <span style="width:38px;height:38px;border-radius:99px;background:{{ s.bg }};color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">{{ s.i }}</span>
+            <span style="min-width:0;display:flex;flex-direction:column"><b style="font-size:14px;color:#0B2A20">{{ s.name }}</b><span style="font-size:12.5px;color:#8A9690">{{ s.mail }}</span></span>
+            <span style="display:inline-grid;font-size:12px;font-weight:800">
+              <span style="grid-area:1/1;justify-self:end;background:#EEF1ED;color:#6B7A74;border-radius:99px;padding:5px 11px;white-space:nowrap;animation:{{ s.a1 }}">{{ s.days }}</span>
+              <span style="grid-area:1/1;justify-self:end;background:#1E88FF;color:#fff;border-radius:99px;padding:5px 11px;white-space:nowrap;animation:{{ s.a2 }}">Opened</span>
+              <span style="grid-area:1/1;justify-self:end;background:#23895C;color:#fff;border-radius:99px;padding:5px 11px;white-space:nowrap;animation:{{ s.a3 }}">Bought</span>
+            </span>
+          </div>
+        </sc-for>
+        <div style="margin-top:8px;background:#0B2A20;border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:9px">
+          <span style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;color:#A9C7BA"><span>Usable list</span><span style="color:#3BB77E">growing</span></span>
+          <span style="height:8px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden"><span style="display:block;height:100%;border-radius:99px;background:#3BB77E;animation:gmUsable 7s ease-in-out infinite"></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · WHAT YOU CAN EXPECT -->
+<section data-screen-label="07 Expect" style="padding:0 0 clamp(64px,8vw,120px)">
+  <div style="max-width:1100px;margin:0 auto;padding:0 clamp(18px,4vw,40px)">
+    <h2 style="margin:0 0 clamp(28px,3.5vw,44px);text-align:center;font-weight:800;font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-.04em;color:#0B2A20">What you can <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;letter-spacing:-.01em;color:#23895C">expect</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:20px">
+      <div style="background:#F5F5F2;border-radius:32px;padding:clamp(22px,3vw,34px)">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:#E5484D;margin-bottom:10px"><span style="width:22px;height:22px;border-radius:99px;background:#E5484D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px">✕</span>Before (typical)</span>
+        <sc-for list="{{ expect }}" as="r" hint-placeholder-count="7">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid #E6E8E4"><span style="font-size:14.5px;color:#6B7A74">{{ r.k }}</span><b style="font-size:17px;color:#0B2A20;text-align:right">{{ r.b }}</b></div>
+        </sc-for>
+      </div>
+      <div style="position:relative;background:#23895C;border-radius:32px;padding:clamp(22px,3vw,34px);color:#fff;overflow:hidden">
+        <span aria-hidden="true" style="position:absolute;top:18px;right:20px;width:40px;height:40px;border-radius:13px;background:#FFB800;animation:gmBobA 3.8s ease-in-out infinite"></span>
+        <span style="position:relative;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:#fff;margin-bottom:10px"><span style="width:22px;height:22px;border-radius:99px;background:#fff;color:#23895C;display:flex;align-items:center;justify-content:center;font-size:12px">✓</span>After</span>
+        <sc-for list="{{ expect }}" as="r" hint-placeholder-count="7">
+          <div style="position:relative;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.2)"><span style="font-size:14.5px;color:#D6EEE2">{{ r.k }}</span><b style="font-size:17px;color:#fff;text-align:right">{{ r.a }}</b></div>
+        </sc-for>
+      </div>
+    </div>
+    <p style="margin:28px auto 0;max-width:60ch;text-align:center;font-size:17px;line-height:1.65">On one client, <b style="color:#0B2A20">1,984 written-off subscribers came back — and bought.</b> First fixes and first placement test inside 3 weeks. Most cases resolve in 6–12 weeks.</p>
+  </div>
+</section>
+
+<!-- 8 · PROOF -->
+<section data-screen-label="08 Proof" style="background:#F5F5F2;padding:clamp(64px,8vw,120px) 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px)">
+    <div style="text-align:center;max-width:820px;margin:0 auto">
+      <h2 style="margin:0 0 12px;font-weight:800;font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-.04em;color:#0B2A20">Out of spam and promotions. <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;letter-spacing:-.01em;color:#23895C">Here's the receipts.</span></h2>
+      <p style="margin:0;font-size:clamp(17px,1.6vw,19px);line-height:1.6">Real businesses. Real placement tests. Real revenue.</p>
+    </div>
+    <div style="margin-top:clamp(32px,4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:20px">
+      <!-- Reimagine Love -->
+      <article style="background:#fff;border-radius:32px;padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:16px">
+        <span style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><img src="assets/clients/rl.png" alt="Reimagine Love" style="height:40px;width:auto"><span style="font-size:12px;font-weight:800;color:#6B7A74">Relationship coaching</span></span>
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><b style="font-size:clamp(38px,4.4vw,54px);letter-spacing:-.05em;line-height:1;color:#23895C">46% → 83%</b><span style="font-size:15px;font-weight:700;color:#0B2A20">inbox placement</span></div>
+        <h3 style="margin:0;font-size:17px;line-height:1.45;font-weight:700;color:#4A5A54">Half their emails were landing in spam &amp; promotions. 45 days later: 83.8% in the inbox.</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto">
+          <a href="assets/proof/crop-reimagine-before.png" target="_blank" style="display:flex;flex-direction:column;gap:6px;text-decoration:none"><span style="font-size:11.5px;font-weight:800;color:#E5484D">BEFORE · 22.17% opens</span><img src="assets/proof/crop-reimagine-before.png" alt="Before: 22.17% open rate, 2,108 bounced" style="width:100%;height:auto;border-radius:14px;border:1px solid #E6E8E4;display:block"></a>
+          <a href="assets/proof/crop-reimagine-after.png" target="_blank" style="display:flex;flex-direction:column;gap:6px;text-decoration:none"><span style="font-size:11.5px;font-weight:800;color:#23895C">AFTER · 68.42% opens</span><img src="assets/proof/crop-reimagine-after.png" alt="After: 68.42% open rate, 29 bounced" style="width:100%;height:auto;border-radius:14px;border:1px solid #E6E8E4;display:block"></a>
+        </div>
+      </article>
+      <!-- PCA -->
+      <article style="background:#fff;border-radius:32px;padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:16px">
+        <span style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><span style="display:flex;align-items:center;gap:10px"><img src="assets/clients/pca.webp" alt="" style="height:38px;width:auto"><b style="font-size:20px;letter-spacing:-.03em;color:#0B2A20">Product Career Accelerator</b></span><span style="font-size:12px;font-weight:800;color:#6B7A74">Career coaching for PMs</span></span>
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><b style="font-size:clamp(38px,4.4vw,54px);letter-spacing:-.05em;line-height:1;color:#23895C">$150K+</b><span style="font-size:15px;font-weight:700;color:#0B2A20">est. backend sales</span></div>
+        <h3 style="margin:0;font-size:17px;line-height:1.45;font-weight:700;color:#4A5A54">A 12K list stuck in Promotions. Now at 50%+ opens, every send.</h3>
+        <span style="display:flex;flex-wrap:wrap;gap:8px"><span style="font-size:13px;font-weight:800;color:#0B2A20;background:#F5F5F2;border-radius:99px;padding:6px 12px">100+ applications in a month</span><span style="font-size:13px;font-weight:800;color:#0B2A20;background:#F5F5F2;border-radius:99px;padding:6px 12px">Placement 82.9% → 90.9%</span></span>
+        <a href="assets/proof/crop-pca.png" target="_blank" style="margin-top:auto;display:flex;flex-direction:column;gap:6px;text-decoration:none"><span style="font-size:11.5px;font-weight:800;color:#23895C">500+ WEBINAR REGISTRATIONS IN 4 DAYS</span><img src="assets/proof/crop-pca.png" alt="Team update: 500+ registrations" style="width:100%;height:auto;border-radius:14px;display:block"></a>
+      </article>
+      <!-- Faiz -->
+      <article style="background:#fff;border-radius:32px;padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:16px">
+        <span style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><span style="display:flex;align-items:center;gap:10px"><img src="assets/logos/learnwithfaiz.ico" alt="" style="height:38px;width:38px;border-radius:10px"><b style="font-size:20px;letter-spacing:-.03em;color:#0B2A20">Learn With Faiz</b></span><span style="font-size:12px;font-weight:800;color:#6B7A74">Career coaching · 567K on Instagram</span></span>
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><b style="font-size:clamp(38px,4.4vw,54px);letter-spacing:-.05em;line-height:1;color:#23895C">0 → 2 sales</b><span style="font-size:15px;font-weight:700;color:#0B2A20">the week after</span></div>
+        <h3 style="margin:0;font-size:17px;line-height:1.45;font-weight:700;color:#4A5A54">Three months of zero sales. Two sales the week after the fix.</h3>
+        <a href="assets/proof/crop-faiz.png" target="_blank" style="margin-top:auto;display:flex;flex-direction:column;gap:6px;text-decoration:none"><span style="font-size:11.5px;font-weight:800;color:#23895C">OPEN RATE PEAKED AT 40.57%</span><img src="assets/proof/crop-faiz.png" alt="Campaign table: open rates 31–40%" style="width:100%;height:auto;border-radius:14px;border:1px solid #E6E8E4;display:block"></a>
+      </article>
+      <!-- Close With Copy -->
+      <article style="background:#fff;border-radius:32px;padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:16px">
+        <span style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><b style="font-size:22px;letter-spacing:-.03em;color:#0B2A20">Close With Copy</b><span style="font-size:12px;font-weight:800;color:#6B7A74">LinkedIn branding</span></span>
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><b style="font-size:clamp(38px,4.4vw,54px);letter-spacing:-.05em;line-height:1;color:#23895C">37 sales</b><span style="font-size:15px;font-weight:700;color:#0B2A20">+ 17 booked calls in one week</span></div>
+        <h3 style="margin:0;font-size:17px;line-height:1.45;font-weight:700;color:#4A5A54">From a ~2,000-person list. The landing page we built converted at 23% opt-in, 5.49% to sale.</h3>
+        <a href="assets/proof/crop-cwc.png" target="_blank" style="margin-top:auto;display:flex;flex-direction:column;gap:6px;text-decoration:none"><span style="font-size:11.5px;font-weight:800;color:#23895C">35 SIGNUPS · 17 BOOKED</span><img src="assets/proof/crop-cwc.png" alt="Chat: total signup 35, total booked 17" style="width:100%;height:auto;border-radius:14px;display:block"></a>
+      </article>
+      <!-- Convert to Scale -->
+      <article style="position:relative;background:#23895C;border-radius:32px;padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:14px;color:#fff;overflow:hidden">
+        <span aria-hidden="true" style="position:absolute;top:22px;right:24px;width:44px;height:44px;border-radius:14px;background:#FFB800;animation:gmBobA 3.8s ease-in-out infinite"></span>
+        <span style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><b style="font-size:22px;letter-spacing:-.03em">Convert to Scale</b><span style="font-size:12px;font-weight:800;color:#D6EEE2">Content marketing coaching</span></span>
+        <b style="font-size:clamp(46px,5.4vw,68px);letter-spacing:-.05em;line-height:1;margin-top:8px">$21,536</b>
+        <span style="font-size:18px;font-weight:800">in 14 days</span>
+        <p style="margin:0;font-size:16px;line-height:1.55;color:#E3F5EC;max-width:36ch">From a 3,200-person list — 1,984 of them previously written off as inactive.</p>
+        <div style="margin-top:auto;display:grid;grid-template-columns:repeat(20,1fr);gap:4px;padding-top:10px">
+          <sc-for list="{{ ctsDots }}" as="d" hint-placeholder-count="40"><span style="aspect-ratio:1;border-radius:3px;background:{{ d.bg }};animation:{{ d.anim }}"></span></sc-for>
+        </div>
+      </article>
+      <!-- GrowMailers own -->
+      <article style="background:#0E1311;border-radius:32px;padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:14px;color:#AAB6BF">
+        <span style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><img src="assets/logo-white.png" alt="GrowMailers" style="height:26px;width:auto"><span style="font-size:12px;font-weight:800;color:#8A97A1">Our own systems</span></span>
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><b style="font-size:clamp(38px,4.4vw,54px);letter-spacing:-.05em;line-height:1;color:#3BB77E">60–80%</b><span style="font-size:15px;font-weight:700;color:#fff">open rates, sustained</span></div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px">
+          <sc-for list="{{ dash }}" as="t" hint-placeholder-count="6"><span style="background:#1A201D;border-radius:12px;padding:9px 10px;min-width:0"><span style="display:block;font-size:10.5px;color:#8A97A1">{{ t.k }}</span><b style="font-size:14.5px;color:#fff">{{ t.v }}</b></span></sc-for>
+        </div>
+        <svg viewBox="0 0 300 90" style="width:100%;height:auto;display:block" preserveAspectRatio="none">
+          <path d="{{ chartOpens }}" fill="none" stroke="#3BB77E" stroke-width="2.2" stroke-dasharray="1400" style="animation:gmDraw 4s ease-out infinite"></path>
+          <path d="{{ chartUnique }}" fill="none" stroke="#FFB800" stroke-width="2" stroke-dasharray="1400" style="animation:gmDraw 4s ease-out .3s infinite"></path>
+        </svg>
+        <p style="margin:0;font-size:14.5px;line-height:1.6">Our own campaigns run on the same placement discipline we sell. If we couldn't land our own email, you shouldn't hire us for yours.</p>
+      </article>
+    </div>
+    <div style="margin-top:28px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+      <a href="Results.dc.html" style="display:inline-flex;background:#0B2A20;color:#fff;text-decoration:none;font-weight:800;font-size:16px;padding:15px 24px;border-radius:999px" style-hover="background:#23895C;color:#fff">All case studies →</a>
+      <p style="margin:0;font-size:13px;color:#6B7A74">Placement measured with GlockApps. Baseline set before we change anything. Revenue estimates use stated close-rate assumptions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · WHY WE EXIST -->
+<section data-screen-label="09 About" style="padding:clamp(64px,8vw,120px) 0">
+  <div style="max-width:1100px;margin:0 auto;padding:0 clamp(18px,4vw,40px);text-align:center">
+    <span style="font-size:13px;font-weight:800;color:#23895C">About &amp; Team</span>
+    <h2 style="margin:12px auto 18px;max-width:22ch;font-weight:800;font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-.04em;color:#0B2A20;text-wrap:balance">We went looking for this company. It didn't exist. <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;letter-spacing:-.01em;color:#23895C">So we built it.</span></h2>
+    <p style="margin:0 auto 12px;max-width:62ch;font-size:clamp(17px,1.6vw,19px);line-height:1.65">When our own clients' emails started dying in spam, we searched for someone who fixes deliverability for warm newsletter and email marketing lists. We found a few monitoring tools. Not one agency that builds and repairs the infrastructure behind a warm list.</p>
+    <p style="margin:0 auto;max-width:62ch;font-size:clamp(17px,1.6vw,19px);line-height:1.65;font-weight:800;color:#0B2A20">Nobody whose whole job is getting a real list back into the inbox. So that became the company.</p>
+    <div style="margin-top:clamp(32px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px">
+      <sc-for list="{{ team }}" as="m" hint-placeholder-count="4">
+        <div style="background:#F5F5F2;border-radius:28px;padding:24px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:12px">
+          <span style="position:relative;width:110px;height:110px;border-radius:999px;background:{{ m.bg }};overflow:hidden;animation:{{ m.bob }}">
+            <span style="position:absolute;left:50%;top:20px;margin-left:-27px;width:54px;height:60px;border-radius:27px 27px 24px 24px;background:#FCE9D8"></span>
+            <span style="position:absolute;left:50%;top:13px;margin-left:-31px;width:62px;height:27px;border-radius:31px 31px 9px 9px;background:{{ m.hair }}"></span>
+            <span style="position:absolute;left:50%;top:46px;margin-left:-14px;width:7px;height:9px;border-radius:9px;background:#0B2A20;animation:gmEye 4s ease-in-out infinite"></span>
+            <span style="position:absolute;left:50%;top:46px;margin-left:7px;width:7px;height:9px;border-radius:9px;background:#0B2A20;animation:gmEye 4s ease-in-out infinite"></span>
+            <span style="position:absolute;left:50%;top:61px;margin-left:-8px;width:16px;height:8px;border-radius:0 0 16px 16px;background:#E5484D"></span>
+            <span style="position:absolute;left:50%;bottom:-24px;margin-left:-40px;width:80px;height:48px;border-radius:40px 40px 0 0;background:{{ m.shirt }}"></span>
+          </span>
+          <b style="font-size:18px;letter-spacing:-.02em;color:#0B2A20">{{ m.name }}</b>
+          <span style="font-size:13.5px;font-weight:700;color:#6B7A74">{{ m.role }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <a href="About.dc.html" style="display:inline-flex;margin-top:24px;font-weight:800;font-size:15px;color:#23895C;text-decoration:none">Meet the team →</a>
+  </div>
+</section>
+
+<!-- 10 · GUARANTEE -->
+<section data-screen-label="10 Guarantee" style="padding:0 clamp(18px,4vw,40px) clamp(64px,8vw,120px)">
+  <div style="position:relative;max-width:1200px;margin:0 auto;background:#0B2A20;border-radius:36px;padding:clamp(32px,5vw,64px);color:#fff;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(32px,5vw,64px);align-items:center">
+    <div style="min-width:0">
+      <span style="font-size:13px;font-weight:800;color:#3BB77E">Guarantee</span>
+      <h2 style="margin:12px 0 18px;font-weight:800;font-size:clamp(32px,4.2vw,56px);line-height:1.02;letter-spacing:-.04em;color:#fff">Primary Inbox Placement <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;letter-spacing:-.01em;color:#3BB77E">Guaranteed</span></h2>
+      <p style="margin:0;font-size:clamp(17px,1.6vw,19px);line-height:1.6;color:#C3D8CE;max-width:46ch">Verified on consecutive third-party placement tests, not a one-off score. If we don't hit the mark, the fee terms swing in your favor, agreed in writing before we start.</p>
+      <a href="Contact.dc.html" style="display:inline-flex;margin-top:28px;background:#3BB77E;color:#0B2A20;text-decoration:none;font-weight:800;font-size:16px;padding:16px 26px;border-radius:999px" style-hover="background:#fff;color:#0B2A20">Get the diagnosis →</a>
+    </div>
+    <div style="position:relative;min-width:0">
+      <div style="background:#fff;border-radius:26px;padding:clamp(18px,2.4vw,26px);display:flex;flex-direction:column;gap:14px;color:#0B2A20">
+        <div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:16px">Placement tests</b><span style="font-size:12px;font-weight:800;color:#6B7A74">Target line ┆</span></div>
+        <sc-for list="{{ tests }}" as="t" hint-placeholder-count="3">
+          <div style="display:grid;grid-template-columns:70px 1fr auto;gap:12px;align-items:center">
+            <span style="font-size:13px;font-weight:800;color:#6B7A74">{{ t.label }}</span>
+            <span style="position:relative;height:14px;border-radius:99px;background:#EEF1ED;overflow:visible">
+              <span style="display:block;height:100%;border-radius:99px;background:#23895C;animation:{{ t.anim }}"></span>
+              <span style="position:absolute;top:-6px;bottom:-6px;left:80%;border-left:2px dashed #FFB800"></span>
+            </span>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;color:#23895C;min-width:74px;justify-content:flex-end">{{ t.v }} ✓</span>
+          </div>
+        </sc-for>
+      </div>
+      <span style="position:absolute;right:-10px;bottom:-26px;width:112px;height:112px;border-radius:999px;background:#FFB800;color:#0B2A20;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:13px;line-height:1.2;letter-spacing:.5px;box-shadow:0 18px 30px -16px rgba(0,0,0,.5);animation:gmPassIn 5s ease-out infinite">IN<br>WRITING</span>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · FAQ -->
+<section data-screen-label="11 FAQ" style="padding:0 0 clamp(64px,8vw,120px)">
+  <div style="max-width:860px;margin:0 auto;padding:0 clamp(18px,4vw,40px)">
+    <h2 style="margin:0 0 clamp(24px,3vw,40px);text-align:center;font-weight:800;font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-.04em;color:#0B2A20">The questions you're <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:600;letter-spacing:-.01em;color:#23895C">about to ask.</span></h2>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="10">
+        <details style="background:#F5F5F2;border-radius:22px;padding:0 22px">
+          <summary style="list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:800;font-size:16.5px;letter-spacing:-.01em;color:#0B2A20">{{ f.q }}<span class="gm-plus" style="flex:0 0 auto;width:30px;height:30px;border-radius:99px;background:#0B2A20;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;transition:transform .2s">+</span></summary>
+          <p style="margin:0 0 20px;font-size:16px;line-height:1.7">{{ f.a }}</p>
+        </details>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · CLOSE -->
+<section data-screen-label="12 Close" style="padding:0 clamp(18px,4vw,40px) clamp(64px,8vw,120px)">
+  <div style="position:relative;max-width:1200px;margin:0 auto;background:#23895C;border-radius:36px;padding:clamp(44px,6vw,88px) clamp(22px,5vw,64px);text-align:center;overflow:hidden;color:#fff">
+    <span aria-hidden="true" style="position:absolute;top:28px;left:6%;width:54px;height:54px;border-radius:16px;background:#FFB800;animation:gmBobA 3.8s ease-in-out infinite"></span>
+    <span aria-hidden="true" style="position:absolute;bottom:34px;right:7%;width:62px;height:62px;border-radius:20px;background:#0B2A20;animation:gmBobB 4.2s ease-in-out infinite"></span>
+    <span aria-hidden="true" style="position:absolute;top:40px;right:14%;width:22px;height:22px;border-radius:99px;background:#fff;opacity:.8;animation:gmBobC 3.2s ease-in-out infinite"></span>
+    <h2 style="position:relative;margin:0 auto 16px;max-width:20ch;font-weight:800;font-size:clamp(30px,4.2vw,54px);line-height:1.04;letter-spacing:-.04em;color:#fff;text-wrap:balance">Every send from a damaged domain digs the hole deeper.</h2>
+    <p style="position:relative;margin:0 auto;max-width:44ch;font-size:clamp(17px,1.8vw,20px);line-height:1.55;color:#E3F5EC">Thirty minutes gets you the root cause. Whether or not you hire us.</p>
+    <a href="Contact.dc.html" style="position:relative;display:inline-flex;margin-top:28px;background:#fff;color:#0B2A20;text-decoration:none;font-weight:800;font-size:17px;padding:18px 30px;border-radius:999px" style-hover="background:#0B2A20;color:#fff">Get the diagnosis →</a>
+    <p style="position:relative;margin:16px 0 0;font-size:14px;color:#D2EFE1">30 minutes · your domain live · skin-in-the-game guarantee</p>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,300px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const fav = (d) => `assets/logos/${d.split('.')[0]}.ico`;
+    const esps = [['Klaviyo','klaviyo.com'],['HubSpot','hubspot.com'],['ActiveCampaign','activecampaign.com'],['Mailchimp','mailchimp.com'],['Kit','kit.com'],['Kajabi','kajabi.com'],['GoHighLevel','gohighlevel.com'],['Shopify','shopify.com'],['Beehiiv','beehiiv.com']].map(([name, d]) => ({ name, logo: fav(d) }));
+    const spam = new Set([2, 9, 15, 20]);
+    const promo = new Set([0, 5, 11, 17, 22]);
+    const mails = Array.from({ length: 24 }, (_, i) => ({
+      anim: spam.has(i) ? `gmToSpam 7s ease-in-out ${(i * 0.02).toFixed(2)}s infinite` : promo.has(i) ? `gmToPromo 7s ease-in-out ${(i * 0.02).toFixed(2)}s infinite` : 'none'
+    }));
+    const providers = [['Gmail','gmail.com'],['Outlook','outlook.com'],['Yahoo','yahoo.com']].map(([name, d], i) => ({
+      name, logo: fav(d), low: `gmLow 4.4s ease-in-out ${(i * 0.25).toFixed(2)}s infinite`, high: `gmHigh 4.4s ease-in-out ${(i * 0.25).toFixed(2)}s infinite`
+    }));
+    const subsRaw = [['Sarah K.','sarah.k@…','SK','#1E88FF','Dormant · 214 days'],['Marcus T.','marcus.t@…','MT','#E5484D','Dormant · 180 days'],['Priya R.','priya.r@…','PR','#23895C','Dormant · 301 days'],['Jon B.','jon.b@…','JB','#0B2A20','Dormant · 152 days'],['Ana L.','ana.l@…','AL','#FFB800','Dormant · 240 days']];
+    const subs = subsRaw.map(([name, mail, i, bg, days], k) => {
+      const d = (k * 0.6).toFixed(1) + 's';
+      return { name, mail, i, bg, days, a1: `gmDormant 7s ease-in-out ${d} infinite`, a2: `gmOpened 7s ease-in-out ${d} infinite`, a3: `gmBought 7s ease-in-out ${d} infinite` };
+    });
+    const ctsDots = Array.from({ length: 40 }, (_, i) => i < 25
+      ? { bg: '#1C6E4A', anim: `gmToPromo 1s linear 0s 0` }
+      : { bg: '#fff', anim: 'none' });
+    ctsDots.forEach((d, i) => { if (i < 25) d.anim = `gmWakeW 5s ease-in-out ${(i * 0.08).toFixed(2)}s infinite`; });
+    const pts = [3,5,2,8,4,12,6,18,30,14,40,22,48,20,10,36,16,6,3,2,4,2,20,34,12,38,18,42,10,26,44,16,8,3];
+    const line = (scale) => pts.map((v, i) => `${i === 0 ? 'M' : 'L'}${(i * 300 / (pts.length - 1)).toFixed(1)} ${(86 - Math.min(80, v * scale)).toFixed(1)}`).join(' ');
+    const tests = [['Test 1', 84, '84.1%'], ['Test 2', 87, '86.9%'], ['Test 3', 91, '90.9%']].map(([label, w, v], i) => ({
+      label, v, anim: `gmTest 5s cubic-bezier(.2,.8,.2,1) ${(i * 0.25).toFixed(2)}s infinite`.replace('gmTest', 'gmTest') , w
+    }));
+    tests.forEach(t => { t.anim = t.anim; });
+    return {
+      mails, providers, subs, ctsDots,
+      espLoop: [...esps, ...esps],
+      chartOpens: line(1.6), chartUnique: line(0.7),
+      tests: tests.map(t => ({ ...t, anim: `gmTest${t.w} 5s cubic-bezier(.2,.8,.2,1) infinite` })),
+      stages: [
+        { n: '1', t: 'Foundations & Trust', d: 'Authentication, spoofing protection, blacklist delisting, compliance.' },
+        { n: '2', t: 'List Hygiene & Protection', d: 'List restructuring, cleaning, opt-in protection, suppression automations.' },
+        { n: '3', t: 'Sending Behavior', d: 'Cadence, content alignment, and duplicate-send control.' },
+        { n: '4', t: 'Reputation Rebuild', d: 'Trust scores re-earned through controlled, deliberate activity.' },
+        { n: '5', t: 'Test, Correct & Recoup', d: 'Weekly placement tests, drift correction, and dormant list reactivation.' }
+      ],
+      dash: [
+        { k: 'Leads contacted', v: '1,936' }, { k: 'Open rate', v: '78.06%' }, { k: 'Click rate', v: '24.07%' },
+        { k: 'Reply rate', v: '8.06%' }, { k: 'Bounce rate', v: '0.97%' }, { k: 'Opportunities', v: '42 · $4,200' }
+      ],
+      team: [
+        { name: 'First name', role: 'Role', bg: '#23895C', hair: '#3A2A1E', shirt: '#0B2A20', bob: 'gmBobC 3.4s ease-in-out infinite' },
+        { name: 'First name', role: 'Role', bg: '#1E88FF', hair: '#1F1A14', shirt: '#FFB800', bob: 'gmBobC 3.8s ease-in-out .4s infinite' },
+        { name: 'First name', role: 'Role', bg: '#E5484D', hair: '#6B3E1E', shirt: '#0B2A20', bob: 'gmBobC 3.2s ease-in-out .8s infinite' },
+        { name: 'First name', role: 'Role', bg: '#FFB800', hair: '#2A1E14', shirt: '#23895C', bob: 'gmBobC 3.6s ease-in-out 1.2s infinite' }
+      ],
+      expect: [
+        { k: 'Inbox placement', b: '40–70%', a: '80–90%+' },
+        { k: 'Open rates', b: '10–25%', a: '1.5x–3x' },
+        { k: 'Spam complaints', b: 'Above 0.1%', a: 'Held under 0.1%' },
+        { k: 'Where you land', b: 'Promotions · Spam', a: 'Primary' },
+        { k: 'Your dormant list', b: 'Written off', a: 'Reactivated, in waves' },
+        { k: 'Subscriber trust signals', b: 'Declining', a: 'Strengthening' },
+        { k: 'Revenue from email', b: 'Flatlined', a: 'Growing' }
+      ],
+      faqs: [
+        { q: 'Why can\u2019t I just do this myself?', a: 'You genuinely can, and some people should. But we\u2019ve watched smart founders spend six months on this while their launches kept underperforming, and most of them got the authentication layer right and never found the real problem. If you\u2019d rather have it done in weeks, that\u2019s what we\u2019re for.' },
+        { q: 'I\u2019ve already done SPF, DKIM and DMARC, cleaned my list, and I only send to engaged. What\u2019s left?', a: 'You\u2019ve done the three things everyone tells you to do, and you\u2019re still reading this page. That\u2019s not a coincidence \u2014 it\u2019s the pattern we see on almost every call. What\u2019s almost always missing: placement measured per provider, where your complaints actually come from, and whether your content and frequency match the segment receiving them.' },
+        { q: 'Will you make me suppress my subscribers?', a: 'Temporarily, yes \u2014 permanently, no. We pause sending to the dormant part of your list while we rebuild, then run a deliberate wake-up sequence gated behind recovered health. Typically that recoups 5 to 10% of the dormant list, sometimes more. Some went quiet because they didn\u2019t love the content, and that part isn\u2019t ours to promise back. But a big share went quiet because your emails stopped landing \u2014 those we recover. On one client, 1,984 \u201cdead\u201d subscribers came back and bought.' },
+        { q: 'Do I have to switch ESPs?', a: 'Almost never, and we won\u2019t open with that. We fix inside your platform first. If yours is truly the problem, we\u2019ll show you the evidence and let you decide. In most cases it isn\u2019t.' },
+        { q: 'What access do you need, and why should I trust you with it?', a: 'You keep admin. We work on restricted, revocable permissions that never include your contacts. Nothing is exported, nothing is copied out, and an NDA covers everything before we see a single record. We don\u2019t edit anything live \u2014 changes are built on duplicates and go live only with your sign-off. And none of this becomes your job: you approve, we do the work.' },
+        { q: 'How long does this take?', a: 'First fixes and the first placement test inside three weeks. Most cases resolve in 6 to 12 weeks. Deep reputation damage runs longer. If someone quotes you two weeks, ask them what they\u2019re measuring. They won\u2019t have an answer.' },
+        { q: 'What happens if you don\u2019t hit the promised placement?', a: 'The fee terms swing in your favor, in writing, agreed before we start. Not a policy we point to afterwards.' },
+        { q: 'My list is old and I haven\u2019t sent in months. Is it recoverable?', a: 'Probably \u2014 and honestly, that\u2019s the easier case. A list that\u2019s been left alone recovers faster than one that\u2019s been hammered daily. We\u2019ll tell you on the call if yours is the exception, and we do tell people that.' },
+        { q: 'What does it cost?', a: 'Depends on your list size and how deep the damage goes, so we give you a fixed number on the call instead of a range on a page. Scope agreed in writing before anything starts, and it doesn\u2019t grow after.' },
+        { q: 'What happens if I just\u2026 don\u2019t fix it?', a: 'Broken email doesn\u2019t show up as one number. Your ads pay twice, because the follow-up emails that convert skeptical leads never get seen. Your webinars run half-empty, because the reminders landed in spam. And the lead-gen channel that should drive 10 to 20% of your calls every month simply doesn\u2019t exist. Meanwhile, every send from the damaged domain digs the hole deeper.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

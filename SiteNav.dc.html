@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="position:sticky;top:0;z-index:90;background:rgba(244,250,247,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #D7E9E1;font-family:'Satoshi',sans-serif">
+  <div style="max-width:1200px;margin:0 auto;padding:12px clamp(16px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:12px 24px">
+    <a href="Home.dc.html" style="display:flex;align-items:center;text-decoration:none;flex:0 0 auto">
+      <img src="assets/logo.png" alt="GrowMailers" style="height:{{ logoH }};width:auto;display:block">
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:4px">
+        <sc-for list="{{ links }}" as="l" hint-placeholder-count="5">
+          <sc-if value="{{ l.hasMenu }}">
+            <span style="position:relative;display:flex" onMouseEnter="{{ ddOpen }}" onMouseLeave="{{ ddClose }}">
+              <a href="{{ l.href }}" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:{{ l.fg }};text-decoration:none;padding:8px 12px;border-radius:999px;background:{{ l.bg }}" style-hover="background:#E7F3ED;color:#072A1E">{{ l.label }}<svg viewBox="0 0 12 12" style="width:10px;height:10px;transform:{{ ddRot }};transition:transform .2s" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"></path></svg></a>
+              <sc-if value="{{ dd }}">
+                <span style="position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:10px;z-index:100">
+                  <span style="display:flex;flex-direction:column;gap:4px;width:300px;background:#fff;border:1px solid #DCE7E1;border-radius:18px;padding:8px;box-shadow:0 24px 48px -24px rgba(11,42,32,.35)">
+                    <sc-for list="{{ sub }}" as="s" hint-placeholder-count="2">
+                      <a href="{{ s.href }}" style="display:flex;flex-direction:column;gap:3px;padding:12px 14px;border-radius:12px;text-decoration:none;background:{{ s.bg }}" style-hover="background:#F1F7F4"><b style="font-size:14.5px;font-weight:700;color:#0B2A20">{{ s.label }}</b><span style="font-size:13px;font-weight:500;line-height:1.45;color:#5F6F68">{{ s.desc }}</span></a>
+                    </sc-for>
+                  </span>
+                </span>
+              </sc-if>
+            </span>
+          </sc-if>
+          <sc-if value="{{ l.isActivePlain }}">
+            <a href="{{ l.href }}" style="font-size:14px;font-weight:700;color:#072A1E;text-decoration:none;padding:8px 12px;border-radius:999px;background:#DDF0E6">{{ l.label }}</a>
+          </sc-if>
+          <sc-if value="{{ l.notActivePlain }}" hint-placeholder-val="{{ true }}">
+            <a href="{{ l.href }}" style="font-size:14px;font-weight:700;color:#3E5A50;text-decoration:none;padding:8px 12px;border-radius:999px" style-hover="background:#E7F3ED;color:#072A1E">{{ l.label }}</a>
+          </sc-if>
+        </sc-for>
+      </nav>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;gap:8px;background:#072A1E;color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:11px 18px;border-radius:999px;white-space:nowrap" style-hover="background:#23895C">Book my free diagnosis <span style="color:#7FD6AC">→</span></a>
+    </sc-if>
+    <sc-if value="{{ isMobile }}">
+      <button type="button" onClick="{{ toggle }}" aria-label="Menu" aria-expanded="{{ open }}" style="width:44px;height:44px;border:0;border-radius:999px;background:#072A1E;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0">
+        <svg viewBox="0 0 24 24" style="width:20px;height:20px" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="{{ iconPath }}"></path></svg>
+      </button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ showPanel }}">
+    <div style="border-top:1px solid #D7E9E1;background:#F4FAF7;padding:12px 16px 20px;display:flex;flex-direction:column;gap:4px">
+      <sc-for list="{{ links }}" as="l" hint-placeholder-count="5">
+        <a href="{{ l.href }}" style="display:flex;align-items:center;min-height:48px;padding:0 14px;border-radius:14px;font-size:17px;font-weight:700;text-decoration:none;color:#072A1E;background:{{ l.mbg }}">{{ l.label }}</a>
+        <sc-if value="{{ l.hasMenu }}">
+          <sc-for list="{{ sub }}" as="s" hint-placeholder-count="2">
+            <a href="{{ s.href }}" style="display:flex;align-items:center;min-height:44px;padding:0 14px 0 30px;border-radius:12px;font-size:15.5px;font-weight:600;text-decoration:none;color:#2F4A40;background:{{ s.bg }}">{{ s.label }}</a>
+          </sc-for>
+        </sc-if>
+      </sc-for>
+      <a href="Contact.dc.html" style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;background:#072A1E;color:#fff;text-decoration:none;font-weight:700;font-size:16px;border-radius:999px">Book my free diagnosis <span style="color:#7FD6AC">→</span></a>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:80},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;services&quot;,&quot;results&quot;,&quot;about&quot;,&quot;contact&quot;,&quot;deliverability&quot;,&quot;marketing&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1200, open: false, dd: false };
+  componentDidMount() {
+    this._r = () => this.setState({ w: window.innerWidth, open: window.innerWidth >= 900 ? false : this.state.open });
+    window.addEventListener('resize', this._r);
+    this._r();
+    requestAnimationFrame(this._r);
+    setTimeout(this._r, 300);
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this._r); }
+  renderVals() {
+    const a = this.props.active ?? 'home';
+    const mobile = this.state.w < 900;
+    const open = mobile && this.state.open;
+    const links = [
+      ['home','Home','Home.dc.html'],['services','Services','Deliverability.dc.html'],['results','Results','Results.dc.html'],['about','About','About.dc.html'],['contact','Contact','Contact.dc.html']
+    ].map(([k,label,href]) => { const act = k === a || (k === 'services' && (a === 'deliverability' || a === 'marketing')); const menu = k === 'services';
+      return { label, href, hasMenu: menu, isActive: act, notActive: !act, isActivePlain: act && !menu, notActivePlain: !act && !menu, fg: act ? '#072A1E' : '#3E5A50', bg: act ? '#DDF0E6' : 'transparent', mbg: act ? '#DDF0E6' : 'transparent' }; });
+    const sub = [['deliverability','Email deliverability','Get out of spam and promotions, into Primary.','Deliverability.dc.html'],['marketing','Email marketing','Emails, automations and pages that sell.','Marketing.dc.html']]
+      .map(([k,label,desc,href]) => ({ label, desc, href, bg: k === a ? '#EEF6F1' : 'transparent' }));
+    return {
+      logoH: (mobile ? 28 : (this.props.logoSize ?? 32)) + 'px',
+      links, sub, dd: this.state.dd, ddRot: this.state.dd ? 'rotate(180deg)' : 'none',
+      ddOpen: () => { clearTimeout(this._ddT); this.setState({ dd: true }); },
+      ddClose: () => { this._ddT = setTimeout(() => this.setState({ dd: false }), 120); },
+      isDesktop: !mobile, isMobile: mobile, open, showPanel: open,
+      iconPath: open ? 'M6 6l12 12M18 6L6 18' : 'M4 7h16M4 12h16M4 17h16',
+      toggle: () => this.setState(s => ({ open: !s.open }))
+    };
+  }
+}
+</script>
+</body>
+</html>

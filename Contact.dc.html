@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap">
+<style>
+  html,body{margin:0;background:#FBFBF8}
+  a{color:#23895C}
+  a:hover{color:#0B2A20}
+  details summary::-webkit-details-marker{display:none}
+  details[open] .gm-plus{transform:rotate(45deg)}
+
+  @media (max-width:760px){
+    [data-m="wrap"]{white-space:normal!important}
+    [data-m="hero-stat"]{flex:1 1 100%!important;padding-top:0!important;flex-direction:row!important;flex-wrap:wrap!important;justify-content:center!important;align-items:flex-start!important;text-align:center!important;gap:20px 28px!important}
+    [data-m="hero-stat"]>*{align-items:center!important;text-align:center!important}
+    [data-m="wall"]{grid-template-columns:repeat(2,minmax(0,1fr))!important;height:560px!important}
+    [data-m="wall"]>*:nth-child(3){display:none!important}
+    [data-m="fan"]{flex-direction:column!important;align-items:center!important;gap:20px!important}
+    [data-m="fan"]>figure{transform:none!important;margin:0!important;width:100%!important;max-width:340px!important;flex:0 0 auto!important}
+    [data-m="stack"]{grid-template-columns:minmax(0,1fr)!important}
+    section{scroll-margin-top:70px}
+    
+  }
+</style>
+</helmet>
+<div style="background:#FBFBF8;color:#2F4A40;font-family:'Satoshi',sans-serif;overflow-x:clip">
+<dc-import name="SiteNav" active="contact" hint-size="100%,58px"></dc-import>
+
+<section data-screen-label="01 Book" style="position:relative;padding:clamp(80px,10vw,128px) clamp(18px,4vw,40px) clamp(72px,9vw,112px);overflow:hidden">
+  <span aria-hidden="true" style="position:absolute;left:50%;top:22%;width:1000px;height:600px;margin-left:-500px;background:radial-gradient(closest-side,rgba(255,196,0,.22),rgba(255,196,0,0));pointer-events:none"></span>
+  <div style="position:relative;max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
+    <h1 style="margin:0;font-weight:700;font-size:clamp(36px,4.6vw,62px);line-height:1.05;letter-spacing:-.04em;color:#0B2A20;text-wrap:balance">Book your <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.1em;letter-spacing:-.01em;color:#23895C">diagnosis.</span></h1>
+    <p style="font-weight:500;margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.6;max-width:44ch">Thirty minutes gets you the root cause. Whether or not you hire us.</p>
+    <div style="margin-top:clamp(24px,3vw,40px);width:100%;background:#fff;border:1px solid #E3EAE6;border-radius:24px;box-shadow:0 30px 60px -40px rgba(11,42,32,.35);overflow:hidden;min-height:640px;display:flex">
+      <sc-if value="{{ hasCal }}"><iframe src="{{ calUrl }}" title="Book a call" style="flex:1;width:100%;min-height:640px;border:0"></iframe></sc-if>
+      <sc-if value="{{ noCal }}" hint-placeholder-val="{{ true }}"><div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:40px;border:2px dashed #D3DED8;border-radius:22px;margin:12px">
+        <b style="font-size:18px;font-weight:700;color:#0B2A20">Booking calendar goes here</b>
+        <span style="font-size:15px;max-width:40ch">Add your Calendly or Cal.com link in the Tweaks panel and the calendar shows up here.</span>
+      </div></sc-if>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Before you book" style="padding:0 clamp(18px,4vw,40px) clamp(104px,13vw,160px)">
+  <div style="max-width:760px;margin:0 auto">
+    <h2 style="margin:0 0 clamp(32px,4vw,48px);text-align:center;font-weight:700;font-size:clamp(28px,3vw,40px);letter-spacing:-.035em;color:#0B2A20">Before you <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.1em;color:#23895C">book</span></h2>
+    <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="3">
+      <details style="border-top:1px solid #E7EBE7">
+        <summary style="list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-weight:700;font-size:17px;color:#0B2A20">{{ f.q }}<span class="gm-plus" style="flex:0 0 auto;font-size:24px;font-weight:400;color:#23895C;transition:transform .2s">+</span></summary>
+        <p style="font-weight:500;margin:0 0 22px;font-size:16px;line-height:1.7">{{ f.a }}</p>
+      </details>
+    </sc-for>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,300px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;calendarUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Booking&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const url = (this.props.calendarUrl ?? 'https://cal.com/shardulphuyal/30-minute-game-plan-call').trim();
+    return {
+      calUrl: url, hasCal: !!url, noCal: !url,
+      faqs: [
+        { q: 'What does it cost?', a: 'Depends on your list size and how deep the damage goes, so we give you a fixed number on the call instead of a range on a page. Scope agreed in writing before anything starts, and it doesn\u2019t grow after.' },
+        { q: 'What access do you need, and why should I trust you with it?', a: 'You keep admin. We work on restricted, revocable permissions that never include your contacts. Nothing is exported, nothing is copied out, and an NDA covers everything before we see a single record. Changes are built on duplicates and go live only with your sign-off.' },
+        { q: 'How long does this take?', a: 'First fixes and the first placement test inside three weeks. Most cases resolve in 6 to 12 weeks. Deep reputation damage runs longer.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

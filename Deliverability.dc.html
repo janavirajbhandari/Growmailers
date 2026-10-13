@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;display=swap">
+<style>
+  html,body{margin:0;background:#FBFBF8}
+  a{color:#23895C}
+  a:hover{color:#0B2A20}
+  @keyframes dlBlink{0%,100%{opacity:1}50%{opacity:.35}}
+  @keyframes dlPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.45)}100%{box-shadow:0 0 0 22px rgba(255,255,255,0)}}
+  @keyframes dlFailOut{0%,38%{opacity:1}44%,92%{opacity:0}100%{opacity:1}}
+  @keyframes dlPassIn{0%,38%{opacity:0;transform:scale(.85)}46%,92%{opacity:1;transform:none}100%{opacity:0}}
+  @keyframes dlStrike{0%,30%{transform:scaleX(0)}42%,90%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+  @keyframes dlDim{0%,40%{opacity:1}50%,90%{opacity:.35}100%{opacity:1}}
+  @keyframes dlDotOut{0%,30%{opacity:1}45%,92%{opacity:.15}100%{opacity:1}}
+  @keyframes dlPopDot{0%,40%{transform:scale(0)}52%,92%{transform:scale(1)}100%{transform:scale(0)}}
+  @keyframes dlBarY{0%,6%{transform:scaleY(0)}40%,92%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+  @keyframes dlBorder{0%,38%{border-left-color:#D93025}46%,92%{border-left-color:#1E8E3E}100%{border-left-color:#D93025}}
+  @keyframes dlWipe{0%,28%{clip-path:inset(0 0 0 0)}48%,82%{clip-path:inset(0 0 0 100%)}100%{clip-path:inset(0 0 0 0)}}
+  @keyframes dlWipeBar{0%,28%{left:0%}48%,82%{left:100%}100%{left:0%}}
+  @keyframes dlTabIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @keyframes dlGrowY{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+  @keyframes dlDraw{from{stroke-dashoffset:900}to{stroke-dashoffset:0}}
+  @media (max-width:760px){[data-m="rep3"]{grid-template-columns:minmax(0,1fr)!important}[data-m="dash-side"]{display:none!important}}
+</style>
+</helmet>
+
+<div style="background:#FBFBF8;color:#4A5A54;font-family:'Satoshi',sans-serif;overflow-x:clip">
+
+<dc-import name="SiteNav" active="services" hint-size="100%,64px"></dc-import>
+
+<!-- 1 · HERO + VSL -->
+<section data-screen-label="01 Hero" style="position:relative;padding:clamp(72px,9vw,112px) clamp(18px,4vw,40px) clamp(72px,9vw,112px);overflow:hidden">
+  <span aria-hidden="true" style="position:absolute;left:50%;top:38%;width:min(1100px,120vw);height:640px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(35,137,92,.12),rgba(35,137,92,0));pointer-events:none"></span>
+  <div style="position:relative;max-width:880px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px">
+    <h1 style="margin:0;font-weight:700;font-size:clamp(36px,4.8vw,62px);line-height:1.05;letter-spacing:-.04em;color:#0B2A20;text-wrap:balance">Your emails, back in Primary. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:#23895C">Your revenue, back with them.</span></h1>
+    <p style="margin:0;max-width:54ch;font-size:clamp(17px,1.6vw,19px);line-height:1.6;font-weight:500;color:#3E4F48;text-wrap:pretty">We pull your emails out of spam and Promotions and into Primary, where people actually see them and buy.</p>
+  </div>
+  <div data-reveal="100" style="position:relative;max-width:920px;margin:clamp(40px,5vw,56px) auto 0">
+    <div style="position:relative;aspect-ratio:16/9;border-radius:24px;overflow:hidden;background:#0B2A20;box-shadow:0 40px 80px -40px rgba(11,42,32,.55)">
+      <span aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 45%,rgba(59,183,126,.28),rgba(11,42,32,0))"></span>
+      <span style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px">
+        <span style="width:84px;height:84px;border-radius:99px;background:#fff;display:flex;align-items:center;justify-content:center;animation:dlPulse 1.8s ease-out infinite"><svg viewBox="0 0 24 24" style="width:30px;margin-left:5px" fill="#0B2A20"><path d="M6 4l14 8-14 8z"></path></svg></span>
+        <span style="font-size:15px;font-weight:600;color:#E3F0EA">Watch how we get you into Primary</span>
+      </span>
+      <span style="position:absolute;left:18px;bottom:16px;font-size:12px;font-weight:600;letter-spacing:.06em;color:#9BB8AB">VIDEO · COMING SOON</span>
+    </div>
+  </div>
+  <div style="position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px">
+    <a href="Contact.dc.html" style="display:inline-flex;align-items:center;background:#0B2A20;color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:16px 28px;border-radius:999px" style-hover="background:#23895C;color:#fff">Book my free diagnosis</a>
+    <a href="Results.dc.html" style="display:inline-flex;align-items:center;background:#fff;border:1px solid #DCE7E1;color:#0B2A20;text-decoration:none;font-weight:700;font-size:16px;padding:15px 26px;border-radius:999px" style-hover="background:#EEF5F1;color:#0B2A20">Results</a>
+  </div>
+</section>
+
+<!-- 2 · PAIN: REASONS -->
+<section data-screen-label="02 Reasons" style="padding:clamp(56px,7vw,88px) clamp(18px,4vw,40px)">
+  <div style="max-width:1120px;margin:0 auto">
+    <div data-reveal="0" style="text-align:center;max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-weight:700;font-size:clamp(30px,3.8vw,48px);line-height:1.08;letter-spacing:-.035em;color:#0B2A20;text-wrap:balance">Your list isn't the problem. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:#23895C">Your emails just aren't arriving.</span></h2>
+      <p style="margin:0;font-size:clamp(16px,1.5vw,18px);line-height:1.6;color:#3E4F48">1 in 6 emails never reaches an inbox, and 1 in 4 Gmail users never open Promotions. These are the seven reasons we find behind it. Most brands have three or four at once.</p>
+    </div>
+    <div style="margin-top:clamp(40px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px">
+      <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="7">
+        <div data-reveal="{{ r.d }}" style="background:#fff;border:1px solid #E3EAE6;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:12px;box-shadow:0 18px 36px -30px rgba(11,42,32,.35)">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+            <b style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;color:#9AA5A0">{{ r.n }}</b>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;border-radius:99px;padding:5px 11px;background:{{ r.bg }};color:{{ r.fg }}"><span style="width:6px;height:6px;border-radius:99px;background:{{ r.fg }};animation:dlBlink 1.4s ease-in-out infinite"></span>{{ r.s }}</span>
+          </span>
+          <b style="font-size:18px;font-weight:700;line-height:1.25;letter-spacing:-.01em;color:#0B2A20">{{ r.t }}</b>
+          <span style="font-size:15px;line-height:1.55;color:#55655E">{{ r.x }}</span>
+        </div>
+      </sc-for>
+      <div data-reveal="420" style="background:#0B2A20;border-radius:20px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;color:#fff">
+        <b style="font-size:18px;font-weight:700;line-height:1.3;color:#fff">We check all of these on day one.</b>
+        <span style="font-size:15px;line-height:1.55;color:#CFE3D9">A full audit of your domain, list and sending, before we change anything.</span>
+        <a href="Contact.dc.html" style="align-self:flex-start;font-weight:700;font-size:15px;color:#FFB800;text-decoration:none" style-hover="color:#fff">Book my free diagnosis →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · PLAN: 5 STAGES (centered) -->
+<section data-screen-label="03 Stages" style="padding:clamp(56px,7vw,88px) clamp(18px,4vw,40px)">
+  <div style="max-width:1200px;margin:0 auto">
+    <div data-reveal="0" style="text-align:center;max-width:760px;margin:0 auto clamp(40px,5vw,56px);display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-weight:700;font-size:clamp(30px,3.8vw,48px);line-height:1.08;letter-spacing:-.035em;color:#0B2A20;text-wrap:balance">Five fixes, in order. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:#23895C">So you land in Primary and stay there.</span></h2>
+      <p style="margin:0;font-size:clamp(16px,1.5vw,18px);line-height:1.6;color:#3E4F48">Each stage builds on the last. Skip one and the rest won't hold.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)">
+      <!-- S1 -->
+      <article data-reveal="0" style="background:#fff;border:1px solid #E3EAE6;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px -44px rgba(11,42,32,.4)">
+        <div style="padding:clamp(24px,3.4vw,40px) clamp(20px,4vw,48px) 22px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px">
+          <span style="display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:#0B2A20"><span style="width:30px;height:30px;border-radius:10px;background:#0B2A20;color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center">1</span>Stage 1 · Authentication &amp; blacklists</span>
+          <h3 style="margin:0;font-weight:800;font-size:clamp(28px,3vw,38px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20">Prove every email is really from you</h3>
+          <p style="margin:0;max-width:58ch;font-size:16.5px;line-height:1.6;color:#3E4F48">We fix SPF, DKIM and DMARC so Gmail trusts your mail, get your domain off blacklists, stop anyone faking emails in your name, and meet Google's 2024 sender rules.</p>
+        </div>
+        <div style="height:340px;box-sizing:border-box;background:radial-gradient(120% 90% at 50% 0%,#1C5A40 0%,#0B2A20 70%);padding:clamp(20px,3vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;align-content:center;overflow:hidden">
+          <div style="background:#fff;border:1px solid #E3EAE6;border-radius:16px;overflow:hidden">
+            <div style="padding:11px 16px;border-bottom:1px solid #EEF1EF;font-size:13px;font-weight:700;color:#0B2A20">DNS records · yourbrand.com</div>
+            <sc-for list="{{ auth }}" as="a" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:11px 16px;border-top:1px solid #F1F3F2">
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><b style="font-size:14px;font-weight:700;color:#0B2A20">{{ a.k }}</b><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#6B7A74;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.v }}</span></span>
+                <span style="display:inline-grid;font-size:12px;font-weight:700"><span style="grid-area:1/1;justify-self:end;background:#FCE8E6;color:#B3261E;border-radius:99px;padding:4px 10px;white-space:nowrap;animation:{{ a.out }}">{{ a.bad }}</span><span style="grid-area:1/1;justify-self:end;background:#1E8E3E;color:#fff;border-radius:99px;padding:4px 10px;white-space:nowrap;animation:{{ a.in }}">{{ a.good }}</span></span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="background:#fff;border:1px solid #E3EAE6;border-radius:16px;overflow:hidden">
+            <div style="padding:11px 16px;border-bottom:1px solid #EEF1EF;font-size:13px;font-weight:700;color:#0B2A20">Blacklists &amp; spoofing</div>
+            <sc-for list="{{ bl }}" as="a" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:11px 16px;border-top:1px solid #F1F3F2">
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><b style="font-size:14px;font-weight:700;color:#0B2A20">{{ a.k }}</b><span style="font-size:12px;color:#6B7A74;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.v }}</span></span>
+                <span style="display:inline-grid;font-size:12px;font-weight:700"><span style="grid-area:1/1;justify-self:end;background:#FCE8E6;color:#B3261E;border-radius:99px;padding:4px 10px;white-space:nowrap;animation:{{ a.out }}">{{ a.bad }}</span><span style="grid-area:1/1;justify-self:end;background:#1E8E3E;color:#fff;border-radius:99px;padding:4px 10px;white-space:nowrap;animation:{{ a.in }}">{{ a.good }}</span></span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </article>
+
+      <!-- S2 -->
+      <article data-reveal="0" style="background:#fff;border:1px solid #E3EAE6;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px -44px rgba(11,42,32,.4)">
+        <div style="padding:clamp(24px,3.4vw,40px) clamp(20px,4vw,48px) 22px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px">
+          <span style="display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:#0B2A20"><span style="width:30px;height:30px;border-radius:10px;background:#1E5BD8;color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center">2</span>Stage 2 · List cleaning</span>
+          <h3 style="margin:0;font-weight:800;font-size:clamp(28px,3vw,38px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20">Clean your list, then keep it clean</h3>
+          <p style="margin:0;max-width:58ch;font-size:16.5px;line-height:1.6;color:#3E4F48">Dead addresses, typos and bots drag every send down. We remove them, block fake signups at the form, and set up automatic removals so the list stays healthy.</p>
+        </div>
+        <div style="height:340px;box-sizing:border-box;background:linear-gradient(160deg,#2C6BEA 0%,#1747B8 100%);padding:clamp(20px,3vw,32px);display:flex;align-items:center;justify-content:center">
+          <div style="width:100%;max-width:620px;background:#fff;border:1px solid #E3EAE6;border-radius:16px;overflow:hidden">
+            <div style="display:flex;justify-content:space-between;gap:10px;padding:11px 16px;border-bottom:1px solid #EEF1EF;font-size:13px;font-weight:700;color:#0B2A20"><span>Subscriber list · 12,480</span><span style="display:inline-grid"><span style="grid-area:1/1;justify-self:end;color:#6B7A74;animation:dlFailOut 7s ease infinite">Checking…</span><span style="grid-area:1/1;justify-self:end;color:#1E8E3E;animation:dlPassIn 7s ease infinite">1,142 removed</span></span></div>
+            <sc-for list="{{ list }}" as="l" hint-placeholder-count="5">
+              <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 16px;border-top:1px solid #F1F3F2;animation:{{ l.dim }}">
+                <span style="position:relative;justify-self:start;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0B2A20">{{ l.e }}<sc-if value="{{ l.bad }}"><span style="position:absolute;left:0;right:0;top:50%;height:2px;background:#D93025;transform-origin:left;animation:dlStrike 7s ease infinite"></span></sc-if></span>
+                <span style="font-size:12px;font-weight:700;border-radius:99px;padding:4px 10px;background:{{ l.bg }};color:{{ l.fg }};white-space:nowrap">{{ l.tag }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </article>
+
+      <!-- S3 -->
+      <article data-reveal="0" style="background:#fff;border:1px solid #E3EAE6;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px -44px rgba(11,42,32,.4)">
+        <div style="padding:clamp(24px,3.4vw,40px) clamp(20px,4vw,48px) 22px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px">
+          <span style="display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:#0B2A20"><span style="width:30px;height:30px;border-radius:10px;background:#23895C;color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center">3</span>Stage 3 · Sending plan</span>
+          <h3 style="margin:0;font-weight:800;font-size:clamp(28px,3vw,38px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20">Send less, to people who open</h3>
+          <p style="margin:0;max-width:58ch;font-size:16.5px;line-height:1.6;color:#3E4F48">Flows and campaigns often stack up into two or three emails a day. We plan sends so each person gets about one, and the people who open get your email first.</p>
+        </div>
+        <div style="height:340px;box-sizing:border-box;background:linear-gradient(160deg,#2FA36E 0%,#1C6E4A 100%);padding:clamp(20px,3vw,32px);display:flex;align-items:center;justify-content:center">
+          <div style="width:100%;max-width:680px;background:#fff;border:1px solid #E3EAE6;border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;box-sizing:border-box">
+            <b style="font-size:13px;font-weight:700;color:#0B2A20">Emails one subscriber gets · this week</b>
+            <div style="display:grid;grid-template-columns:72px repeat(7,minmax(0,1fr));gap:6px;font-size:12px;font-weight:600;color:#9AA5A0;text-align:center"><span></span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+            <sc-for list="{{ cal }}" as="c" hint-placeholder-count="2">
+              <div style="display:grid;grid-template-columns:72px repeat(7,minmax(0,1fr));gap:6px;align-items:center">
+                <span style="display:flex;flex-direction:column;gap:2px"><b style="font-size:13.5px;font-weight:700;color:{{ c.ink }}">{{ c.k }}</b><span style="font-size:11.5px;color:#6B7A74">{{ c.sum }}</span></span>
+                <sc-for list="{{ c.days }}" as="d" hint-placeholder-count="7">
+                  <span style="height:54px;border-radius:10px;background:#F4F6F5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px"><sc-for list="{{ d.dots }}" as="o" hint-placeholder-count="1"><span style="width:22px;height:7px;border-radius:3px;background:{{ c.col }};animation:{{ o.anim }}"></span></sc-for></span>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </article>
+
+      <!-- S4 -->
+      <article data-reveal="0" style="background:#fff;border:1px solid #E3EAE6;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px -44px rgba(11,42,32,.4)">
+        <div style="padding:clamp(24px,3.4vw,40px) clamp(20px,4vw,48px) 22px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px">
+          <span style="display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:#0B2A20"><span style="width:30px;height:30px;border-radius:10px;background:#0E1311;color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center">4</span>Stage 4 · Sender reputation</span>
+          <h3 style="margin:0;font-weight:800;font-size:clamp(28px,3vw,38px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20">Rebuild your sender reputation</h3>
+          <p style="margin:0;max-width:58ch;font-size:16.5px;line-height:1.6;color:#3E4F48">Gmail grades your IP and domain on how people react to your email. We raise both with careful, controlled sending, week by week, until they read High.</p>
+        </div>
+        <div style="height:340px;box-sizing:border-box;background:radial-gradient(120% 90% at 50% 0%,#24302B 0%,#0E1311 70%);padding:clamp(20px,3vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;align-content:center;overflow:hidden">
+          <div style="background:#fff;border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-width:0;font-family:'Roboto',sans-serif">
+            <span style="display:flex;justify-content:space-between;align-items:center;gap:8px"><b style="font-size:14px;font-weight:500;color:#202124">IP reputation</b><span style="font-size:11px;color:#5F6368">Google Postmaster Tools</span></span>
+            <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;height:150px;align-items:end">
+              <sc-for list="{{ ipRep }}" as="b" hint-placeholder-count="12"><span style="display:flex;flex-direction:column-reverse;height:100%;border-radius:3px;overflow:hidden;transform-origin:bottom;animation:{{ b.anim }}"><span style="height:{{ b.bad }};background:#D93025"></span><span style="height:{{ b.low }};background:#F29900"></span><span style="height:{{ b.med }};background:#FBBC04"></span><span style="height:{{ b.high }};background:#1E8E3E"></span></span></sc-for>
+            </div>
+            <span style="display:flex;justify-content:space-between;font-size:10.5px;color:#5F6368"><span>Week 1</span><span>Week 12</span></span>
+            <span style="display:flex;gap:10px;flex-wrap:wrap;font-size:11px;color:#3C4043"><span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;background:#1E8E3E"></span>High</span><span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;background:#FBBC04"></span>Medium</span><span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;background:#F29900"></span>Low</span><span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;background:#D93025"></span>Bad</span></span>
+          </div>
+          <div style="background:#fff;border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-width:0;font-family:'Roboto',sans-serif">
+            <span style="display:flex;justify-content:space-between;align-items:center;gap:8px"><b style="font-size:14px;font-weight:500;color:#202124">Domain reputation</b><span style="font-size:11px;color:#5F6368">Google Postmaster Tools</span></span>
+            <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;height:150px;align-items:end">
+              <sc-for list="{{ domRep }}" as="b" hint-placeholder-count="12"><span style="display:flex;flex-direction:column-reverse;height:100%;border-radius:3px;overflow:hidden;transform-origin:bottom;animation:{{ b.anim }}"><span style="height:{{ b.bad }};background:#D93025"></span><span style="height:{{ b.low }};background:#F29900"></span><span style="height:{{ b.med }};background:#FBBC04"></span><span style="height:{{ b.high }};background:#1E8E3E"></span></span></sc-for>
+            </div>
+            <span style="display:flex;justify-content:space-between;font-size:10.5px;color:#5F6368"><span>Week 1</span><span>Week 12</span></span>
+            <span style="display:flex;gap:10px;flex-wrap:wrap;font-size:11px;color:#3C4043"><span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;background:#1E8E3E"></span>High</span><span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;background:#FBBC04"></span>Medium</span><span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;background:#F29900"></span>Low</span><span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;background:#D93025"></span>Bad</span></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- S5 -->
+      <article data-reveal="0" style="background:#fff;border:1px solid #E3EAE6;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px -44px rgba(11,42,32,.4)">
+        <div style="padding:clamp(24px,3.4vw,40px) clamp(20px,4vw,48px) 22px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px">
+          <span style="display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:#0B2A20"><span style="width:30px;height:30px;border-radius:10px;background:#FFB800;color:#0B2A20;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center">5</span>Stage 5 · Test &amp; win back</span>
+          <h3 style="margin:0;font-weight:800;font-size:clamp(28px,3vw,38px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20">Test every week, and win back quiet subscribers</h3>
+          <p style="margin:0;max-width:58ch;font-size:16.5px;line-height:1.6;color:#3E4F48">A placement test runs every week across Gmail, Outlook and Yahoo. Anything that slips gets fixed. Then we wake up the people who stopped seeing you, usually 5 to 10% of your quiet list.</p>
+        </div>
+        <div style="height:340px;box-sizing:border-box;background:linear-gradient(160deg,#FFC633 0%,#F0A500 100%);padding:clamp(20px,3vw,32px);display:flex;align-items:center;justify-content:center">
+          <div style="width:100%;max-width:760px;height:100%;background:#fff;border:1px solid #E3EAE6;border-radius:16px;padding:14px 18px;box-sizing:border-box;display:flex;flex-direction:column;gap:10px">
+            <span style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12px;color:#55655E"><b style="font-size:13px;font-weight:700;color:#0B2A20">Every GlockApps test, last 8 weeks</b><span style="display:flex;gap:12px"><span style="display:flex;align-items:center;gap:5px"><span style="width:9px;height:9px;border-radius:2px;background:#0F6E4A"></span>80%+</span><span style="display:flex;align-items:center;gap:5px"><span style="width:9px;height:9px;border-radius:2px;background:#C98A00"></span>60–80%</span><span style="display:flex;align-items:center;gap:5px"><span style="width:9px;height:9px;border-radius:2px;background:#D93025"></span>Under 60%</span></span></span>
+            <div style="position:relative;flex:1;min-height:0;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:clamp(8px,1.6vw,18px);align-items:end;border-bottom:1px solid #E3EAE6;padding:0 6px">
+              <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:80%;border-top:1.5px dashed #0B2A20;opacity:.5"></span>
+              <span style="position:absolute;left:4px;bottom:calc(80% + 4px);font-size:10.5px;color:#55655E;background:#fff;padding:0 4px">80% benchmark</span>
+              <sc-for list="{{ glock }}" as="g" hint-placeholder-count="8">
+                <span style="height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px"><b style="font-size:11px;font-weight:700;color:#0B2A20">{{ g.v }}</b><span style="width:100%;max-width:34px;height:{{ g.h }};border-radius:5px 5px 0 0;background:{{ g.c }};transform-origin:bottom;animation:{{ g.anim }}"></span></span>
+              </sc-for>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:clamp(8px,1.6vw,18px);font-size:11px;color:#6B7A74;text-align:center;padding:0 6px"><sc-for list="{{ glock }}" as="g" hint-placeholder-count="8"><span>{{ g.w }}</span></sc-for></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · DASHBOARD -->
+<section data-screen-label="04 Dashboard" style="padding:clamp(56px,7vw,88px) clamp(12px,3vw,32px)">
+  <div style="max-width:1240px;margin:0 auto;background:#0B2A20;border-radius:36px;padding:clamp(48px,6vw,80px) clamp(16px,4vw,56px);position:relative;overflow:hidden">
+    <span aria-hidden="true" style="position:absolute;left:50%;top:0;width:80%;height:60%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(59,183,126,.25),rgba(59,183,126,0))"></span>
+    <div data-reveal="0" style="position:relative;text-align:center;max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-weight:700;font-size:clamp(30px,3.8vw,46px);line-height:1.08;letter-spacing:-.035em;color:#fff;text-wrap:balance">You see everything <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:#FFB800">we see.</span></h2>
+      <p style="margin:0;font-size:clamp(16px,1.5vw,18px);line-height:1.6;color:#CFE3D9">Gmail stopped showing IP reputation, so we built our own tracker. Placement, reputation, every send and the revenue it brings, updated live.</p>
+    </div>
+    <div data-reveal="120" style="position:relative;margin-top:clamp(36px,4.5vw,52px);background:#F7FAF8;border-radius:20px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);font-family:'Satoshi',sans-serif;color:#0B2A20">
+      <div data-m="dash-side" style="background:#EEF5F1;padding:18px 14px;display:flex;flex-direction:column;gap:4px;border-right:1px solid #E1EAE5">
+        <span style="display:flex;align-items:center;gap:8px;padding:0 6px 4px"><img src="assets/logo-mark.png" alt="" style="width:24px;height:24px;border-radius:99px"><b style="font-size:15px;font-weight:700">GrowMailers</b></span>
+        <span style="padding:0 6px 14px;font-size:11.5px;color:#55655E">Email Delivery Tracker</span>
+        <sc-for list="{{ side }}" as="s" hint-placeholder-count="5"><span style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;border-radius:10px;font-size:13px;font-weight:500;background:{{ s.bg }}">{{ s.k }}<sc-if value="{{ s.badge }}"><span style="font-size:11px;font-weight:700;background:#fff;border-radius:99px;padding:1px 7px">2</span></sc-if></span></sc-for>
+      </div>
+      <div style="min-width:0;padding:16px clamp(14px,2vw,24px) 20px;display:flex;flex-direction:column;gap:14px;min-height:470px;box-sizing:border-box">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;color:#55655E">
+          <span style="display:flex;align-items:center;gap:6px">Overview / <span style="filter:blur(4px);user-select:none">Client</span> / <b style="color:#0B2A20">{{ dTitle }}</b></span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:99px;background:#1E8E3E;animation:dlBlink 1.4s ease-in-out infinite"></span>live</span>
+        </div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;background:#fff;border:1px solid #E1EAE5;border-radius:12px;padding:4px;align-self:flex-start;max-width:100%">
+          <sc-for list="{{ dTabs }}" as="t" hint-placeholder-count="5"><span style="padding:7px 12px;border-radius:9px;font-size:12.5px;font-weight:700;white-space:nowrap;background:{{ t.bg }};border:1px solid {{ t.bd }};transition:background .3s">{{ t.k }}</span></sc-for>
+        </div>
+        <sc-if value="{{ dIs0 }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:12px;animation:dlTabIn .45s ease both">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px"><sc-for list="{{ kpi0 }}" as="k" hint-placeholder-count="4"><span style="background:#fff;border:1px solid #E1EAE5;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:3px"><span style="font-size:12px;color:#55655E">{{ k.k }}</span><b style="font-size:24px;font-weight:700;letter-spacing:-.02em">{{ k.v }}</b><span style="font-size:11.5px;color:#55655E">{{ k.s }}</span></span></sc-for></div>
+            <div style="background:#fff;border:1px solid #E1EAE5;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:8px">
+              <b style="font-size:13px;font-weight:700">Every GlockApps test, last 8 weeks</b>
+              <div style="position:relative;height:150px;display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:10px;align-items:end;border-bottom:1px solid #E1EAE5">
+                <span style="position:absolute;left:0;right:0;bottom:80%;border-top:1.5px dashed #0B2A20;opacity:.45"></span>
+                <sc-for list="{{ bars0 }}" as="b" hint-placeholder-count="10"><span style="height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:3px"><span style="font-size:10px;color:#55655E">{{ b.v }}</span><span style="width:100%;max-width:26px;height:{{ b.h }};background:{{ b.c }};border-radius:3px 3px 0 0;transform-origin:bottom;animation:dlGrowY .7s cubic-bezier(.2,.8,.2,1) {{ b.dl }} both"></span></span></sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ dIs1 }}">
+          <div data-m="rep3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;animation:dlTabIn .45s ease both">
+            <sc-for list="{{ rep1 }}" as="c" hint-placeholder-count="3"><span style="background:#fff;border:1px solid #E1EAE5;border-left:4px solid #0F6E4A;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px"><b style="font-size:14px;font-weight:700">{{ c.k }}</b><b style="font-size:30px;font-weight:700;letter-spacing:-.03em"><span style="color:#0F6E4A">✓</span> High</b><span style="font-size:12.5px;color:#55655E">Nothing found against it.</span><span style="height:1px;background:#EEF1EF"></span><sc-for list="{{ c.rows }}" as="r" hint-placeholder-count="3"><span style="display:flex;gap:6px;font-size:11.5px;line-height:1.45;color:#3E4F48"><span style="flex:0 0 auto;width:7px;height:7px;margin-top:5px;border-radius:99px;background:{{ r.c }}"></span><span><b style="font-weight:700;color:#0B2A20">{{ r.k }}</b> {{ r.v }}</span></span></sc-for></span></sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ dIs2 }}">
+          <div style="display:flex;flex-direction:column;gap:12px;animation:dlTabIn .45s ease both">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px"><sc-for list="{{ kpi2 }}" as="k" hint-placeholder-count="4"><span style="background:#fff;border:1px solid #E1EAE5;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:3px"><span style="font-size:12px;color:#55655E">{{ k.k }}</span><b style="font-size:24px;font-weight:700;letter-spacing:-.02em">{{ k.v }}</b><span style="font-size:11.5px;color:#55655E">{{ k.s }}</span></span></sc-for></div>
+            <div style="background:#fff;border:1px solid #E1EAE5;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px">
+              <b style="font-size:13px;font-weight:700">Open rate per send</b>
+              <svg viewBox="0 0 600 150" preserveAspectRatio="none" style="width:100%;height:150px;display:block">
+                <g stroke="#EEF1EF"><line x1="0" y1="20" x2="600" y2="20"></line><line x1="0" y1="60" x2="600" y2="60"></line><line x1="0" y1="100" x2="600" y2="100"></line><line x1="0" y1="140" x2="600" y2="140"></line></g>
+                <line x1="0" y1="58" x2="600" y2="58" stroke="#0B2A20" stroke-dasharray="6 5" opacity=".45"></line>
+                <path d="M10 56 L62 58 L114 60 L166 58 L218 59 L270 50 L322 57 L374 56 L426 54 L478 59 L530 57 L590 52" fill="none" stroke="#1A73E8" stroke-width="3" stroke-dasharray="900" vector-effect="non-scaling-stroke" style="animation:dlDraw 1.4s ease-out both"></path>
+              </svg>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ dIs3 }}">
+          <div style="display:flex;flex-direction:column;gap:12px;animation:dlTabIn .45s ease both">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px"><sc-for list="{{ kpi3 }}" as="k" hint-placeholder-count="4"><span style="background:#fff;border:1px solid #E1EAE5;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:3px"><span style="font-size:12px;color:#55655E">{{ k.k }}</span><b style="font-size:24px;font-weight:700;letter-spacing:-.02em">{{ k.v }}</b><span style="font-size:11.5px;color:#55655E">{{ k.s }}</span></span></sc-for></div>
+            <div style="background:#fff;border:1px solid #E1EAE5;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:8px">
+              <span style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><b style="font-size:13px;font-weight:700">Money received per day</b><span style="display:flex;gap:10px;font-size:11px;color:#55655E"><span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;border-radius:2px;background:#1A73E8"></span>Broadcast</span><span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;border-radius:2px;background:#B5179E"></span>Automation</span><span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;border-radius:2px;background:#16325C"></span>Other</span></span></span>
+              <div style="height:130px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:10px;align-items:end;border-bottom:1px solid #E1EAE5"><sc-for list="{{ bars3 }}" as="b" hint-placeholder-count="12"><span style="height:{{ b.h }};background:{{ b.c }};border-radius:3px 3px 0 0;transform-origin:bottom;animation:dlGrowY .7s cubic-bezier(.2,.8,.2,1) {{ b.dl }} both"></span></sc-for></div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · GUARANTEE -->
+<section data-screen-label="05 Guarantee" style="padding:clamp(56px,7vw,88px) clamp(18px,4vw,40px)">
+  <div data-reveal="0" style="max-width:860px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px">
+    <h2 style="margin:0;font-weight:700;font-size:clamp(30px,3.8vw,48px);line-height:1.08;letter-spacing:-.035em;color:#0B2A20;text-wrap:balance">80%+ in the inbox, <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:#23895C">guaranteed.</span></h2>
+    <p style="margin:0;max-width:56ch;font-size:clamp(16px,1.5vw,18px);line-height:1.65;color:#3E4F48">We guarantee at least 80% inbox placement across Gmail, Outlook and Yahoo on two GlockApps tests in a row, with spam complaints held under 0.1%. You pay half up front, and the rest once the results are in.</p>
+  </div>
+  <div data-tl="1" style="max-width:1040px;margin:clamp(36px,4.5vw,52px) auto 0;background:#fff;border:1px solid #E3EAE6;border-radius:28px;padding:clamp(22px,3.4vw,40px);box-shadow:0 30px 60px -44px rgba(11,42,32,.35)">
+    <div style="position:relative;height:160px">
+      <svg viewBox="0 0 1000 160" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">
+        <g stroke="#EEF1EF"><line x1="0" x2="1000" y1="20" y2="20"></line><line x1="0" x2="1000" y1="80" y2="80"></line><line x1="0" x2="1000" y1="140" y2="140"></line></g>
+        <line x1="0" x2="1000" y1="44" y2="44" stroke="#1E8E3E" stroke-width="1.5" stroke-dasharray="6 6" vector-effect="non-scaling-stroke"></line>
+        <path d="M0 132 C 120 130, 200 126, 250 118 S 420 92, 500 70 S 680 46, 750 40 S 920 30, 1000 26" fill="none" stroke="#0B2A20" stroke-width="3.5" stroke-linecap="round" vector-effect="non-scaling-stroke" stroke-dasharray="1300" stroke-dashoffset="{{ tlDash }}" style="transition:stroke-dashoffset 2.6s cubic-bezier(.4,0,.2,1)"></path>
+      </svg>
+      <span style="position:absolute;right:0;top:20px;font-size:12px;font-weight:700;color:#1E8E3E;background:#E6F4EA;border-radius:99px;padding:3px 9px">80% target</span>
+      <span style="position:absolute;left:0;bottom:8px;font-size:12px;font-weight:600;color:#9AA5A0">Inbox placement</span>
+    </div>
+    <div style="position:relative;margin-top:22px;height:6px;border-radius:99px;background:#EEF1EF">
+      <span style="position:absolute;left:0;top:0;bottom:0;width:{{ tlFill }};border-radius:99px;background:linear-gradient(90deg,#9AA5A0,#23895C);transition:width 2.6s cubic-bezier(.4,0,.2,1)"></span>
+    </div>
+    <div style="margin-top:-13px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+          <span style="width:20px;height:20px;border-radius:99px;box-sizing:border-box;border:4px solid #fff;background:{{ s.dot }};box-shadow:0 0 0 1px {{ s.dot }};transform:{{ s.sc }};transition:all .5s cubic-bezier(.34,1.4,.64,1) {{ s.delay }}"></span>
+          <span style="font-size:12.5px;font-weight:700;letter-spacing:.06em;color:{{ s.tag }}">{{ s.when }}</span>
+          <b style="font-size:17px;font-weight:700;line-height:1.3;color:#0B2A20">{{ s.t }}</b>
+          <span style="font-size:14px;line-height:1.5;color:#55655E">{{ s.x }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · CASE STUDIES -->
+<section data-screen-label="06 Case studies" style="padding:clamp(56px,7vw,88px) clamp(18px,4vw,40px)">
+  <div style="max-width:1000px;margin:0 auto">
+    <div data-reveal="0" style="text-align:center;max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-weight:700;font-size:clamp(30px,3.8vw,48px);line-height:1.08;letter-spacing:-.035em;color:#0B2A20;text-wrap:balance">Out of spam and Promotions. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:#23895C">Here's what happened next.</span></h2>
+    </div>
+    <article data-reveal="100" style="margin-top:clamp(40px,5vw,56px);background:#fff;border:1px solid #E3EAE6;border-radius:28px;padding:clamp(22px,3.4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,4vw,48px);align-items:center;box-shadow:0 30px 60px -44px rgba(11,42,32,.35)">
+      <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+        <span style="font-size:13px;font-weight:700;letter-spacing:.06em;color:#55655E">Reimagine Love · relationship coaching</span>
+        <span style="display:flex;flex-direction:column;gap:4px"><b style="font-size:clamp(32px,3.6vw,46px);font-weight:700;letter-spacing:-.04em;line-height:1;color:#0B2A20"><span style="color:#9AA5A0">46%</span> → 83.8%</b><span style="font-size:14px;font-weight:600;color:#23895C">inbox placement in 45 days</span></span>
+        <span style="display:flex;flex-direction:column;gap:4px"><b style="font-size:clamp(32px,3.6vw,46px);font-weight:700;letter-spacing:-.04em;line-height:1;color:#0B2A20"><span style="color:#9AA5A0">22%</span> → 68%</b><span style="font-size:14px;font-weight:600;color:#23895C">broadcast open rate</span></span>
+        <p style="margin:0;font-size:15.5px;line-height:1.6;color:#3E4F48">Half their emails were landing in spam and Promotions. Bounces dropped from 2,108 to 29.</p>
+      </div>
+      <div style="min-width:0"><div style="position:relative;width:100%;aspect-ratio:1850/1094;border-radius:14px;overflow:hidden;border:1px solid #E3EAE6;background:#fff">
+        <img src="assets/proof/reimagine-after.png" alt="After: 68.42% open rate" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain">
+        <span style="position:absolute;inset:0;background:#fff;animation:dlWipe 7s cubic-bezier(.65,0,.35,1) infinite"><img src="assets/proof/reimagine-before.png" alt="Before: 22.17% open rate" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain"></span>
+        <span style="position:absolute;top:0;bottom:0;width:3px;margin-left:-1.5px;background:#0B2A20;animation:dlWipeBar 7s cubic-bezier(.65,0,.35,1) infinite"></span>
+        <span style="position:absolute;left:12px;top:12px;display:inline-grid;font-size:11.5px;font-weight:700"><span style="grid-area:1/1;background:#D93025;color:#fff;border-radius:99px;padding:5px 11px;animation:dlFailOut 7s ease infinite">BEFORE</span><span style="grid-area:1/1;background:#1E8E3E;color:#fff;border-radius:99px;padding:5px 11px;animation:dlPassIn 7s ease infinite">AFTER</span></span>
+      </div></div>
+    </article>
+    <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+      <article data-reveal="0" style="background:#fff;border:1px solid #E3EAE6;border-radius:24px;padding:28px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px">
+        <img src="assets/clients/pca.webp" alt="" style="width:44px;height:44px;border-radius:99px">
+        <b style="font-size:15px;font-weight:700;color:#0B2A20">Product Career Accelerator</b>
+        <b style="font-size:clamp(30px,3vw,40px);font-weight:700;letter-spacing:-.04em;line-height:1;color:#0B2A20"><span style="color:#9AA5A0">35%</span> → 50%+</b>
+        <span style="font-size:14px;font-weight:600;color:#23895C">open rate, out of Promotions into Primary</span>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#3E4F48">A 12K list stuck in Promotions. Placement now holds at 90%+, and email drives 40 to 70 booked calls a month.</p>
+      </article>
+      <article data-reveal="120" style="background:#fff;border:1px solid #E3EAE6;border-radius:24px;padding:28px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px">
+        <img src="assets/clients/logo-c.png" alt="Close With Copy" style="width:44px;height:44px;border-radius:12px">
+        <b style="font-size:15px;font-weight:700;color:#0B2A20">Close With Copy</b>
+        <b style="font-size:clamp(30px,3vw,40px);font-weight:700;letter-spacing:-.04em;line-height:1;color:#0B2A20"><span style="color:#9AA5A0">0</span> → 37 sales</b>
+        <span style="font-size:14px;font-weight:600;color:#23895C">plus 17 booked calls, in one week</span>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#3E4F48">Their launch emails were missing the inbox. Once they landed in Primary, a ~2,000-person list paid for itself.</p>
+      </article>
+    </div>
+    <div style="margin-top:32px;display:flex;justify-content:center">
+      <a href="Results.dc.html" style="display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;color:#0B2A20;text-decoration:none;border-bottom:2px solid #23895C;padding-bottom:3px" style-hover="color:#23895C">See all case studies →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · CLOSE -->
+<section data-screen-label="07 Close" style="padding:clamp(24px,4vw,48px) clamp(12px,3vw,32px) clamp(72px,9vw,112px)">
+  <div data-reveal="0" style="position:relative;max-width:1240px;margin:0 auto;background:#0B2A20;border-radius:36px;padding:clamp(56px,7vw,96px) clamp(22px,5vw,64px);text-align:center;color:#fff;overflow:hidden">
+    <span aria-hidden="true" style="position:absolute;inset:-30% 20% auto;height:80%;background:radial-gradient(closest-side,rgba(59,183,126,.22),rgba(59,183,126,0))"></span>
+    <h2 style="position:relative;margin:0 auto 14px;max-width:20ch;font-weight:700;font-size:clamp(30px,4vw,50px);line-height:1.06;letter-spacing:-.035em;color:#fff;text-wrap:balance">Find out why your emails <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FFB800">miss the inbox.</span></h2>
+    <p style="position:relative;margin:0 auto;max-width:44ch;font-size:clamp(16px,1.6vw,19px);line-height:1.6;color:#CFE3D9">Thirty minutes gets you the root cause, whether or not you hire us.</p>
+    <a href="Contact.dc.html" style="position:relative;display:inline-flex;margin-top:28px;background:#fff;color:#0B2A20;text-decoration:none;font-weight:700;font-size:17px;padding:17px 30px;border-radius:999px" style-hover="background:#FFB800;color:#0B2A20">Book my free diagnosis</a>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,300px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { tl: false, tab: 0 };
+  componentDidMount() {
+    setTimeout(() => { const el = document.querySelector('[data-tl]'); if (el && 'IntersectionObserver' in window) { this._tlo = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { this.setState({ tl: true }); this._tlo.disconnect(); } }), { threshold: 0.35 }); this._tlo.observe(el); } else this.setState({ tl: true }); }, 80);
+    setTimeout(() => this.setupReveal(), 60);
+    this._t = setInterval(() => this.setState(s => ({ tab: (s.tab + 1) % 4 })), 3600);
+  }
+  componentWillUnmount() { this._io && this._io.disconnect(); clearInterval(this._t); }
+  setupReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    const els = [...document.querySelectorAll('[data-reveal]')].filter(el => el.getBoundingClientRect().top > window.innerHeight * 0.9);
+    this._io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; e.target.style.opacity = '1'; e.target.style.transform = 'none'; this._io.unobserve(e.target); }), { threshold: 0.12 });
+    els.forEach(el => { const d = parseInt(el.getAttribute('data-reveal') || '0', 10); el.style.opacity = '0'; el.style.transform = 'translateY(24px)'; el.style.transition = `opacity .7s cubic-bezier(.2,.8,.2,1) ${d}ms, transform .7s cubic-bezier(.2,.8,.2,1) ${d}ms`; this._io.observe(el); });
+  }
+  mkRep(off) {
+    const seq = [[0,0,10,90],[0,5,25,70],[5,15,35,45],[10,25,40,25],[25,35,30,10],[40,35,20,5],[55,30,15,0],[70,25,5,0],[80,20,0,0],[88,12,0,0],[95,5,0,0],[100,0,0,0]];
+    return seq.map(([h,m,l,b], i) => ({ high: h + '%', med: m + '%', low: l + '%', bad: b + '%', anim: `dlBarY 7s cubic-bezier(.2,.8,.2,1) ${(off + i * .08).toFixed(2)}s infinite` }));
+  }
+  renderVals() {
+    const tab = this.state.tab;
+    const sw = (i) => ({ out: `dlFailOut 7s ease ${(i * .25).toFixed(2)}s infinite`, in: `dlPassIn 7s ease ${(i * .25).toFixed(2)}s infinite` });
+    const issue = { s: 'Issue', bg: '#FCE8E6', fg: '#B3261E' }, likely = { s: 'Likely', bg: '#FEF0C3', fg: '#8A5A00' };
+    const bad = (e, tag) => ({ e, tag, bad: true, bg: '#FCE8E6', fg: '#B3261E', dim: 'dlDim 7s ease infinite' });
+    const good = (e) => ({ e, tag: 'Keep', bad: false, bg: '#E6F4EA', fg: '#137333', dim: 'none' });
+    const days = (arr, mk) => arr.map((n, di) => ({ dots: Array.from({ length: n }, (_, k) => ({ anim: mk(di) })) }));
+    const g8 = [52, 58, 64, 71, 76, 81, 83, 84];
+    const tabNames = ['Deliverability', 'Reputations and Content', 'Broadcasts', 'Bookings & revenue'];
+    return {
+      reasons: [
+        ['Authentication is broken', 'SPF, DKIM or DMARC is missing or set up wrong, so Gmail can\'t confirm the email is really yours.', issue],
+        ['Poor domain reputation', 'Since 2024, your domain\'s track record decides more of your placement than anything else.', likely],
+        ['Poor IP reputation', 'The servers your emails leave from carry their own score, and a bad one drags you down.', likely],
+        ['Content that looks like spam', 'Heavy images, risky links and spammy wording push you into Promotions or spam.', likely],
+        ['A dirty list', 'Old addresses, typos and bot signups cause bounces and spam traps.', issue],
+        ['Spam complaints too high', 'Over 0.3% and Google starts filtering you. We hold it under 0.1%.', likely],
+        ['Too many emails per person', 'Flows and campaigns stack up, and people get two or three emails a day.', likely]
+      ].map(([t, x, st], i) => ({ n: String(i + 1).padStart(2, '0'), t, x, d: String((i % 4) * 90), ...st })),
+      auth: [['SPF', 'v=spf1 include:_spf.klaviyo.com ~all', 'Fail', 'Pass'], ['DKIM', 'k1._domainkey.yourbrand.com', 'Missing', 'Signed'], ['DMARC', 'p=none → p=quarantine', 'Not enforced', 'Enforced']].map(([k, v, b, g], i) => ({ k, v, bad: b, good: g, ...sw(i) })),
+      bl: [['Spamhaus', 'Domain and sending IP', 'Listed', 'Delisted'], ['Barracuda', 'Sending IP', 'Listed', 'Delisted'], ['Spoofing', '3 unknown senders using your domain', 'Exposed', 'Blocked']].map(([k, v, b, g], i) => ({ k, v, bad: b, good: g, ...sw(i + 3) })),
+      list: [good('sarah.k@gmail.com'), bad('info@company.co', 'Role address'), good('priya.r@outlook.com'), bad('jon.b@gmial.com', 'Typo'), bad('x7k2q@tempmail.io', 'Bot')],
+      cal: [
+        { k: 'Before', sum: '16 emails', ink: '#B3261E', col: '#D93025', days: days([3, 2, 3, 2, 3, 1, 2], () => 'dlDotOut 7s ease infinite') },
+        { k: 'After', sum: '4 emails', ink: '#137333', col: '#1E8E3E', days: days([1, 0, 1, 0, 1, 1, 0], (di) => `dlPopDot 7s cubic-bezier(.34,1.4,.64,1) ${(di * .12).toFixed(2)}s infinite`) }
+      ],
+      ipRep: this.mkRep(0), domRep: this.mkRep(.15),
+      repCards: [['Content', 'Spammy wording flagged'], ['IP', 'Listed on Spamhaus'], ['Domain', 'Complaints over 0.3%']].map(([k, lo], i) => ({ k, lo, border: `dlBorder 7s ease ${(i * .3).toFixed(1)}s infinite`, ...sw(i * 1.2) })),
+      glock: g8.map((v, i) => ({ w: 'W' + (i + 1), v: v + '%', h: v + '%', c: v >= 80 ? '#0F6E4A' : v >= 60 ? '#C98A00' : '#D93025', anim: `dlBarY 7s cubic-bezier(.2,.8,.2,1) ${(i * .12).toFixed(2)}s infinite` })),
+      side: [['Overview', 0], ['Alerts', 1], ['Activity', 0], ['IP & Domain Reputation', 0], ['Clients · 10', 0]].map(([k, b], i) => ({ k, badge: !!b, bg: i === 0 ? '#fff' : 'transparent' })),
+      dTitle: tabNames[tab],
+      dTabs: tabNames.map((k, i) => ({ k, bg: i === tab ? '#EEF5F1' : 'transparent', bd: i === tab ? '#CFE0D7' : 'transparent' })),
+      dIs0: tab === 0, dIs1: tab === 1, dIs2: tab === 2, dIs3: tab === 3,
+      kpi0: [['Benchmark', 'On', '83.5% in the inbox or a tab'], ['Passing weeks in a row', '5', '80% or more, Mon to Sun'], ['In spam, latest test', '4.1%', 'inbox 83.5%'], ['Gmail spam rate', '0.00%', 'Google\'s limit is 0.3%']].map(([k, v, s]) => ({ k, v, s })),
+      bars0: [83.3, 81.5, 81.3, 82.7, 83.5, 78.5, 81.3, 83.5, 82.7, 84.1].map((v, i) => ({ v: v + '%', h: v + '%', c: v >= 80 ? '#0F6E4A' : '#C98A00', dl: (i * .06).toFixed(2) + 's' })),
+      rep1: ['Content', 'IP', 'Domain'].map(k => ({ k, rows: [['High', 'nothing found against it', '#0F6E4A'], ['Medium', 'readers slow to act', '#C98A00'], ['Low', 'complaints or listings', '#D93025']].map(([a, b, c]) => ({ k: a, v: b, c })) })),
+      kpi2: [['Latest send', '11 Oct', 'Weekend edit'], ['Its open rate', '61.2%', '9,550 delivered'], ['Sends, last 30 days', '14', 'about 3.3 a week'], ['Open rate, 30 days', '54.2%', 'all opens ÷ delivered']].map(([k, v, s]) => ({ k, v, s })),
+      kpi3: [['Booked calls', '73', 'since 1 Feb'], ['Booked through email', '45', '62% of all bookings'], ['Became clients', '19', 'deals won'], ['Money received', '$95,666', 'since 1 Feb']].map(([k, v, s]) => ({ k, v, s })),
+      bars3: [[62, '#16325C'], [0, '#16325C'], [24, '#16325C'], [0, '#1A73E8'], [38, '#16325C'], [72, '#B5179E'], [68, '#1A73E8'], [0, '#16325C'], [20, '#B5179E'], [0, '#16325C'], [26, '#16325C'], [6, '#16325C']].map(([h, c], i) => ({ h: Math.max(h, 2) + '%', c, dl: (i * .05).toFixed(2) + 's' })),
+      steps: [
+        { when: 'DAYS 1–7', t: 'Full audit', x: 'Every part of your setup checked. You see exactly what we\'ll change.' },
+        { when: 'DAYS 7–21', t: 'First fixes + first test', x: 'Technical fixes go in, then your first placement test.' },
+        { when: 'WEEK 3 ONWARD', t: 'Recovery', x: 'Most cases clear 80% here. Deep damage takes 6 to 10 more weeks.' },
+        { when: 'RESULT', t: '80%+ on two tests in a row', x: 'Then we send the final invoice. Not before.', dark: true }
+      ].map((s, i) => ({ ...s, dot: this.state.tl ? (s.dark ? '#1E8E3E' : '#23895C') : '#D6DDD9', sc: this.state.tl ? 'scale(1)' : 'scale(.7)', delay: (this.state.tl ? 0.4 + i * 0.6 : 0).toFixed(1) + 's', tag: s.dark ? '#1E8E3E' : '#23895C' })),
+      tlDash: this.state.tl ? '0' : '1300', tlFill: this.state.tl ? '100%' : '0%'
+    };
+  }
+}
+</script>
+</body>
+</html>

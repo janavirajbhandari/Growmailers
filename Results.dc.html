@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap">
+<style>
+  html,body{margin:0;background:#FBFBF8}
+  a{color:#23895C}
+  a:hover{color:#0B2A20}
+  details summary::-webkit-details-marker{display:none}
+  details[open] .gm-plus{transform:rotate(45deg)}
+  @keyframes gmFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  @keyframes gmTap{from{transform:scale(.2);opacity:1}to{transform:scale(1.4);opacity:0}}
+  @keyframes gmSlideIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+  @keyframes gmPopIn{0%{opacity:0;transform:scale(.5)}70%{transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
+  @keyframes gmShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+  @keyframes gmFall{0%,25%{transform:none;background:#23895C}40%,85%{transform:translateY(54px);background:#E5484D}100%{transform:none;background:#23895C}}
+  @keyframes gmFade{0%,25%{opacity:1}40%,85%{opacity:.18}100%{opacity:1}}
+  @keyframes gmBinPulse{0%,35%{border-color:#E7E3DC;color:#9AA5A0}45%,85%{border-color:#E5484D;color:#B4232B}100%{border-color:#E7E3DC;color:#9AA5A0}}
+  @keyframes gmBar{0%,15%{width:18%;background:#E5484D}55%,100%{width:92%;background:#3BB77E}}
+  @keyframes gmOpens{0%,20%{width:30%}55%,100%{width:86%}}
+  @keyframes gmIgnores{0%,20%{width:55%}55%,100%{width:20%}}
+  @keyframes gmReports{0%,20%{width:28%}55%,100%{width:4%}}
+  @keyframes gmSeg{0%,100%{background:transparent;color:#CFE3D9}10%,30%{background:#3BB77E;color:#0B2A20}}
+  @keyframes gmTick{0%,10%{transform:scale(0)}22%,90%{transform:scale(1)}100%{transform:scale(0)}}
+  @keyframes gmColUp{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+  @keyframes gmColDown{from{transform:translateY(-50%)}to{transform:translateY(0)}}
+  @keyframes gmMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes gmSwapA{0%,40%{opacity:1}50%,92%{opacity:0}100%{opacity:1}}
+  @keyframes gmSwapB{0%,40%{opacity:0}50%,92%{opacity:1}100%{opacity:0}}
+  @keyframes gmRowHi{0%,100%{background:#fff}10%,30%{background:#F2F8F4}}
+  @keyframes gmGrow{0%{transform:scaleX(0)}45%,100%{transform:scaleX(1)}}
+  @keyframes gmLogo1{0%,28%{opacity:1;transform:scale(1)}33%,95%{opacity:0;transform:scale(.8)}100%{opacity:1}}
+  @keyframes gmLogo2{0%,28%{opacity:0;transform:scale(.8)}33%,61%{opacity:1;transform:scale(1)}66%,100%{opacity:0}}
+  @keyframes gmLogo3{0%,61%{opacity:0;transform:scale(.8)}66%,95%{opacity:1;transform:scale(1)}100%{opacity:0}}
+  @keyframes gmFlag{0%,100%{transform:translateY(0)}10%{transform:translateY(-6px)}20%{transform:translateY(0)}}
+  @keyframes gmUL{0%{transform:scaleX(0);transform-origin:left}30%{transform:scaleX(1);transform-origin:left}55%{transform:scaleX(1);transform-origin:right}80%,100%{transform:scaleX(0);transform-origin:right}}
+  @keyframes gmCaret{0%,49%{opacity:1}50%,100%{opacity:0}}
+  @keyframes gmMarqueeR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  @keyframes gmTap2{0%,100%{transform:rotate(0)}50%{transform:rotate(8deg)}}
+  @keyframes gmSpin{to{transform:rotate(360deg)}}
+  @keyframes gmPassIn{0%,38%{transform:scale(0) rotate(-20deg);opacity:0}48%,100%{transform:scale(1) rotate(-8deg);opacity:1}}
+  @keyframes gmTest84{0%,8%{width:0}40%,100%{width:84%}}
+  @keyframes gmTest87{0%,12%{width:0}44%,100%{width:87%}}
+  @keyframes gmTest91{0%,16%{width:0}48%,100%{width:91%}}
+  @keyframes gmDraw{0%{stroke-dashoffset:600}60%,100%{stroke-dashoffset:0}}
+@keyframes gmWipe{0%,12%{clip-path:inset(0 0 0 0)}45%,62%{clip-path:inset(0 100% 0 0)}92%,100%{clip-path:inset(0 0 0 0)}}
+  @keyframes gmWipeBar{0%,12%{left:100%}45%,62%{left:0%}92%,100%{left:100%}}
+  @keyframes gmSwB{0%,20%{opacity:1;transform:none}32%,80%{opacity:0;transform:translateY(-6px)}92%,100%{opacity:1;transform:none}}
+  @keyframes gmSwA{0%,22%{opacity:0;transform:translateY(6px)}34%,78%{opacity:1;transform:none}90%,100%{opacity:0;transform:translateY(6px)}}
+  @keyframes rsGrow{0%,6%{transform:scaleY(0)}30%,90%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+  @keyframes rsGrowX{0%,6%{transform:scaleX(0)}30%,90%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+  @keyframes rsDraw{0%{stroke-dashoffset:1200}50%,100%{stroke-dashoffset:0}}
+
+  @media (max-width:760px){
+    [data-m="wrap"]{white-space:normal!important}
+    [data-m="hero-stat"]{flex:1 1 100%!important;padding-top:0!important;flex-direction:row!important;flex-wrap:wrap!important;justify-content:center!important;align-items:flex-start!important;text-align:center!important;gap:20px 28px!important}
+    [data-m="hero-stat"]>*{align-items:center!important;text-align:center!important}
+    [data-m="wall"]{grid-template-columns:repeat(2,minmax(0,1fr))!important;height:560px!important}
+    [data-m="wall"]>*:nth-child(3){display:none!important}
+    [data-m="fan"]{flex-direction:column!important;align-items:center!important;gap:20px!important}
+    [data-m="fan"]>figure{transform:none!important;margin:0!important;width:100%!important;max-width:340px!important;flex:0 0 auto!important}
+    [data-m="stack"]{grid-template-columns:minmax(0,1fr)!important}
+    section{scroll-margin-top:70px}
+    
+  }
+</style>
+</helmet>
+<div style="background:#FBFBF8;color:#2F4A40;font-family:'Satoshi',sans-serif;overflow-x:clip">
+<dc-import name="SiteNav" active="results" logo-size="{{ logoSize }}" hint-size="100%,58px"></dc-import>
+<section data-screen-label="01 Results hero" style="padding:clamp(88px,11vw,144px) clamp(18px,4vw,40px) clamp(40px,5vw,64px)">
+  <div style="position:relative;max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
+    <h1 style="margin:0;font-weight:700;font-size:clamp(36px,4.6vw,62px);line-height:1.05;letter-spacing:-.04em;color:#0B2A20;text-wrap:balance">20+ lists back in the inbox. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.1em;color:#23895C">Here’s what they earned.</span></h1>
+    <p style="font-weight:500;margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.6;color:#2F4A40;max-width:52ch">Placement tests, dashboards and messages from the people whose email we fixed.</p>
+  </div>
+</section>
+
+
+
+<section data-screen-label="02 Video" style="padding:clamp(40px,5vw,64px) clamp(18px,4vw,40px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:clamp(28px,3.5vw,44px)">
+    
+    <div style="width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px"><div style="aspect-ratio:16/9;background:#0A0A0A;border-radius:20px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 24px 50px -30px rgba(0,0,0,.6)"><span style="width:56px;height:56px;border-radius:99px;background:#fff;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:22px;margin-left:3px" fill="#0B2A20"><path d="M7 4l13 8-13 8z"></path></svg></span><span style="position:absolute;left:16px;bottom:14px;font-size:13px;font-weight:600;color:#BDBDBD">Video testimonial 1</span></div><div style="aspect-ratio:16/9;background:#0A0A0A;border-radius:20px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 24px 50px -30px rgba(0,0,0,.6)"><span style="width:56px;height:56px;border-radius:99px;background:#fff;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:22px;margin-left:3px" fill="#0B2A20"><path d="M7 4l13 8-13 8z"></path></svg></span><span style="position:absolute;left:16px;bottom:14px;font-size:13px;font-weight:600;color:#BDBDBD">Video testimonial 2</span></div><div style="aspect-ratio:16/9;background:#0A0A0A;border-radius:20px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 24px 50px -30px rgba(0,0,0,.6)"><span style="width:56px;height:56px;border-radius:99px;background:#fff;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:22px;margin-left:3px" fill="#0B2A20"><path d="M7 4l13 8-13 8z"></path></svg></span><span style="position:absolute;left:16px;bottom:14px;font-size:13px;font-weight:600;color:#BDBDBD">Video testimonial 3</span></div></div>
+  </div>
+</section>
+
+<section id="cases" data-screen-label="03 Case studies" style="padding:clamp(72px,8vw,112px) clamp(24px,5vw,40px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,5vw,56px)">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px"><h2 style="margin:0;font-weight:700;font-size:clamp(30px,3.4vw,48px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20">Out of spam and promotions.<br><span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.1em;letter-spacing:-.01em;color:#23895C">Here’s the receipts.</span></h2><p style="font-weight:500;margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.6;color:#2F4A40;max-width:52ch">Click any case to see the full story and the real screenshots behind it.</p></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:28px">
+      <sc-for list="{{ cases }}" as="c" hint-placeholder-count="7">
+        <button type="button" onClick="{{ c.open }}" style="all:unset;box-sizing:border-box;cursor:pointer;background:radial-gradient(120% 120% at 20% 0%,#17573F 0%,#0B2A20 65%);border:1px solid #0B2A20;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:18px;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s" style-hover="transform:translateY(-3px);box-shadow:0 30px 60px -30px rgba(11,42,32,.6)">
+          <span style="display:flex;align-items:center;gap:12px">
+            <sc-if value="{{ c.hasLogo }}"><span style="flex:0 0 auto;min-width:48px;height:48px;display:flex;align-items:center;justify-content:flex-start;box-sizing:border-box"><span role="img" aria-label="{{ c.brand }}" style="display:block;height:{{ c.lh }};width:{{ c.lw }};background:{{ c.logoBg }} center/contain no-repeat"></span></span></sc-if>
+            <sc-if value="{{ c.noLogo }}"><span style="flex:0 0 auto;width:48px;height:48px;border-radius:99px;background:#23895C;color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center">{{ c.letter }}</span></sc-if>
+            <span style="display:flex;flex-direction:column;min-width:0"><b style="font-size:16.5px;font-weight:700;color:#fff">{{ c.who }}</b><span style="font-size:13.5px;font-weight:500;color:#A9C7BA">{{ c.brand }}</span></span>
+          </span>
+          <b style="margin-top:8px;font-size:clamp(30px,2.8vw,38px);font-weight:700;letter-spacing:-.04em;line-height:1;color:#fff">{{ c.metric }}</b>
+          <span style="font-size:16px;font-weight:700;color:#FFC400;margin-top:-6px">{{ c.label }}</span>
+          <span style="font-size:15.5px;font-weight:500;line-height:1.5;color:#CFE3D9">{{ c.line }}</span>
+          <span style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12)"><sc-for list="{{ c.chips }}" as="k" hint-placeholder-count="2"><span style="display:flex;flex-direction:column;gap:2px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px 12px"><b style="font-size:16px;font-weight:700;letter-spacing:-.01em;color:#fff">{{ k.v }}</b><span style="font-size:12px;font-weight:500;line-height:1.35;color:#A9C7BA">{{ k.k }}</span></span></sc-for></span>
+          <span style="font-size:13px;font-weight:600;color:#A9C7BA">{{ c.industry }}</span>
+          <span style="margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;background:#FFC400;color:#0B2A20;border-radius:99px;padding:9px 16px;font-size:13.5px;font-weight:700">Full case study →</span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ isOpen }}">
+  <div style="position:fixed;inset:0;z-index:1000;background:rgba(11,42,32,.55);backdrop-filter:blur(3px);display:flex;align-items:flex-start;justify-content:center;padding:clamp(12px,4vh,48px) 12px;overflow-y:auto" onClick="{{ close }}">
+    <div onClick="{{ stop }}" style="position:relative;width:100%;max-width:880px;background:#fff;border-radius:28px;padding:clamp(24px,4vw,48px);box-sizing:border-box;display:flex;flex-direction:column;gap:24px;box-shadow:0 40px 100px -40px rgba(0,0,0,.6)">
+      <button type="button" onClick="{{ close }}" aria-label="Close" style="all:unset;cursor:pointer;position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:99px;background:#F1F4F2;color:#0B2A20;font-size:20px;display:flex;align-items:center;justify-content:center" style-hover="background:#E3EAE6">×</button>
+      <span style="display:flex;align-items:center;gap:12px;padding-right:48px">
+        <sc-if value="{{ m.hasLogo }}"><span style="flex:0 0 auto;min-width:52px;height:52px;border-radius:14px;background:#fff;border:1px solid #E3EAE6;display:flex;align-items:center;justify-content:center;padding:6px 10px;box-sizing:border-box"><span role="img" aria-label="{{ m.brand }}" style="display:block;height:{{ m.lh }};width:{{ m.lw }};background:{{ m.logoBg }} center/contain no-repeat"></span></span></sc-if>
+        <sc-if value="{{ m.noLogo }}"><span style="flex:0 0 auto;width:52px;height:52px;border-radius:99px;background:#0B2A20;color:#fff;font-size:19px;font-weight:700;display:flex;align-items:center;justify-content:center">{{ m.letter }}</span></sc-if>
+        <span style="display:flex;flex-direction:column"><b style="font-size:18px;font-weight:700;color:#0B2A20">{{ m.who }} · {{ m.brand }}</b><span style="font-size:14px;font-weight:500;color:#6B7A74">{{ m.industry }}</span></span>
+      </span>
+      <h3 style="margin:0;font-weight:700;font-size:clamp(24px,2.8vw,34px);line-height:1.15;letter-spacing:-.03em;color:#0B2A20">{{ m.headline }}</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px">
+        <sc-for list="{{ m.kpis }}" as="k"><div style="background:#F4F7F5;border-radius:14px;padding:16px;text-align:center;display:flex;flex-direction:column;gap:4px"><b style="font-size:22px;font-weight:700;letter-spacing:-.02em;color:#0B2A20">{{ k.v }}</b><span style="font-size:13px;font-weight:500;color:#6B7A74">{{ k.k }}</span></div></sc-for>
+      </div>
+      <sc-for list="{{ m.story }}" as="s"><div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:12px;font-weight:700;letter-spacing:.14em;color:{{ m.color }}">{{ s.t }}</span><p style="margin:0;font-weight:500;font-size:16.5px;line-height:1.7;color:#2F4A40">{{ s.p }}</p></div></sc-for>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.14em;color:{{ m.color }}">THE PROOF</span>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ m.imgs }}" as="im"><a href="{{ im.src }}" target="_blank" style="display:block;background:#fff;border:1px solid #E3EAE6;border-radius:14px;padding:6px;cursor:zoom-in"><img src="{{ im.src }}" alt="{{ im.alt }}" loading="lazy" style="width:100%;height:auto;display:block;border-radius:9px"></a></sc-for>
+      </div>
+      <div style="border-top:1px solid #E3EAE6;padding-top:24px;display:flex;flex-direction:column;align-items:center;gap:10px">
+        <a href="Contact.dc.html" style="display:inline-flex;background:#0B2A20;color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:15px 26px;border-radius:999px" style-hover="background:#23895C;color:#fff">Book my free diagnosis →</a>
+        <span style="font-size:13px;font-weight:500;color:#6B7A74">30 minutes · your domain live</span>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<section id="clients" data-screen-label="05 In their words" style="padding:clamp(72px,8vw,112px) clamp(24px,5vw,40px)"><div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)"><div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px"><h2 style="margin:0;font-weight:700;font-size:clamp(28px,3.2vw,44px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20">In their own words. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.1em;letter-spacing:-.01em;color:#23895C">Unedited.</span></h2><p style="font-weight:500;margin:0;font-size:clamp(16px,1.3vw,18px);line-height:1.6;color:#2F4A40;max-width:52ch">The results clients got and what they said about the work.</p></div><div  data-m="stack" style="margin:clamp(40px,5vw,56px) auto 0;width:100%;max-width:1120px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:16px"><div style="background:#1A1D21;border:1.5px solid #B9DCC8;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px;font-family:Lato,'Satoshi',-apple-system,sans-serif;box-shadow:0 18px 36px -24px rgba(11,42,32,.45);text-align:left">
+        <div style="display:flex;gap:10px"><span><img src="assets/testi/av-tristan.png" alt="" style="flex:0 0 auto;width:36px;height:36px;border-radius:8px;object-fit:cover;display:block"></span><div style="min-width:0;display:flex;flex-direction:column;gap:3px"><span style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><b style="font-size:14.5px;font-weight:800;color:#F8F8F8">Tristan Workman</b><span style="font-size:11.5px;color:#ABABAD">Nov 15th, 2025 · 3:41 AM</span></span><span style="font-size:14.5px;line-height:1.45;color:#D1D2D3">this is a banger of an email. <span style="background:rgba(232,171,0,.18);color:#F2C744;border-radius:3px;padding:0 2px">@Shardul Phuyal</span> <span style="background:rgba(29,155,209,.18);color:#36C5F0;border-radius:3px;padding:0 2px">@Alex Rechevskiy</span> who wrote this?<div style="margin-top:6px;background:#fff;border-radius:8px;padding:14px 16px;font-family:Georgia,serif;font-size:12.5px;line-height:1.55;color:#222;display:flex;flex-direction:column;gap:7px"><b style="font-family:Arial,sans-serif;font-size:12px">The 'less hand-waviness' advice I got at Google</b><b>Hey Tristan,</b><span>If you got promoted to L7 tomorrow, would you know how to operate?</span><span>Or would you spend a year spinning your wheels like I did?</span></div></span><span style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px"><span style="display:inline-flex;align-items:center;gap:4px;background:#2B2F36;border:1px solid #3A3F47;border-radius:99px;padding:2px 8px;font-size:12px;color:#D1D2D3">🙌 3</span><span style="display:inline-flex;align-items:center;gap:4px;background:#2B2F36;border:1px solid #3A3F47;border-radius:99px;padding:2px 8px;font-size:12px;color:#D1D2D3">🔥 2</span></span></div></div><span style="display:flex;align-items:center;gap:10px;font-size:12.5px;color:#ABABAD">4 replies<span style="flex:1;height:1px;background:#33363B"></span></span><div style="display:flex;gap:10px"><span><img src="assets/testi/av-tristan.png" alt="" style="flex:0 0 auto;width:36px;height:36px;border-radius:8px;object-fit:cover;display:block"></span><div style="min-width:0;display:flex;flex-direction:column;gap:3px"><span style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><b style="font-size:14.5px;font-weight:800;color:#F8F8F8">Tristan Workman</b><span style="font-size:11.5px;color:#ABABAD">3:42 AM</span></span><span style="font-size:14.5px;line-height:1.45;color:#D1D2D3">also i like this SL better than the other test one</span></div></div><div style="display:flex;gap:10px"><span><img src="assets/testi/av-alex.png" alt="" style="flex:0 0 auto;width:36px;height:36px;border-radius:8px;object-fit:cover;display:block"></span><div style="min-width:0;display:flex;flex-direction:column;gap:3px"><span style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><b style="font-size:14.5px;font-weight:800;color:#F8F8F8">Alex Rechevskiy</b><span style="font-size:11.5px;color:#ABABAD">5:18 AM</span></span><span style="font-size:14.5px;line-height:1.45;color:#D1D2D3"><span style="background:rgba(232,171,0,.18);color:#F2C744;border-radius:3px;padding:0 2px">@Shardul Phuyal</span> is this your handiwork?</span></div></div><div style="display:flex;gap:10px"><span><img src="assets/testi/av-shardul.png" alt="" style="flex:0 0 auto;width:36px;height:36px;border-radius:8px;object-fit:cover;display:block"></span><div style="min-width:0;display:flex;flex-direction:column;gap:3px"><span style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><b style="font-size:14.5px;font-weight:800;color:#F8F8F8">Shardul Phuyal</b><span style="font-size:11.5px;color:#ABABAD">6:46 AM</span></span><span style="font-size:14.5px;line-height:1.45;color:#D1D2D3">Yes sir!</span><span style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px"><span style="display:inline-flex;align-items:center;gap:4px;background:#2B2F36;border:1px solid #3A3F47;border-radius:99px;padding:2px 8px;font-size:12px;color:#D1D2D3">🙌 3</span></span></div></div><div style="display:flex;gap:10px"><span><img src="assets/testi/av-alex.png" alt="" style="flex:0 0 auto;width:36px;height:36px;border-radius:8px;object-fit:cover;display:block"></span><div style="min-width:0;display:flex;flex-direction:column;gap:3px"><span style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><b style="font-size:14.5px;font-weight:800;color:#F8F8F8">Alex Rechevskiy</b><span style="font-size:11.5px;color:#ABABAD">8:37 AM</span></span><span style="font-size:14.5px;line-height:1.45;color:#D1D2D3">crushed it!!</span></div></div></div><div style="background:#0B141A;border:1.5px solid #B9DCC8;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;box-shadow:0 18px 36px -24px rgba(11,42,32,.45);text-align:left">
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0">
+          <span style="position:relative;max-width:88%;background:#202C33;color:#E9EDEF;border-radius:2px 10px 10px 10px;padding:8px 10px 8px 12px;font-size:15px;line-height:1.4;display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px 12px"><span>This Monday email is sooooo good! I felt it! Gave me chills!</span><span style="margin-left:auto;font-size:11px;color:#8696A0">10:09</span></span>
+          <span style="margin:-6px 0 0 10px;background:#202C33;border:2px solid #0B141A;border-radius:99px;padding:1px 6px;font-size:12px;position:relative;z-index:1">❤️</span>
+        </div></div><div style="background:#0B141A;border:1.5px solid #B9DCC8;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;box-shadow:0 18px 36px -24px rgba(11,42,32,.45);text-align:left">
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0">
+          <span style="position:relative;max-width:88%;background:#005C4B;color:#E9EDEF;border-radius:10px 2px 10px 10px;padding:8px 10px 8px 12px;font-size:15px;line-height:1.4;display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px 12px"><span>The funnel copy can be adjusted as well, so please let me know if you need any changes and also changes for the scripts or emails.</span><span style="margin-left:auto;font-size:11px;color:#8FC9BC">10:57 PM <span style="color:#53BDEB">✓✓</span></span></span>
+          
+        </div><div style="display:flex;flex-direction:column;align-items:flex-start;gap:0">
+          <span style="position:relative;max-width:88%;background:#202C33;color:#E9EDEF;border-radius:2px 10px 10px 10px;padding:8px 10px 8px 12px;font-size:15px;line-height:1.4;display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px 12px"><span>Bro you are really good at this</span><span style="margin-left:auto;font-size:11px;color:#8696A0">11:44 PM</span></span>
+          <span style="margin:-6px 0 0 10px;background:#202C33;border:2px solid #0B141A;border-radius:99px;padding:1px 6px;font-size:12px;position:relative;z-index:1">❤️</span>
+        </div><div style="display:flex;flex-direction:column;align-items:flex-start;gap:0">
+          <span style="position:relative;max-width:88%;background:#202C33;color:#E9EDEF;border-radius:2px 10px 10px 10px;padding:8px 10px 8px 12px;font-size:15px;line-height:1.4;display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px 12px"><span>Excited to dive deeper. When will you be available to hop on a call?</span><span style="margin-left:auto;font-size:11px;color:#8696A0">11:44 PM</span></span>
+          
+        </div></div></div>
+      <div style="display:flex;flex-direction:column;gap:16px"><div style="background:#1A1D21;border:1.5px solid #B9DCC8;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px;font-family:Lato,'Satoshi',-apple-system,sans-serif;box-shadow:0 18px 36px -24px rgba(11,42,32,.45);text-align:left">
+        <div style="display:flex;gap:10px"><span><span style="flex:0 0 auto;width:36px;height:36px;border-radius:8px;background:#7A5C3E;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">PB</span></span><div style="min-width:0;display:flex;flex-direction:column;gap:3px"><span style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><b style="font-size:14.5px;font-weight:800;color:#F8F8F8">Paul Barry</b><span style="font-size:11.5px;color:#ABABAD">Nov 26th, 2025 · 8:07 AM</span></span><span style="font-size:14.5px;line-height:1.45;color:#D1D2D3">Every single time <span style="background:rgba(29,155,209,.18);color:#36C5F0;border-radius:3px;padding:0 2px">@Alex Rechevskiy</span> emails come out with more gold, I find a way to weave it into every call for the next week. Keep 'em coming, Alex, top intel! :)<div style="margin-top:6px;background:#fff;border-radius:8px;padding:14px 16px;font-family:Georgia,serif;font-size:12.5px;line-height:1.55;color:#222;display:flex;flex-direction:column;gap:7px"><span>But don't make this mistake of asking for the referral like this:</span><i>"Hey, I applied for the PM role at your company. Would you mind referring me?"</i><b>Instead, lead with utility.</b></div></span><span style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px"><span style="display:inline-flex;align-items:center;gap:4px;background:#2B2F36;border:1px solid #3A3F47;border-radius:99px;padding:2px 8px;font-size:12px;color:#D1D2D3">❤️ 4</span></span></div></div><span style="display:flex;align-items:center;gap:10px;font-size:12.5px;color:#ABABAD">2 replies<span style="flex:1;height:1px;background:#33363B"></span></span><div style="display:flex;gap:10px"><span><img src="assets/testi/av-alex.png" alt="" style="flex:0 0 auto;width:36px;height:36px;border-radius:8px;object-fit:cover;display:block"></span><div style="min-width:0;display:flex;flex-direction:column;gap:3px"><span style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><b style="font-size:14.5px;font-weight:800;color:#F8F8F8">Alex Rechevskiy</b><span style="font-size:11.5px;color:#ABABAD">8:28 AM</span></span><span style="font-size:14.5px;line-height:1.45;color:#D1D2D3"><span style="background:rgba(232,171,0,.18);color:#F2C744;border-radius:3px;padding:0 2px">@Shardul Phuyal</span> gets the credit, the emails have been fire as of late!!</span><span style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px"><span style="display:inline-flex;align-items:center;gap:4px;background:#2B2F36;border:1px solid #3A3F47;border-radius:99px;padding:2px 8px;font-size:12px;color:#D1D2D3">🔥 2</span><span style="display:inline-flex;align-items:center;gap:4px;background:#2B2F36;border:1px solid #3A3F47;border-radius:99px;padding:2px 8px;font-size:12px;color:#D1D2D3">🚀 1</span></span></div></div><div style="display:flex;gap:10px"><span><img src="assets/testi/av-shardul.png" alt="" style="flex:0 0 auto;width:36px;height:36px;border-radius:8px;object-fit:cover;display:block"></span><div style="min-width:0;display:flex;flex-direction:column;gap:3px"><span style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><b style="font-size:14.5px;font-weight:800;color:#F8F8F8">Shardul Phuyal</b><span style="font-size:11.5px;color:#ABABAD">10:27 AM</span></span><span style="font-size:14.5px;line-height:1.45;color:#D1D2D3">Happy that's helping you <span style="background:rgba(29,155,209,.18);color:#36C5F0;border-radius:3px;padding:0 2px">@Paul Barry</span> more good stuff to come!</span><span style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px"><span style="display:inline-flex;align-items:center;gap:4px;background:#2B2F36;border:1px solid #3A3F47;border-radius:99px;padding:2px 8px;font-size:12px;color:#D1D2D3">🚀 1</span></span></div></div></div><div style="background:#0B141A;border:1.5px solid #B9DCC8;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;box-shadow:0 18px 36px -24px rgba(11,42,32,.45);text-align:left">
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0">
+          <span style="position:relative;max-width:88%;background:#202C33;color:#E9EDEF;border-radius:2px 10px 10px 10px;padding:8px 10px 8px 12px;font-size:15px;line-height:1.4;display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px 12px"><span>But the last email was really good, it is as if I told you some of my story from last year how I pivoted and started from scratch all over and how scary it was for me</span><span style="margin-left:auto;font-size:11px;color:#8696A0">19:43</span></span>
+          <span style="margin:-6px 0 0 10px;background:#202C33;border:2px solid #0B141A;border-radius:99px;padding:1px 6px;font-size:12px;position:relative;z-index:1">❤️</span>
+        </div></div><div style="background:#0B141A;border:1.5px solid #B9DCC8;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;box-shadow:0 18px 36px -24px rgba(11,42,32,.45);text-align:left">
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0">
+          <span style="position:relative;max-width:88%;background:#202C33;color:#E9EDEF;border-radius:2px 10px 10px 10px;padding:8px 10px 8px 12px;font-size:15px;line-height:1.4;display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px 12px"><span>I appreciate your patience.</span><span style="margin-left:auto;font-size:11px;color:#8696A0">6:59 PM</span></span>
+          
+        </div><div style="display:flex;flex-direction:column;align-items:flex-start;gap:0">
+          <span style="position:relative;max-width:88%;background:#202C33;color:#E9EDEF;border-radius:2px 10px 10px 10px;padding:8px 10px 8px 12px;font-size:15px;line-height:1.4;display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px 12px"><span>I love all of the work you’re doing</span><span style="margin-left:auto;font-size:11px;color:#8696A0">6:59 PM</span></span>
+          <span style="margin:-6px 0 0 10px;background:#202C33;border:2px solid #0B141A;border-radius:99px;padding:1px 6px;font-size:12px;position:relative;z-index:1">❤️</span>
+        </div><div style="display:flex;flex-direction:column;align-items:flex-start;gap:0">
+          <span style="position:relative;max-width:88%;background:#202C33;color:#E9EDEF;border-radius:2px 10px 10px 10px;padding:8px 10px 8px 12px;font-size:15px;line-height:1.4;display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px 12px"><span>This is so much better than any campaign I would’ve created.</span><span style="margin-left:auto;font-size:11px;color:#8696A0">7:00 PM</span></span>
+          <span style="margin:-6px 0 0 10px;background:#202C33;border:2px solid #0B141A;border-radius:99px;padding:1px 6px;font-size:12px;position:relative;z-index:1">❤️</span>
+        </div></div></div>
+    </div></div></section>
+
+<section data-screen-label="12 Close" style="padding:0 clamp(18px,4vw,40px) clamp(104px,13vw,176px)">
+  <div data-reveal="0" style="max-width:1120px;margin:0 auto;background:radial-gradient(120% 120% at 50% 0%,#2FA36E 0%,#1C6E4A 55%,#0B2A20 100%);border-radius:32px;padding:clamp(72px,9vw,120px) clamp(22px,5vw,64px);text-align:center;color:#fff">
+    <h2 style="margin:0 auto;max-width:20ch;font-weight:700;font-size:clamp(30px,3.8vw,52px);line-height:1.08;letter-spacing:-.035em;color:#fff;text-wrap:balance">Every send from a damaged domain digs the hole <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.1em">deeper.</span></h2>
+    <p style="font-weight:500;margin:20px auto 0;max-width:44ch;font-size:clamp(17px,1.5vw,19px);line-height:1.6;color:#DDF1E7">Thirty minutes gets you the root cause. Whether or not you hire us.</p>
+    <a href="Contact.dc.html" style="display:inline-flex;margin-top:36px;background:#fff;color:#0B2A20;text-decoration:none;font-weight:700;font-size:16px;padding:16px 28px;border-radius:999px" style-hover="background:#0B2A20;color:#fff">Book my free diagnosis →</a>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,300px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;logoSize&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:24,&quot;min&quot;:16,&quot;max&quot;:40,&quot;step&quot;:1,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Logo&quot;}}">
+class Component extends DCLogic {
+  state = { open: -1 };
+  setOpen(i) { this.setState({ open: i }); document.body.style.overflow = i < 0 ? '' : 'hidden'; }
+  componentWillUnmount() { document.body.style.overflow = ''; }
+  renderVals() {
+    const im = (arr) => arr.map(([k, alt]) => ({ src: 'assets/hd/' + k + '.png', alt }));
+    const K = (arr) => arr.map(([v, k]) => ({ v, k }));
+    const S = (b, w, r) => [{ t: 'BEFORE', p: b }, { t: 'WHAT WE DID', p: w }, { t: 'THE RESULT', p: r }];
+    const data = [
+      { who: 'Shawn', brand: 'Reimagine Love', industry: 'Relationship coaching', color: '#23895C', logo: '', metric: '22% → 68%', label: 'Open rate in 15 days', line: 'Pulled out of spam in 45 days', headline: 'Half the emails were landing in spam. 45 days later, 83.8% reached the inbox.',
+        kpis: K([['68.42%', 'Open rate (was 22.17%)'], ['83.8%', 'Inbox placement (was 68.5%)'], ['29', 'Bounces (was 2,108)'], ['5', 'Placement tests in a row']]),
+        story: S('Half of Shawn’s emails were landing in spam and promotions. Across 34,129 emails his open rate sat at 22.17%, with 2,108 bounces.', 'We rebuilt authentication, cleaned and restructured the list, and reset the sending plan so the most engaged subscribers were emailed first.', 'Fifteen days later the open rate was 68.42% with 29 bounces. Five placement tests in a row took inbox placement from 68.5% to 83.8%.'),
+        imgs: im([['shawn-before', 'Before: 22.17% open rate'], ['shawn-after', 'After: 68.42% open rate'], ['shawn-tests', '5 inbox placement tests']]) },
+      { who: 'Alex', brand: 'Product Career Accelerator', industry: 'Career coaching', color: '#1E6FE0', logo: 'assets/clients/pca.webp', metric: '$790K', label: 'Closed from email', line: '100 applications from email in one month', headline: '$790,600 in closed deals from people who opened the emails.',
+        kpis: K([['$790,600', 'Closed from email openers'], ['862', 'Deals closed'], ['$105,088', 'From one campaign'], ['72% · 27%', 'Open and click on one send']]),
+        story: S('Alex’s 12K list was stuck in the Promotions tab, so most launches reached a fraction of the people who signed up.', 'We moved the list into Primary and kept it there with a sending plan built around engagement, then rebuilt the launch emails around it.', 'Opens held above 50% send after send. In November email brought in 100 applications, and HubSpot attributes $790,600 in closed deals to email openers.'),
+        imgs: im([['alex-790k', '$790,600 closed from email'], ['alex-105k', '$105,088 attributed to one campaign'], ['alex-72', '72% open and 27% click'], ['alex-kit', '50%+ opens on a 12K list'], ['alex-s1', '100 applications in November'], ['alex-s2', '15 call bookings in a week'], ['alex-s3', '500+ webinar registrations'], ['alex-s4', '$14,000 paid-in-full from email']]) },
+      { who: 'Elle', brand: 'Convert to Scale', industry: 'Content coaching', color: '#E09A00', letter: 'E', metric: '$21,536', label: 'In 14 days', line: 'A written-off list woke up and bought', headline: 'A 3,200-person list produced $21,536 in two weeks.',
+        kpis: K([['$21,536', 'Revenue in 14 days'], ['3,200', 'Subscribers'], ['1,984', 'Written-off subscribers back']]),
+        story: S('Most of Elle’s list had stopped opening and was about to be deleted as inactive.', 'Instead of cutting them, we fixed placement first and then woke the list up in waves, starting with the most recently engaged.', 'Calls were booked within hours of the first send. In 14 days the list produced $21,536, and 1,984 of the buyers had been written off.'),
+        imgs: im([['elle-1', 'Calls booked within hours'], ['elle-2', 'Clients closing']]) },
+      { who: 'Audrey', brand: 'Close With Copy', industry: 'LinkedIn coaching', color: '#7B61FF', logo: 'assets/clients/logo-c.png', metric: '0 → 37', label: 'Sales in one week', line: '17 sales calls booked from one launch', headline: '37 sales and 17 booked calls in one week, from a 2,000-person list.',
+        kpis: K([['37', 'Sales at $49'], ['17', 'Calls booked'], ['23%', 'Landing page opt-in'], ['69%', 'Show-up sequence opens']]),
+        story: S('Audrey had a playbook to sell and a 2,000-person list, but no page or sequence built to turn it into sales.', 'We built the landing page and wrote the promo, show-up and post-webinar email sequences around it.', 'One in four visitors opted in. The show-up sequence opened at 69%, and the week ended with 37 sales and 17 booked calls.'),
+        imgs: im([['aud-lp', 'Landing page: 23% opt-in, 37 sales'], ['aud-r2', 'Show-up sequence: 69% open rate'], ['aud-r3', 'Post-webinar sequence: 64% open rate']]) },
+      { who: 'Faiz', brand: 'Learn With Faiz', industry: 'Career coaching · 567K on Instagram', color: '#E5484D', logo: 'assets/logos/learnwithfaiz.ico', metric: '20% → 40%', label: 'Open rate', line: 'Out of the Promotions tab', headline: 'From the Promotions tab to 40.57% opens.',
+        kpis: K([['33–40%', 'Open rate (was 20–25%)'], ['40.57%', 'Peak open rate'], ['10', 'Campaigns compared']]),
+        story: S('Faiz’s emails were landing in Promotions. Ten campaigns in a row opened at 20–25%.', 'We fixed the sending setup and the plan behind it so his emails reached Primary.', 'Every campaign after the fix opened between 33% and 40%, peaking at 40.57%.'),
+        imgs: im([['faiz-before', 'Before: 20–25% opens'], ['faiz-after', 'After: 33–40% opens']]) },
+      { who: 'Roger', brand: 'Universal Accounting', industry: 'Accounting training · $55K/month', color: '#0B2A20', letter: 'U', metric: 'Medium → High', label: 'Domain reputation', line: 'The year-long drop nobody noticed', headline: 'Opens fell from 45% to 20% over a year. Nobody noticed.',
+        kpis: K([['45% → 20%', 'Open rate before the fix'], ['High', 'Domain reputation'], ['High', 'IP reputation']]),
+        story: S('Opens slid from 45% to 20% over a year. Because it happened slowly, nobody caught it.', 'We traced it to falling domain and IP reputation in Google Postmaster and fixed what was dragging it down.', 'Both climbed back to High and held, and the emails landed in Primary again.'),
+        imgs: im([['inf-table', 'Open rates side by side'], ['inf-domain', 'Domain reputation: Medium to High'], ['inf-ip', 'IP reputation back to High'], ['inf-primary', 'Landing in Primary']]) },
+      { who: 'GrowMailers', brand: 'Our own outreach', industry: 'The same system, on ourselves', color: '#23895C', logo: 'assets/logo-mark.png', metric: '78%', label: 'Open rate on our own campaign', line: 'We eat our own cooking', headline: 'Our own outreach runs on the same system we sell.',
+        kpis: K([['1,936', 'Leads contacted'], ['78.06%', 'Open rate'], ['8.06%', 'Reply rate'], ['42', 'Opportunities']]),
+        story: S('If we couldn’t land our own email, you shouldn’t hire us to land yours.', 'We run our own outreach on the same placement discipline: clean lists, warmed domains and a plan built around engagement.', 'Across 1,936 leads, 78% opened and 42 became opportunities. A second campaign of 1,012 leads replied at 11%.'),
+        imgs: im([['own-k1', '1,936 leads, 78% open'], ['own-k2', '1,012 leads, 11% reply'], ['own-r1', 'Prospect reply'], ['own-r2', 'Prospect reply'], ['own-r3', 'Prospect reply'], ['own-r4', 'Prospect reply']]) }
+    ];
+    const keep = { 0: 2, 1: 2, 2: 2, 3: 2, 4: 2, 5: 2, 6: 2 };
+    const cases = data.map((d, i) => ({ ...d, color: '#23895C', chips: d.kpis.slice(1, 3), imgs: d.imgs.slice(0, keep[i]), hasLogo: !!d.logo, noLogo: !d.logo, lh: d.logo === 'assets/clients/rl.png' ? '34px' : '32px', lw: d.logo === 'assets/clients/rl.png' ? '72px' : '32px', logoBg: d.logo ? 'url(' + d.logo + ')' : 'none', open: () => this.setOpen(i) }));
+    const o = this.state.open;
+    return { logoSize: this.props.logoSize ?? 24, cases, isOpen: o >= 0, m: o >= 0 ? cases[o] : cases[0], close: () => this.setOpen(-1), stop: (e) => e.stopPropagation() };
+  }
+}
+</script>
+</body>
+</html>

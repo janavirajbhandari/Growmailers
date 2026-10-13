@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap">
+<script src="./image-slot.js"></script>
+<style>
+  html,body{margin:0;background:#FBFBF8}
+  a{color:#23895C}
+  a:hover{color:#072A1E}
+  @keyframes gmBobA{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-13px) rotate(-3deg)}}
+  @keyframes gmBobB{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+  @keyframes gmBobC{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  @keyframes gmBlink{0%,100%{opacity:1}50%{opacity:.3}}
+  @keyframes gmDraw{0%{stroke-dashoffset:1400}60%,100%{stroke-dashoffset:0}}
+</style>
+</helmet>
+
+<div style="background:#FBFBF8;color:#4A5A54;font-family:'Satoshi',sans-serif;overflow-x:clip">
+
+<dc-import name="SiteNav" active="results" hint-size="100%,58px"></dc-import>
+
+<section data-screen-label="01 Results hero" style="position:relative;overflow:hidden;background:#FBFBF8;padding:clamp(80px,10vw,136px) 0 clamp(72px,9vw,112px)">
+  <div style="position:relative;max-width:880px;margin:0 auto;padding:0 clamp(18px,4vw,32px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px">
+    <span style="font-size:13px;font-weight:700;color:#1C6E4A">Results · Case studies</span>
+    <h1 style="margin:0;font-weight:700;font-size:clamp(34px,4.6vw,58px);line-height:1.04;letter-spacing:-.035em;color:#0B2A20;text-wrap:balance">Out of spam and promotions. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.1em;letter-spacing:-.01em;color:#23895C">Here's the receipts.</span></h1>
+    <p style="margin:0;font-size:clamp(17px,1.6vw,19px);line-height:1.6;max-width:58ch">Real businesses. Real placement tests. Real revenue.</p>
+  </div>
+</section>
+
+<section data-screen-label="02 Revenue strip" style="padding:clamp(72px,9vw,112px) 0 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+    <sc-for list="{{ strip }}" as="s" hint-placeholder-count="4">
+      <div style="background:{{ s.bg }};border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:8px">
+        <b style="font-size:clamp(30px,3vw,38px);font-weight:700;letter-spacing:-.03em;line-height:1.1;color:{{ s.ink }}">{{ s.v }}</b>
+        <span style="font-size:15px;line-height:1.45;color:{{ s.sub }}">{{ s.k }}</span>
+        <span style="font-size:13px;font-weight:700;color:{{ s.ink }}">{{ s.who }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="03 Jump" style="padding:clamp(40px,5vw,56px) 0 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px);display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+    <a href="#reimagine" style="text-decoration:none;background:#fff;border:1px solid #D7E9E1;color:#0B2A20;border-radius:99px;padding:9px 16px;font-size:14px;font-weight:700" style-hover="background:#23895C;color:#fff">Out of spam</a>
+    <a href="#pca" style="text-decoration:none;background:#fff;border:1px solid #D7E9E1;color:#0B2A20;border-radius:99px;padding:9px 16px;font-size:14px;font-weight:700" style-hover="background:#23895C;color:#fff">Campaigns</a>
+    <a href="#us" style="text-decoration:none;background:#fff;border:1px solid #D7E9E1;color:#0B2A20;border-radius:99px;padding:9px 16px;font-size:14px;font-weight:700" style-hover="background:#23895C;color:#fff">Our own systems</a>
+    <a href="#clients" style="text-decoration:none;background:#fff;border:1px solid #D7E9E1;color:#0B2A20;border-radius:99px;padding:9px 16px;font-size:14px;font-weight:700" style-hover="background:#23895C;color:#fff">What clients say</a>
+    <a href="#replies" style="text-decoration:none;background:#fff;border:1px solid #D7E9E1;color:#0B2A20;border-radius:99px;padding:9px 16px;font-size:14px;font-weight:700" style-hover="background:#23895C;color:#fff">More messages</a>
+    <a href="#videos" style="text-decoration:none;background:#fff;border:1px solid #D7E9E1;color:#0B2A20;border-radius:99px;padding:9px 16px;font-size:14px;font-weight:700" style-hover="background:#23895C;color:#fff">Video testimonials</a>
+  </div>
+</section>
+
+<section id="videos" data-screen-label="03b Videos" style="scroll-margin-top:70px;padding:clamp(56px,7vw,88px) 0 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px)">
+    <div style="text-align:center;margin:0 auto clamp(24px,3vw,36px);display:flex;flex-direction:column;align-items:center;gap:10px"><span style="font-size:13px;font-weight:700;color:#1C6E4A">Video testimonials</span><h2 style="margin:0;font-weight:700;font-size:clamp(26px,3vw,38px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20">Hear it from them. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.1em;color:#23895C"></span></h2></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px">
+      <div style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#0B2A20;display:flex;align-items:center;justify-content:center;box-shadow:0 24px 50px -30px rgba(11,42,32,.4)">
+        <image-slot id="video-1" shape="rect" placeholder="Drop video thumbnail"></image-slot>
+        <span style="position:absolute;width:68px;height:68px;border-radius:99px;background:#FFB800;display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 12px 30px -10px rgba(0,0,0,.5)"><svg viewBox="0 0 24 24" style="width:26px;margin-left:3px" fill="#0B2A20"><path d="M7 4.5v15l12.5-7.5z"></path></svg></span>
+      </div>
+      <div style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#0B2A20;display:flex;align-items:center;justify-content:center;box-shadow:0 24px 50px -30px rgba(11,42,32,.4)">
+        <image-slot id="video-2" shape="rect" placeholder="Drop video thumbnail"></image-slot>
+        <span style="position:absolute;width:68px;height:68px;border-radius:99px;background:#FFB800;display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 12px 30px -10px rgba(0,0,0,.5)"><svg viewBox="0 0 24 24" style="width:26px;margin-left:3px" fill="#0B2A20"><path d="M7 4.5v15l12.5-7.5z"></path></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Case studies" style="padding:clamp(56px,7vw,88px) 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px);display:flex;flex-direction:column;gap:clamp(24px,3vw,36px)">
+    <div style="max-width:760px;margin:0 auto clamp(32px,4vw,48px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px">
+      <span style="font-size:13px;font-weight:700;color:#1C6E4A">Case studies</span>
+      <h2 style="margin:0;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20;text-wrap:balance">Every number, with the screenshot behind it. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.1em;letter-spacing:-.01em;color:#23895C">Click any image to see it full size.</span></h2>
+      
+    </div>
+    <article id="reimagine" data-screen-label="Case 01" style="scroll-margin-top:90px;background:#fff;border:1px solid #D7E9E1;border-radius:32px;box-shadow:0 24px 50px -30px rgba(11,42,32,.3);padding:clamp(20px,3vw,40px);display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:flex-start">
+      <div style="position:sticky;top:90px;flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:16px">
+        <span style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-size:13px;font-weight:700;color:#6B7A74">Case 01</span><span style="font-size:12.5px;font-weight:700;background:#23895C;color:#fff;border-radius:99px;padding:5px 11px">Out of spam</span></span>
+        <span style="display:flex;align-items:center;gap:12px"><img src="assets/clients/rl.png" alt="" style="height:40px;width:auto;max-width:130px;border-radius:10px;display:block"><span style="display:flex;flex-direction:column"><b style="font-size:clamp(22px,2.4vw,28px);font-weight:700;letter-spacing:-.02em;color:#0B2A20">Reimagine Love</b><span style="font-size:14px;color:#6B7A74">Online program</span></span></span>
+        <h3 style="margin:0;font-size:clamp(20px,2vw,24px);line-height:1.35;font-weight:700;color:#0B2A20;text-wrap:pretty">Before &amp; after: 45-day transformation.</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65">Half their emails were landing in spam &amp; promotions. 45 days later: 83.8% in the inbox.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:4px"><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">68.5% → 83.8%</b><span style="font-size:13px;color:#4A5A54">inbox placement</span></span><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">22.17% → 68.42%</b><span style="font-size:13px;color:#4A5A54">open rate</span></span><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">2,108 → 29</b><span style="font-size:13px;color:#4A5A54">bounces</span></span></div>
+      </div>
+      <div style="flex:1.8 1 480px;min-width:0;display:flex;flex-direction:column;gap:16px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px"><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#B4232B"><span style="width:8px;height:8px;border-radius:99px;background:#E5484D"></span>Before</figcaption>
+            <a href="assets/proof/reimagine-before.png" target="_blank" style="display:block;background:#F7F9F8"><img src="assets/proof/reimagine-before.png" loading="lazy" alt="Before" style="width:100%;height:auto;display:block"></a>
+          </figure><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>After</figcaption>
+            <a href="assets/proof/reimagine-after.png" target="_blank" style="display:block;background:#F7F9F8"><img src="assets/proof/reimagine-after.png" loading="lazy" alt="After" style="width:100%;height:auto;display:block"></a>
+          </figure></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px"><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#B4232B"><span style="width:8px;height:8px;border-radius:99px;background:#E5484D"></span>Before · 15 days prior</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/73417976d5da41c5a0a37cde9886d9c9/original/Screenshot-2026-03-17-at-12.03.32.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/73417976d5da41c5a0a37cde9886d9c9/original/Screenshot-2026-03-17-at-12.03.32.png" loading="lazy" alt="Before · 15 days prior" style="width:100%;height:auto;display:block"></a>
+          </figure><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>After · 15 days later</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/d46e66d3f9904c509685fa233320b3c9/original/Screenshot-2026-03-17-at-12.04.33.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/d46e66d3f9904c509685fa233320b3c9/original/Screenshot-2026-03-17-at-12.04.33.png" loading="lazy" alt="After · 15 days later" style="width:100%;height:auto;display:block"></a>
+          </figure></div>
+      </div>
+    </article>
+    <article id="faiz" data-screen-label="Case 02" style="scroll-margin-top:90px;background:#fff;border:1px solid #D7E9E1;border-radius:32px;box-shadow:0 24px 50px -30px rgba(11,42,32,.3);padding:clamp(20px,3vw,40px);display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:flex-start">
+      <div style="position:sticky;top:90px;flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:16px">
+        <span style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-size:13px;font-weight:700;color:#6B7A74">Case 02</span><span style="font-size:12.5px;font-weight:700;background:#23895C;color:#fff;border-radius:99px;padding:5px 11px">Out of spam</span></span>
+        <span style="display:flex;align-items:center;gap:12px"><img src="assets/logos/learnwithfaiz.ico" alt="" style="height:40px;width:auto;max-width:130px;border-radius:10px;display:block"><span style="display:flex;flex-direction:column"><b style="font-size:clamp(22px,2.4vw,28px);font-weight:700;letter-spacing:-.02em;color:#0B2A20">Faiz Alam</b><span style="font-size:14px;color:#6B7A74">567K on Instagram</span></span></span>
+        <h3 style="margin:0;font-size:clamp(20px,2vw,24px);line-height:1.35;font-weight:700;color:#0B2A20;text-wrap:pretty">Open rates from 20% to 40%.</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65">Built a ManyChat + GoHighLevel automation to grow his email list from Instagram, and fixed his deliverability issues.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:4px"><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">20–25%</b><span style="font-size:13px;color:#4A5A54">avg. open rate before</span></span><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">30–40%</b><span style="font-size:13px;color:#4A5A54">avg. open rate after</span></span><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">40.57%</b><span style="font-size:13px;color:#4A5A54">peak, never hit before</span></span></div>
+      </div>
+      <div style="flex:1.8 1 480px;min-width:0;display:flex;flex-direction:column;gap:16px">
+          <figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#B4232B"><span style="width:8px;height:8px;border-radius:99px;background:#E5484D"></span>Before · avg. open rate 20–25%</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/fa00400a93984d1aa04a7b44a2c24d9d/original/Screenshot-2026-01-06-071022.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/fa00400a93984d1aa04a7b44a2c24d9d/original/Screenshot-2026-01-06-071022.png" loading="lazy" alt="Before · avg. open rate 20–25%" style="width:100%;height:auto;display:block"></a>
+          </figure>
+          <figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>After · avg. open rate 30–40%</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/c9bd5f14c7474160b36255561770e7b8/original/Screenshot-2026-01-06-071004.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/c9bd5f14c7474160b36255561770e7b8/original/Screenshot-2026-01-06-071004.png" loading="lazy" alt="After · avg. open rate 30–40%" style="width:100%;height:auto;display:block"></a>
+          </figure>
+      </div>
+    </article>
+    <article id="pca" data-screen-label="Case 03" style="scroll-margin-top:90px;background:#fff;border:1px solid #D7E9E1;border-radius:32px;box-shadow:0 24px 50px -30px rgba(11,42,32,.3);padding:clamp(20px,3vw,40px);display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:flex-start">
+      <div style="position:sticky;top:90px;flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:16px">
+        <span style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-size:13px;font-weight:700;color:#6B7A74">Case 03</span><span style="font-size:12.5px;font-weight:700;background:#FFB800;color:#0B2A20;border-radius:99px;padding:5px 11px">Campaign</span></span>
+        <span style="display:flex;align-items:center;gap:12px"><img src="assets/clients/pca.webp" alt="" style="height:40px;width:auto;max-width:130px;border-radius:10px;display:block"><span style="display:flex;flex-direction:column"><b style="font-size:clamp(22px,2.4vw,28px);font-weight:700;letter-spacing:-.02em;color:#0B2A20">Alex Rechevskiy</b><span style="font-size:14px;color:#6B7A74">Product Career Accelerator</span></span></span>
+        <h3 style="margin:0;font-size:clamp(20px,2vw,24px);line-height:1.35;font-weight:700;color:#0B2A20;text-wrap:pretty">100+ applications, 500+ webinar signups.</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65">Application push: 100+ applications in one month, fully tracked via UTMs.</p>
+        <p style="margin:0;font-size:16px;line-height:1.65">Two webinar launches: 500+ registrations in 4 days, then 300+ in 3 days.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:4px"><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">100+</b><span style="font-size:13px;color:#4A5A54">applications in a month</span></span><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">500+</b><span style="font-size:13px;color:#4A5A54">webinar signups in 4 days</span></span><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">300+</b><span style="font-size:13px;color:#4A5A54">signups in 3 days</span></span></div>
+      </div>
+      <div style="flex:1.8 1 480px;min-width:0;display:flex;flex-direction:column;gap:16px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px"><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Application push</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/47e9e14458634ed6b83df01723e85e52/original/Screenshot-2025-12-11-204101.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/47e9e14458634ed6b83df01723e85e52/original/Screenshot-2025-12-11-204101.png" loading="lazy" alt="Application push" style="width:100%;height:auto;display:block"></a>
+          </figure><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Tracked applications</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/0f33c83ccd19458ba68b70cbebf4d878/original/image.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/0f33c83ccd19458ba68b70cbebf4d878/original/image.png" loading="lazy" alt="Tracked applications" style="width:100%;height:auto;display:block"></a>
+          </figure></div>
+          <figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Webinar registrations</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/8a1744bdd3da4fe08749b6d371e5c249/original/Screenshot-2025-12-16-120856.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/8a1744bdd3da4fe08749b6d371e5c249/original/Screenshot-2025-12-16-120856.png" loading="lazy" alt="Webinar registrations" style="width:100%;height:auto;display:block"></a>
+          </figure>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px"><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#4A5A54"><span style="width:8px;height:8px;border-radius:99px;background:#9AA5A0"></span>Team shoutout</figcaption>
+            <a href="assets/proof/pca-shoutout-1.png" target="_blank" style="display:block;background:#F7F9F8"><img src="assets/proof/pca-shoutout-1.png" loading="lazy" alt="Team shoutout" style="width:100%;height:auto;display:block"></a>
+          </figure><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#4A5A54"><span style="width:8px;height:8px;border-radius:99px;background:#9AA5A0"></span>Team shoutout</figcaption>
+            <a href="assets/proof/pca-shoutout-2.png" target="_blank" style="display:block;background:#F7F9F8"><img src="assets/proof/pca-shoutout-2.png" loading="lazy" alt="Team shoutout" style="width:100%;height:auto;display:block"></a>
+          </figure></div>
+      </div>
+    </article>
+    <article id="cwc" data-screen-label="Case 04" style="scroll-margin-top:90px;background:#fff;border:1px solid #D7E9E1;border-radius:32px;box-shadow:0 24px 50px -30px rgba(11,42,32,.3);padding:clamp(20px,3vw,40px);display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:flex-start">
+      <div style="position:sticky;top:90px;flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:16px">
+        <span style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-size:13px;font-weight:700;color:#6B7A74">Case 04</span><span style="font-size:12.5px;font-weight:700;background:#FFB800;color:#0B2A20;border-radius:99px;padding:5px 11px">Campaign</span></span>
+        <span style="display:flex;align-items:center;gap:12px"><span style="display:flex;flex-direction:column"><b style="font-size:clamp(22px,2.4vw,28px);font-weight:700;letter-spacing:-.02em;color:#0B2A20">Audrey Chia</b><span style="font-size:14px;color:#6B7A74">Close With Copy</span></span></span>
+        <h3 style="margin:0;font-size:clamp(20px,2vw,24px);line-height:1.35;font-weight:700;color:#0B2A20;text-wrap:pretty">37 sales in one week.</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65">Content email campaign combined with LinkedIn to promote a $49 paid webinar, to a list of ~2,000 people.</p>
+        <p style="margin:0;font-size:16px;line-height:1.65">We also built the landing page (23% opt-in, 5.49% sales conversion).</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:4px"><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">37 sales</b><span style="font-size:13px;color:#4A5A54">$1,813 upfront</span></span><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">17</b><span style="font-size:13px;color:#4A5A54">from one campaign</span></span><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">23%</b><span style="font-size:13px;color:#4A5A54">landing page opt-in</span></span></div>
+      </div>
+      <div style="flex:1.8 1 480px;min-width:0;display:flex;flex-direction:column;gap:16px">
+          <figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Sales in one week</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/19eeae4248b0455b8485d9f0b8cf4a3c/original/Screenshot-2025-12-16-120115.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/19eeae4248b0455b8485d9f0b8cf4a3c/original/Screenshot-2025-12-16-120115.png" loading="lazy" alt="Sales in one week" style="width:100%;height:auto;display:block"></a>
+          </figure>
+          <figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Landing page conversion</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/29c4927f0a6c4bff82eba7332b733130/original/Screenshot-2025-12-16-121228.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/29c4927f0a6c4bff82eba7332b733130/original/Screenshot-2025-12-16-121228.png" loading="lazy" alt="Landing page conversion" style="width:100%;height:auto;display:block"></a>
+          </figure>
+      </div>
+    </article>
+    <article id="cts" data-screen-label="Case 05" style="scroll-margin-top:90px;background:#fff;border:1px solid #D7E9E1;border-radius:32px;box-shadow:0 24px 50px -30px rgba(11,42,32,.3);padding:clamp(20px,3vw,40px);display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:flex-start">
+      <div style="position:sticky;top:90px;flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:16px">
+        <span style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-size:13px;font-weight:700;color:#6B7A74">Case 05</span><span style="font-size:12.5px;font-weight:700;background:#FFB800;color:#0B2A20;border-radius:99px;padding:5px 11px">Campaign</span></span>
+        <span style="display:flex;align-items:center;gap:12px"><span style="display:flex;flex-direction:column"><b style="font-size:clamp(22px,2.4vw,28px);font-weight:700;letter-spacing:-.02em;color:#0B2A20">Elle</b><span style="font-size:14px;color:#6B7A74">Convert to Scale</span></span></span>
+        <h3 style="margin:0;font-size:clamp(20px,2vw,24px);line-height:1.35;font-weight:700;color:#0B2A20;text-wrap:pretty">$21,536 in 14 days.</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65">Content email campaign to a list of 1,200 active subscribers and 1,984 inactive ones. That’s from a list most people would call “small.”</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:4px"><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">$21,536</b><span style="font-size:13px;color:#4A5A54">in two weeks</span></span><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">1,200</b><span style="font-size:13px;color:#4A5A54">active subscribers</span></span><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">1,984</b><span style="font-size:13px;color:#4A5A54">inactive, brought back</span></span></div>
+      </div>
+      <div style="flex:1.8 1 480px;min-width:0;display:flex;flex-direction:column;gap:16px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px"><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Revenue</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/45c24de11d53460db62f977a092e2d28/original/AD_4nXcsxNbkbEUEiO2488cROTY39g--DNU12mIxMWKwVOPztNQu4WAGjgx383eHKhLPcSYwPNKTHfb856GMn7PNM_dtI_jZHH-lcboEY5vM8QV-Dk29D7dW8Y12NkDG92hq5P92gLRl.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/45c24de11d53460db62f977a092e2d28/original/AD_4nXcsxNbkbEUEiO2488cROTY39g--DNU12mIxMWKwVOPztNQu4WAGjgx383eHKhLPcSYwPNKTHfb856GMn7PNM_dtI_jZHH-lcboEY5vM8QV-Dk29D7dW8Y12NkDG92hq5P92gLRl.png" loading="lazy" alt="Revenue" style="width:100%;height:auto;display:block"></a>
+          </figure><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Revenue</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/4668a0ec73394ef283acd344c7c2b99d/original/AD_4nXfiN9chJJu2pagM3VvOuqMpBI0VONbgbz6zncIR09J8ZK9_eIJQTbk2LFBJHWt0aSsWVvjwIbrxSu2D5_Ohxj5wTR42rwtmDx5tBFzesRm8nDAXsfUyr5e0o0rR1hTPBf5yc4PbYA.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/4668a0ec73394ef283acd344c7c2b99d/original/AD_4nXfiN9chJJu2pagM3VvOuqMpBI0VONbgbz6zncIR09J8ZK9_eIJQTbk2LFBJHWt0aSsWVvjwIbrxSu2D5_Ohxj5wTR42rwtmDx5tBFzesRm8nDAXsfUyr5e0o0rR1hTPBf5yc4PbYA.png" loading="lazy" alt="Revenue" style="width:100%;height:auto;display:block"></a>
+          </figure></div>
+      </div>
+    </article>
+    <article id="us" data-screen-label="Case 06" style="scroll-margin-top:90px;background:#fff;border:1px solid #D7E9E1;border-radius:32px;box-shadow:0 24px 50px -30px rgba(11,42,32,.3);padding:clamp(20px,3vw,40px);display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:flex-start">
+      <div style="position:sticky;top:90px;flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:16px">
+        <span style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-size:13px;font-weight:700;color:#6B7A74">Case 06</span><span style="font-size:12.5px;font-weight:700;background:#0B2A20;color:#fff;border-radius:99px;padding:5px 11px">Our own systems</span></span>
+        <span style="display:flex;align-items:center;gap:12px"><img src="assets/logo-mark.png" alt="" style="height:40px;width:auto;max-width:130px;border-radius:10px;display:block"><span style="display:flex;flex-direction:column"><b style="font-size:clamp(22px,2.4vw,28px);font-weight:700;letter-spacing:-.02em;color:#0B2A20">GrowMailers</b><span style="font-size:14px;color:#6B7A74">Our own cold email campaigns</span></span></span>
+        <h3 style="margin:0;font-size:clamp(20px,2vw,24px);line-height:1.35;font-weight:700;color:#0B2A20;text-wrap:pretty">We eat our own cooking.</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65">We run cold email campaigns to get clients for ourselves, using the same frameworks and systems.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:4px"><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">60–80%</b><span style="font-size:13px;color:#4A5A54">open rates</span></span><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">7–10%</b><span style="font-size:13px;color:#4A5A54">reply rates</span></span><span style="display:flex;flex-direction:column;gap:2px;background:#FBFBF8;border-radius:14px;padding:12px 14px"><b style="font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:#1C6E4A">40–60%</b><span style="font-size:13px;color:#4A5A54">of replies become opportunities</span></span></div>
+      </div>
+      <div style="flex:1.8 1 480px;min-width:0;display:flex;flex-direction:column;gap:16px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px"><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Campaign dashboard</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/a28adae9d555421e84da4644b59f299f/original/Screenshot-343.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/a28adae9d555421e84da4644b59f299f/original/Screenshot-343.png" loading="lazy" alt="Campaign dashboard" style="width:100%;height:auto;display:block"></a>
+          </figure><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Campaign dashboard</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/b7867a459f9345b1b34b3e833130e211/original/Screenshot-814.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/b7867a459f9345b1b34b3e833130e211/original/Screenshot-814.png" loading="lazy" alt="Campaign dashboard" style="width:100%;height:auto;display:block"></a>
+          </figure></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px"><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Campaign dashboard</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/24f42ccd641245998752429fd3a29045/original/Screenshot-341.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/24f42ccd641245998752429fd3a29045/original/Screenshot-341.png" loading="lazy" alt="Campaign dashboard" style="width:100%;height:auto;display:block"></a>
+          </figure><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Campaign dashboard</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/408fb802423e460eb3e2f3568374ad58/original/Screenshot-340.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/408fb802423e460eb3e2f3568374ad58/original/Screenshot-340.png" loading="lazy" alt="Campaign dashboard" style="width:100%;height:auto;display:block"></a>
+          </figure></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px"><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Campaign dashboard</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/bbfee6e77a504027a3e61a608aab164d/original/Screenshot-333.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/bbfee6e77a504027a3e61a608aab164d/original/Screenshot-333.png" loading="lazy" alt="Campaign dashboard" style="width:100%;height:auto;display:block"></a>
+          </figure><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Campaign dashboard</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/d975469bfaf04809886a958527844d3b/original/Screenshot-102.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/d975469bfaf04809886a958527844d3b/original/Screenshot-102.png" loading="lazy" alt="Campaign dashboard" style="width:100%;height:auto;display:block"></a>
+          </figure></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px"><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Campaign dashboard</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/f7c49f71515a4faa8b914bd0fb5cca1f/original/Screenshot-68.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/f7c49f71515a4faa8b914bd0fb5cca1f/original/Screenshot-68.png" loading="lazy" alt="Campaign dashboard" style="width:100%;height:auto;display:block"></a>
+          </figure><figure style="margin:0;min-width:0;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+            <figcaption style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #EEF1ED;font-size:12.5px;font-weight:700;color:#1C6E4A"><span style="width:8px;height:8px;border-radius:99px;background:#23895C"></span>Campaign dashboard</figcaption>
+            <a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/72beba4d2d6a4a39bc3656286e8ecb69/original/instantly_2025-07-06.png" target="_blank" style="display:block;background:#F7F9F8"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/72beba4d2d6a4a39bc3656286e8ecb69/original/instantly_2025-07-06.png" loading="lazy" alt="Campaign dashboard" style="width:100%;height:auto;display:block"></a>
+          </figure></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="videos-2" data-screen-label="04b Videos" style="scroll-margin-top:70px;padding:clamp(56px,7vw,88px) 0 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px)">
+    <div style="text-align:center;margin:0 auto clamp(24px,3vw,36px);display:flex;flex-direction:column;align-items:center;gap:10px"><span style="font-size:13px;font-weight:700;color:#1C6E4A">Video testimonials</span><h2 style="margin:0;font-weight:700;font-size:clamp(26px,3vw,38px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20">More from our clients. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.1em;color:#23895C"></span></h2></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px">
+      <div style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#0B2A20;display:flex;align-items:center;justify-content:center;box-shadow:0 24px 50px -30px rgba(11,42,32,.4)">
+        <image-slot id="video-3" shape="rect" placeholder="Drop video thumbnail"></image-slot>
+        <span style="position:absolute;width:68px;height:68px;border-radius:99px;background:#FFB800;display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 12px 30px -10px rgba(0,0,0,.5)"><svg viewBox="0 0 24 24" style="width:26px;margin-left:3px" fill="#0B2A20"><path d="M7 4.5v15l12.5-7.5z"></path></svg></span>
+      </div>
+      <div style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#0B2A20;display:flex;align-items:center;justify-content:center;box-shadow:0 24px 50px -30px rgba(11,42,32,.4)">
+        <image-slot id="video-4" shape="rect" placeholder="Drop video thumbnail"></image-slot>
+        <span style="position:absolute;width:68px;height:68px;border-radius:99px;background:#FFB800;display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 12px 30px -10px rgba(0,0,0,.5)"><svg viewBox="0 0 24 24" style="width:26px;margin-left:3px" fill="#0B2A20"><path d="M7 4.5v15l12.5-7.5z"></path></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="clients" data-screen-label="05 What clients say" style="scroll-margin-top:70px;padding:clamp(56px,7vw,88px) 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px)">
+    <div style="max-width:760px;margin:0 auto clamp(32px,4vw,48px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px"><span style="font-size:13px;font-weight:700;color:#1C6E4A">What clients say</span><h2 style="margin:0;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20;text-wrap:balance">In their words. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.1em;letter-spacing:-.01em;color:#23895C">Unedited.</span></h2><p style="margin:0;font-size:17px;line-height:1.6;max-width:56ch">Messages from clients, their teams, subscribers and cold email prospects.</p></div>
+    <div style="columns:3 300px;column-gap:16px">
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-size:22px;line-height:1;color:#23895C;font-family:'Instrument Serif',serif">“</span><span style="font-size:11.5px;font-weight:700;background:#4A154B;color:#fff;border-radius:99px;padding:4px 10px">Slack</span></span>
+          <blockquote style="margin:0;font-size:16.5px;line-height:1.55;color:#0B2A20;text-wrap:pretty">Every single time Alex’s emails come out with more gold, I find a way to weave it into every call for the next week. Keep ’em coming, Alex, top intel!</blockquote>
+          <span style="display:flex;flex-direction:column;gap:8px;border-left:3px solid #DDF0E6;padding-left:12px"><span style="font-size:14px;line-height:1.45;color:#4A5A54"><b style="font-weight:700;color:#1C6E4A">Alex Rechevskiy:</b> Shardul Phuyal gets the credit, the emails have been fire as of late!!</span></span>
+          <figcaption style="display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid #EEF1ED"><span style="width:36px;height:36px;border-radius:99px;background:#23895C;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">PB</span><span style="display:flex;flex-direction:column"><b style="font-size:14.5px;font-weight:700;color:#0B2A20">Paul Barry</b><span style="font-size:12.5px;color:#6B7A74">PM coaching client · Product Career Accelerator</span></span></figcaption>
+        </figure>
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-size:22px;line-height:1;color:#23895C;font-family:'Instrument Serif',serif">“</span><span style="font-size:11.5px;font-weight:700;background:#4A154B;color:#fff;border-radius:99px;padding:4px 10px">Slack</span></span>
+          <blockquote style="margin:0;font-size:16.5px;line-height:1.55;color:#0B2A20;text-wrap:pretty">That’s a wrap on our first ever webinar masterclass! We had <b style="font-weight:700;color:#fff;background:#23895C;border-radius:5px;padding:0 5px">500+ registrations</b>, ~250 attendees, ~230 peak concurrent viewers, 78 clicks to our interest page, and 20 apps completed.</blockquote>
+          <span style="display:flex;flex-direction:column;gap:8px;border-left:3px solid #DDF0E6;padding-left:12px"><span style="font-size:14px;line-height:1.45;color:#4A5A54"><b style="font-weight:700;color:#1C6E4A">Special shoutout:</b> Shardul Phuyal for the great email blasts to drive our first signups.</span></span>
+          <figcaption style="display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid #EEF1ED"><span style="width:36px;height:36px;border-radius:99px;background:#0B2A20;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">AR</span><span style="display:flex;flex-direction:column"><b style="font-size:14.5px;font-weight:700;color:#0B2A20">Alex Rechevskiy</b><span style="font-size:12.5px;color:#6B7A74">Founder · Product Career Accelerator</span></span></figcaption>
+        </figure>
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-size:22px;line-height:1;color:#23895C;font-family:'Instrument Serif',serif">“</span><span style="font-size:11.5px;font-weight:700;background:#4A154B;color:#fff;border-radius:99px;padding:4px 10px">Slack</span></span>
+          <blockquote style="margin:0;font-size:16.5px;line-height:1.55;color:#0B2A20;text-wrap:pretty">This is a banger of an email. Who wrote this?</blockquote>
+          <span style="display:flex;flex-direction:column;gap:8px;border-left:3px solid #DDF0E6;padding-left:12px"><span style="font-size:14px;line-height:1.45;color:#4A5A54"><b style="font-weight:700;color:#1C6E4A">Alex Rechevskiy:</b> Shardul Phuyal, is this your handiwork?</span><span style="font-size:14px;line-height:1.45;color:#4A5A54"><b style="font-weight:700;color:#1C6E4A">Shardul Phuyal:</b> Yes sir!</span><span style="font-size:14px;line-height:1.45;color:#4A5A54"><b style="font-weight:700;color:#1C6E4A">Alex Rechevskiy:</b> Crushed it!!</span></span>
+          <figcaption style="display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid #EEF1ED"><span style="width:36px;height:36px;border-radius:99px;background:#FFB800;color:#0B2A20;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">TW</span><span style="display:flex;flex-direction:column"><b style="font-size:14.5px;font-weight:700;color:#0B2A20">Tristan Workman</b><span style="font-size:12.5px;color:#6B7A74">Product Career Accelerator team</span></span></figcaption>
+        </figure>
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-size:22px;line-height:1;color:#23895C;font-family:'Instrument Serif',serif">“</span><span style="font-size:11.5px;font-weight:700;background:#25D366;color:#0B2A20;border-radius:99px;padding:4px 10px">WhatsApp</span></span>
+          <blockquote style="margin:0;font-size:16.5px;line-height:1.55;color:#0B2A20;text-wrap:pretty">Love Monday’s email. The story was so spot on!</blockquote>
+          
+          <figcaption style="display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid #EEF1ED"><span style="width:36px;height:36px;border-radius:99px;background:#1E6FE0;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">S</span><span style="display:flex;flex-direction:column"><b style="font-size:14.5px;font-weight:700;color:#0B2A20">Subscriber</b><span style="font-size:12.5px;color:#6B7A74">Replying to a Monday email</span></span></figcaption>
+        </figure>
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-size:22px;line-height:1;color:#23895C;font-family:'Instrument Serif',serif">“</span><span style="font-size:11.5px;font-weight:700;background:#25D366;color:#0B2A20;border-radius:99px;padding:4px 10px">WhatsApp</span></span>
+          <blockquote style="margin:0;font-size:16.5px;line-height:1.55;color:#0B2A20;text-wrap:pretty">This Monday email is sooooo good! I felt it! Gave me chills!</blockquote>
+          
+          <figcaption style="display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid #EEF1ED"><span style="width:36px;height:36px;border-radius:99px;background:#23895C;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">S</span><span style="display:flex;flex-direction:column"><b style="font-size:14.5px;font-weight:700;color:#0B2A20">Subscriber</b><span style="font-size:12.5px;color:#6B7A74">Replying to a Monday email</span></span></figcaption>
+        </figure>
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-size:22px;line-height:1;color:#23895C;font-family:'Instrument Serif',serif">“</span><span style="font-size:11.5px;font-weight:700;background:#25D366;color:#0B2A20;border-radius:99px;padding:4px 10px">WhatsApp</span></span>
+          <blockquote style="margin:0;font-size:16.5px;line-height:1.55;color:#0B2A20;text-wrap:pretty">The last email was really good. It is as if I told you some of my story from last year, how I pivoted and started from scratch all over and how scary it was for me.</blockquote>
+          
+          <figcaption style="display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid #EEF1ED"><span style="width:36px;height:36px;border-radius:99px;background:#0B2A20;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">S</span><span style="display:flex;flex-direction:column"><b style="font-size:14.5px;font-weight:700;color:#0B2A20">Subscriber</b><span style="font-size:12.5px;color:#6B7A74">Replying to a newsletter</span></span></figcaption>
+        </figure>
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-size:22px;line-height:1;color:#23895C;font-family:'Instrument Serif',serif">“</span><span style="font-size:11.5px;font-weight:700;background:#1A73E8;color:#fff;border-radius:99px;padding:4px 10px">Email</span></span>
+          <blockquote style="margin:0;font-size:16.5px;line-height:1.55;color:#0B2A20;text-wrap:pretty">This is the first cold pitch I’ve ever received that did not suck. I really like how you write (so I hope this isn’t a template). What does your offer look like?</blockquote>
+          
+          <figcaption style="display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid #EEF1ED"><span style="width:36px;height:36px;border-radius:99px;background:#FFB800;color:#0B2A20;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">ML</span><span style="display:flex;flex-direction:column"><b style="font-size:14.5px;font-weight:700;color:#0B2A20">Mayara</b><span style="font-size:12.5px;color:#6B7A74">Replying to a cold email</span></span></figcaption>
+        </figure>
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-size:22px;line-height:1;color:#23895C;font-family:'Instrument Serif',serif">“</span><span style="font-size:11.5px;font-weight:700;background:#1A73E8;color:#fff;border-radius:99px;padding:4px 10px">Email</span></span>
+          <blockquote style="margin:0;font-size:16.5px;line-height:1.55;color:#0B2A20;text-wrap:pretty">Ok, you have my attention, and I love your copy. Seriously, it’s pretty good. Can we arrange a call?</blockquote>
+          
+          <figcaption style="display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid #EEF1ED"><span style="width:36px;height:36px;border-radius:99px;background:#1E6FE0;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">J</span><span style="display:flex;flex-direction:column"><b style="font-size:14.5px;font-weight:700;color:#0B2A20">Jake</b><span style="font-size:12.5px;color:#6B7A74">Replying to a cold email</span></span></figcaption>
+        </figure>
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-size:22px;line-height:1;color:#23895C;font-family:'Instrument Serif',serif">“</span><span style="font-size:11.5px;font-weight:700;background:#1A73E8;color:#fff;border-radius:99px;padding:4px 10px">Email</span></span>
+          <blockquote style="margin:0;font-size:16.5px;line-height:1.55;color:#0B2A20;text-wrap:pretty">You have my attention. Let’s connect soon. Do you have a scheduling link?</blockquote>
+          
+          <figcaption style="display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid #EEF1ED"><span style="width:36px;height:36px;border-radius:99px;background:#23895C;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">T</span><span style="display:flex;flex-direction:column"><b style="font-size:14.5px;font-weight:700;color:#0B2A20">Theresa</b><span style="font-size:12.5px;color:#6B7A74">Coach · replying to a cold email</span></span></figcaption>
+        </figure>
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-size:22px;line-height:1;color:#23895C;font-family:'Instrument Serif',serif">“</span><span style="font-size:11.5px;font-weight:700;background:#0B2A20;color:#fff;border-radius:99px;padding:4px 10px">DM</span></span>
+          <blockquote style="margin:0;font-size:16.5px;line-height:1.55;color:#0B2A20;text-wrap:pretty">I keep waiting for your follow ups bro. Love ’em. So you write email sequences for digital products?</blockquote>
+          
+          <figcaption style="display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid #EEF1ED"><span style="width:36px;height:36px;border-radius:99px;background:#0B2A20;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">P</span><span style="display:flex;flex-direction:column"><b style="font-size:14.5px;font-weight:700;color:#0B2A20">Prospect</b><span style="font-size:12.5px;color:#6B7A74">Replying to our follow-ups</span></span></figcaption>
+        </figure>
+    </div>
+  </div>
+</section>
+
+<section id="replies" data-screen-label="06 More messages" style="scroll-margin-top:70px;padding:clamp(56px,7vw,88px) 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px)">
+    <div style="max-width:760px;margin:0 auto clamp(32px,4vw,48px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px"><span style="font-size:13px;font-weight:700;color:#1C6E4A">More messages</span><h2 style="margin:0;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20;text-wrap:balance">What clients said <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.1em;letter-spacing:-.01em;color:#23895C">about our emails.</span></h2></div>
+    <div style="columns:2 420px;column-gap:20px">
+        <figure style="margin:0 0 20px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:18px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/c4a18f9f10de4d189b276ae3c6dc22d9/original/Screenshot-2026-01-04-114805.png" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/c4a18f9f10de4d189b276ae3c6dc22d9/original/Screenshot-2026-01-04-114805.png" loading="lazy" alt="Client message about our emails" style="width:100%;height:auto;display:block"></a></figure>
+        <figure style="margin:0 0 20px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:18px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/60b76e507e27406c93551c821b394ec0/original/Screenshot-2026-01-04-114510.png" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/60b76e507e27406c93551c821b394ec0/original/Screenshot-2026-01-04-114510.png" loading="lazy" alt="Client message about our emails" style="width:100%;height:auto;display:block"></a></figure>
+        <figure style="margin:0 0 20px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:18px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/7c296d6722ba41a9a8c69cbf026021c7/original/AD_4nXe_dzoW84EVsPPzmkJvtrfFemjrUleYHymeMDEZXbAh4ELcPBH_NX1Z1ZEg6st-G8XY_0w9AhL7Ad3SDpvaRBbC8LR2PUERFU6MWIk61Hh90vlsdYOH9QyXPAhCHdDXZ8pdRo5X5g.jpg" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/7c296d6722ba41a9a8c69cbf026021c7/original/AD_4nXe_dzoW84EVsPPzmkJvtrfFemjrUleYHymeMDEZXbAh4ELcPBH_NX1Z1ZEg6st-G8XY_0w9AhL7Ad3SDpvaRBbC8LR2PUERFU6MWIk61Hh90vlsdYOH9QyXPAhCHdDXZ8pdRo5X5g.jpg" loading="lazy" alt="Client message about our emails" style="width:100%;height:auto;display:block"></a></figure>
+        <figure style="margin:0 0 20px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:18px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/8fb9a31f71ae4435b994ab3b43aa71f2/original/AD_4nXfqN-d1Q6l12PO4c1tFM7IyxhpgGJX1YNYZiN0VDLWQip5fDJjXODRViU7X5FaKGE_SSD_GkHBLOBvXksDyGSJ3_9oXeXcgqePmTuzLZn3OA69yo8R_dH6iBkzqPNudCZ6Jw-6W2A.jpg" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/8fb9a31f71ae4435b994ab3b43aa71f2/original/AD_4nXfqN-d1Q6l12PO4c1tFM7IyxhpgGJX1YNYZiN0VDLWQip5fDJjXODRViU7X5FaKGE_SSD_GkHBLOBvXksDyGSJ3_9oXeXcgqePmTuzLZn3OA69yo8R_dH6iBkzqPNudCZ6Jw-6W2A.jpg" loading="lazy" alt="Client message about our emails" style="width:100%;height:auto;display:block"></a></figure>
+        <figure style="margin:0 0 20px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:18px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/2d5c3eeb07204c50a4db672ba503e078/original/AD_4nXexoXHi0mov7DOJ0NSkLzJ9qht8j1bpNyevnXOXBhXZ6WRVwwv0FwaqrONo9sYrl3QoLYXbs8yWS02ntY91NLwgMUO2sKZqaV6JTKWr2WnchKEtL7jolcoGZjJREW91k7oK6WfFyA.jpg" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/2d5c3eeb07204c50a4db672ba503e078/original/AD_4nXexoXHi0mov7DOJ0NSkLzJ9qht8j1bpNyevnXOXBhXZ6WRVwwv0FwaqrONo9sYrl3QoLYXbs8yWS02ntY91NLwgMUO2sKZqaV6JTKWr2WnchKEtL7jolcoGZjJREW91k7oK6WfFyA.jpg" loading="lazy" alt="Client message about our emails" style="width:100%;height:auto;display:block"></a></figure>
+        <figure style="margin:0 0 20px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:18px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/9a4ef41920a04004a45ab89ebe701310/original/AD_4nXd1Hs7zYMX3cA5M862LKLX47cj8NzKpHKIlfYP12lwbCL6QlSKTzSt3iFMOCdBnhWxbLpBc969mPwwoJi0NuajSAb7Xze2_s_2QYJYFo8Cz979vwiUZcI1ijQ5U7Ec-ShDXruor-w.png" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/9a4ef41920a04004a45ab89ebe701310/original/AD_4nXd1Hs7zYMX3cA5M862LKLX47cj8NzKpHKIlfYP12lwbCL6QlSKTzSt3iFMOCdBnhWxbLpBc969mPwwoJi0NuajSAb7Xze2_s_2QYJYFo8Cz979vwiUZcI1ijQ5U7Ec-ShDXruor-w.png" loading="lazy" alt="Client message about our emails" style="width:100%;height:auto;display:block"></a></figure>
+        <figure style="margin:0 0 20px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:18px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/ee96f821e2774524b2f9cef543ce2441/original/AD_4nXcr5DKb6Efvy7zOKA7X4J4Q02v6zovkWQE7APg-_i0zK6qB_4Yc6QtqoUP64xJ9sUdFFEcTvoPMPWejl2SK2fMsHzvbtPnOgSVVqrlPs7m2QeDE6wXkRSzH8ehgZ6ogfW34wUHVLQ.png" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/ee96f821e2774524b2f9cef543ce2441/original/AD_4nXcr5DKb6Efvy7zOKA7X4J4Q02v6zovkWQE7APg-_i0zK6qB_4Yc6QtqoUP64xJ9sUdFFEcTvoPMPWejl2SK2fMsHzvbtPnOgSVVqrlPs7m2QeDE6wXkRSzH8ehgZ6ogfW34wUHVLQ.png" loading="lazy" alt="Client message about our emails" style="width:100%;height:auto;display:block"></a></figure>
+        <figure style="margin:0 0 20px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:18px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/2c2efe930be34a9d9a9bb4f890157760/original/AD_4nXfPbU9z-y1vCQdhyOP2KaXxYK2H4RnL-LgAKg72ZLfZkRbyYwYyDpi6x4GaENLOu5mM_VC9GwG6whgGpUYLI9JXs1Aj9B0mmpU6VQuGtvYeKTO5MMHpW00WY3E2ul8M6OGewfgBGQ.png" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/2c2efe930be34a9d9a9bb4f890157760/original/AD_4nXfPbU9z-y1vCQdhyOP2KaXxYK2H4RnL-LgAKg72ZLfZkRbyYwYyDpi6x4GaENLOu5mM_VC9GwG6whgGpUYLI9JXs1Aj9B0mmpU6VQuGtvYeKTO5MMHpW00WY3E2ul8M6OGewfgBGQ.png" loading="lazy" alt="Client message about our emails" style="width:100%;height:auto;display:block"></a></figure>
+        <figure style="margin:0 0 20px;break-inside:avoid;background:#fff;border:1px solid #D7E9E1;border-radius:18px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/6739b5b089064ebdbc5c07106fdc6362/original/AD_4nXd6Nrj_kXAtA_Up0Y74cdalw58xyIu-t5Sqj-_2ZbnLxXkl5_WIApDl0D-O7JdOb19aNzX7FW-7OC8rpQxAIzgVE5w2ZE13_AAclXFtFQFxHaeUl4Qmu2FdnoYX9qqxP6iJ-yxzuQ.png" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/6739b5b089064ebdbc5c07106fdc6362/original/AD_4nXd6Nrj_kXAtA_Up0Y74cdalw58xyIu-t5Sqj-_2ZbnLxXkl5_WIApDl0D-O7JdOb19aNzX7FW-7OC8rpQxAIzgVE5w2ZE13_AAclXFtFQFxHaeUl4Qmu2FdnoYX9qqxP6iJ-yxzuQ.png" loading="lazy" alt="Client message about our emails" style="width:100%;height:auto;display:block"></a></figure>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="07 Landing pages" style="padding:clamp(56px,7vw,88px) 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px)">
+    <div style="max-width:760px;margin:0 auto clamp(32px,4vw,48px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px">
+      <span style="font-size:13px;font-weight:700;color:#1C6E4A">Landing pages</span>
+      <h2 style="margin:0;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20;text-wrap:balance">Pages we built, <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.1em;letter-spacing:-.01em;color:#23895C">and how they convert.</span></h2>
+      
+    </div>
+    <div style="columns:2 420px;column-gap:20px"><figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/54fad0142399476a8d03c3c34de68d23/original/Screenshot-97.png" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/54fad0142399476a8d03c3c34de68d23/original/Screenshot-97.png" loading="lazy" alt="Landing page conversion stats" style="width:100%;height:auto;display:block"></a></figure>
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/d369b498726149408139a91701eb5cb2/original/image.png" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/d369b498726149408139a91701eb5cb2/original/image.png" loading="lazy" alt="Landing page conversion stats" style="width:100%;height:auto;display:block"></a></figure>
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/9ec2ce2573194fe1b88ecf8b0be786f8/original/image3.jpg" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/9ec2ce2573194fe1b88ecf8b0be786f8/original/image3.jpg" loading="lazy" alt="Landing page conversion stats" style="width:100%;height:auto;display:block"></a></figure>
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/8fece42a00b24c25b52d8e7c080a4c6f/original/image4.jpg" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/8fece42a00b24c25b52d8e7c080a4c6f/original/image4.jpg" loading="lazy" alt="Landing page conversion stats" style="width:100%;height:auto;display:block"></a></figure>
+        <figure style="margin:0 0 16px;break-inside:avoid;background:#fff;border:1px solid #E3E8E5;border-radius:16px;overflow:hidden;box-shadow:0 18px 36px -28px rgba(11,42,32,.35)"><a href="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/544792388bbe4e7698b2a46e513e0a2a/original/Screenshot-996---Copy.png" target="_blank" style="display:block"><img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/sdwsfndt58uxx25/544792388bbe4e7698b2a46e513e0a2a/original/Screenshot-996---Copy.png" loading="lazy" alt="Landing page conversion stats" style="width:100%;height:auto;display:block"></a></figure></div>
+  </div>
+</section>
+
+
+<section data-screen-label="Close" style="padding:clamp(104px,13vw,160px) clamp(18px,4vw,40px)">
+  <div style="position:relative;max-width:1200px;margin:0 auto;background:radial-gradient(120% 120% at 50% 0%,#2FA36E 0%,#1C6E4A 55%,#0B2A20 100%);border-radius:32px;padding:clamp(56px,7vw,96px) clamp(22px,5vw,64px);text-align:center;overflow:hidden;color:#fff">
+    <h2 style="position:relative;margin:0 auto 16px;max-width:20ch;font-weight:700;font-size:clamp(30px,4vw,52px);line-height:1.04;letter-spacing:-.035em;color:#fff;text-wrap:balance">Every send from a damaged domain digs the hole deeper.</h2>
+    <p style="position:relative;margin:0 auto;max-width:48ch;font-size:clamp(17px,1.7vw,20px);line-height:1.6;color:#E3F5EC">Thirty minutes gets you the root cause. Whether or not you hire us.</p>
+    <a href="Contact.dc.html" style="position:relative;display:inline-flex;margin-top:28px;background:#fff;color:#0B2A20;text-decoration:none;font-weight:700;font-size:17px;padding:17px 30px;border-radius:999px" style-hover="background:#0B2A20;color:#fff">Get the diagnosis →</a>
+    <p style="position:relative;margin:16px 0 0;font-size:14px;color:#D2EFE1">30 minutes · your domain live · skin-in-the-game guarantee</p>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,300px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const mk = (pts, s) => pts.map((v, i) => (i ? 'L' : 'M') + (i * 300 / (pts.length - 1)).toFixed(1) + ' ' + (96 - Math.min(90, v * s)).toFixed(1)).join(' ');
+    const area = (pts, s) => mk(pts, s) + ' L300 96 L0 96 Z';
+    const A = [4,8,3,10,6,14,5,20,34,16,44,24,52,22,12,40,18,6,3,2,1,1,2,1,22,36,14,40,20,46,12,28,48,18,8,3];
+    const B = [1,1,2,1,1,2,1,3,2,1,2,1,4,2,6,3,58,30,18,40,12,6,3,2,1,1];
+    const theme = {
+      green: { bg: '#23895C', ink: '#fff', sub: '#DDF1E7', blob: '#FFB800' },
+      blue: { bg: '#1E6FE0', ink: '#fff', sub: '#DCE8FF', blob: '#FFB800' },
+      dark: { bg: '#0B2A20', ink: '#fff', sub: '#A9C7BA', blob: '#23895C' },
+      amber: { bg: '#FFB800', ink: '#0B2A20', sub: '#3A2A00', blob: '#0B2A20' },
+      ink: { bg: '#0E1311', ink: '#fff', sub: '#AAB6BF', blob: '#3BB77E' }
+    };
+    const cases = [
+      { t: 'green', no: 'Case 01', cat: 'Online program', logo: 'assets/clients/rl.png', name: '', site: 'reimaginelove.com', link: 'https://reimaginelove.com',
+        head: 'Half their emails were landing in spam & promotions. 45 days later: 83.8% in the inbox.',
+        rows: [['Inbox placement','68.5%','83.8%'],['Opens','22.17%','68.42%'],['Bounces','2,108','29']],
+        wins: [['83.8% in the inbox','Across five sequential placement tests, never below 80% since.'],['3x the opens','Every campaign now reaches the people who asked for it.']] },
+      { t: 'blue', no: 'Case 02', cat: 'Career coaching for PMs', logo: 'assets/clients/pca.webp', name: 'Product Career Accelerator', site: 'productcareeraccelerator.com', link: 'https://productcareeraccelerator.com',
+        head: 'A 12K list stuck in Promotions. Now at 50%+ opens, every send.',
+        rows: [['Inbox placement','82.9%','90.9%'],['Opens','Promotions','50%+ every send']],
+        wins: [['$150K+ est. backend sales','At a $15K program and typical close rates.'],['100+ applications in one month','50–70% becoming from one campaign.'],['500+ webinar registrations','In 4 days.']] },
+      { t: 'dark', no: 'Case 03', cat: 'Career coaching · 567K on Instagram', logo: 'assets/logos/learnwithfaiz.ico', name: 'Learn With Faiz', site: '', link: '',
+        head: 'Three months of zero sales. Two sales the week after the fix.',
+        rows: [['Opens','20–25%','30–40%'],['Peak open rate','—','40.57%'],['Sales, one week','0','2']],
+        wins: [['0 → 2 sales','The week after the fix, after three months of none.'],['40.57% peak opens','Which had never happened before.']] },
+      { t: 'amber', no: 'Case 04', cat: 'Content marketing coaching', logo: '', name: 'Convert to Scale', site: '', link: '',
+        head: '$21,536 in 14 days', rows: [],
+        wins: [['$21,536 in 14 days','From a 3,200-person list.'],['1,984 subscribers back','Previously written off as inactive. They came back and bought.']] },
+      { t: 'ink', no: 'Case 05', cat: 'LinkedIn branding', logo: '', name: 'Close With Copy', site: 'closewithcopy.co', link: 'https://closewithcopy.co',
+        head: '37 sales + 17 booked calls in one week',
+        rows: [['Landing page opt-in','—','23%'],['Opt-in to sale','—','5.49%']],
+        wins: [['37 sales + 17 booked calls','In one week, from a ~2,000-person list.']] }
+    ].map(c => ({ ...theme[c.t], ...c, logoUrl: c.logo ? `url(${c.logo})` : 'none', logoW: c.logo && c.logo.includes('rl.png') ? '120px' : '40px', alt: c.name || c.cat, hasRows: c.rows.length > 0,
+      rows: c.rows.map(([k, b, a]) => ({ k, b, a })), wins: c.wins.map(([v, d]) => ({ v, d })) }));
+    return {
+      strip: [
+        { v: '$21,536', k: 'in 14 days', who: 'Convert to Scale', bg: '#0B2A20', ink: '#3BB77E', sub: '#CFE3D9' },
+        { v: '$150K+', k: 'est. backend sales', who: 'Product Career Accelerator', bg: '#1E6FE0', ink: '#fff', sub: '#DCE8FF' },
+        { v: '37 sales', k: '+ 17 booked calls in one week', who: 'Close With Copy', bg: '#23895C', ink: '#fff', sub: '#DDF1E7' },
+        { v: '83.8%', k: 'in the inbox after 45 days', who: 'Reimagine Love', bg: '#FFB800', ink: '#0B2A20', sub: '#3A2A00' }
+      ],
+      cases,
+      cams: [
+        { name: 'Campaign A · Aug–Jan', tiles: [{k:'Leads contacted',v:'1,936'},{k:'Open rate',v:'78.06%'},{k:'Click rate',v:'24.07%'},{k:'Reply rate',v:'8.06%'},{k:'Bounce rate',v:'0.97%'},{k:'Opportunities',v:'42 · $4,200'}], a: area(A, 1.6), b: area(A, .7), c: mk(A, .45) },
+        { name: 'Campaign B', tiles: [{k:'Leads contacted',v:'1,012'},{k:'Open rate',v:'69.53%'},{k:'Click rate',v:'Disabled'},{k:'Reply rate',v:'11.26%'},{k:'Bounce rate',v:'0.63%'},{k:'Opportunities',v:'15 · $1,500'}], a: area(B, 1.5), b: area(B, .7), c: mk(B, .45) }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

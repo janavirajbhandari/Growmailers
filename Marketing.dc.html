@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;display=swap">
+<style>
+  html,body{margin:0;background:#FBFBF8}
+  a{color:#23895C}
+  a:hover{color:#0B2A20}
+  @keyframes mkBlink{0%,100%{opacity:1}50%{opacity:.35}}
+  @keyframes mkPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.45)}100%{box-shadow:0 0 0 22px rgba(255,255,255,0)}}
+  @keyframes mkDraw{0%{stroke-dashoffset:1600}55%,92%{stroke-dashoffset:0}100%{stroke-dashoffset:1600}}
+  @keyframes mkDot{0%,8%{transform:scale(0)}14%,92%{transform:scale(1)}100%{transform:scale(0)}}
+  @keyframes mkBarY{0%,6%{transform:scaleY(0)}40%,92%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+  @keyframes mkFlow{0%,10%{opacity:.25}20%,90%{opacity:1}100%{opacity:.25}}
+  @keyframes mkTravel{0%{left:0%;opacity:0}8%{opacity:1}92%{opacity:1}100%{left:100%;opacity:0}}
+  @keyframes mkCount{0%,30%{opacity:0;transform:translateY(8px)}40%,92%{opacity:1;transform:none}100%{opacity:0}}
+  @keyframes mkPop{0%{opacity:0;transform:scale(.85)}100%{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div style="background:#FBFBF8;color:#4A5A54;font-family:'Satoshi',sans-serif;overflow-x:clip">
+
+<dc-import name="SiteNav" active="services" hint-size="100%,64px"></dc-import>
+
+<!-- 1 · HERO + VSL -->
+<section data-screen-label="01 Hero" style="position:relative;padding:clamp(72px,9vw,112px) clamp(18px,4vw,40px);overflow:hidden">
+  <span aria-hidden="true" style="position:absolute;left:50%;top:38%;width:min(1100px,120vw);height:640px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(35,137,92,.12),rgba(35,137,92,0));pointer-events:none"></span>
+  <div style="position:relative;max-width:880px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px">
+    <h1 style="margin:0;font-weight:700;font-size:clamp(36px,4.8vw,62px);line-height:1.05;letter-spacing:-.04em;color:#0B2A20;text-wrap:balance">Why your list stopped selling. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:#23895C">And how we get it selling again.</span></h1>
+    <p style="margin:0;max-width:54ch;font-size:clamp(17px,1.6vw,19px);line-height:1.6;font-weight:500;color:#3E4F48;text-wrap:pretty">We write, send and track every email, build the flows behind them, and make sure they land in Primary. You see what email made you every Monday.</p>
+  </div>
+  <div style="position:relative;max-width:920px;margin:clamp(40px,5vw,56px) auto 0">
+    <div style="position:relative;aspect-ratio:16/9;border-radius:24px;overflow:hidden;background:#0B2A20;box-shadow:0 40px 80px -40px rgba(11,42,32,.55)">
+      <span aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 45%,rgba(59,183,126,.28),rgba(11,42,32,0))"></span>
+      <span style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px">
+        <span style="width:84px;height:84px;border-radius:99px;background:#fff;display:flex;align-items:center;justify-content:center;animation:mkPulse 1.8s ease-out infinite"><svg viewBox="0 0 24 24" style="width:30px;margin-left:5px" fill="#0B2A20"><path d="M6 4l14 8-14 8z"></path></svg></span>
+        <span style="font-size:15px;font-weight:600;color:#E3F0EA">Watch how your list starts selling</span>
+      </span>
+      <span style="position:absolute;left:18px;bottom:16px;font-size:12px;font-weight:600;letter-spacing:.06em;color:#9BB8AB">VIDEO · COMING SOON</span>
+    </div>
+  </div>
+  <div style="position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px">
+    <a href="Contact.dc.html" style="display:inline-flex;align-items:center;background:#0B2A20;color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:16px 28px;border-radius:999px" style-hover="background:#23895C;color:#fff">Book my free diagnosis</a>
+    <a href="Results.dc.html" style="display:inline-flex;align-items:center;background:#fff;border:1px solid #DCE7E1;color:#0B2A20;text-decoration:none;font-weight:700;font-size:16px;padding:15px 26px;border-radius:999px" style-hover="background:#EEF5F1;color:#0B2A20">Results</a>
+  </div>
+</section>
+
+<!-- 2 · PAIN: DEGRADING CHAIN -->
+<section data-screen-label="02 Pain" style="padding:clamp(56px,7vw,88px) clamp(18px,4vw,40px)">
+  <div style="max-width:1080px;margin:0 auto">
+    <div data-reveal="0" style="text-align:center;max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-weight:700;font-size:clamp(30px,3.8vw,48px);line-height:1.08;letter-spacing:-.035em;color:#0B2A20;text-wrap:balance">How a list goes quiet. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:#23895C">One problem feeds the next.</span></h2>
+      <p style="margin:0;font-size:clamp(16px,1.5vw,18px);line-height:1.6;color:#3E4F48">We've run 90+ email audits. Four in five lists make almost nothing, and it happens the same way every time.</p>
+    </div>
+    <div data-reveal="120" style="margin-top:clamp(40px,5vw,56px);background:#fff;border:1px solid #E3EAE6;border-radius:28px;padding:clamp(20px,3vw,32px);box-shadow:0 30px 60px -44px rgba(11,42,32,.35)">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+        <b style="font-size:14px;font-weight:700;color:#0B2A20">Revenue from email</b>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#B3261E">↓ every month it's left alone</span>
+      </div>
+      <div style="overflow-x:auto;margin:0 -6px;padding:0 6px">
+      <div style="position:relative;min-width:860px">
+        <div style="position:relative;height:250px">
+          <svg viewBox="0 0 1000 250" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;display:block">
+            <defs><linearGradient id="mkFall" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#1E8E3E"></stop><stop offset=".5" stop-color="#E0A100"></stop><stop offset="1" stop-color="#D93025"></stop></linearGradient><linearGradient id="mkFallA" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#D93025" stop-opacity=".10"></stop><stop offset="1" stop-color="#D93025" stop-opacity="0"></stop></linearGradient></defs>
+            <g stroke="#EEF1EF" stroke-width="1"><line x1="0" y1="30" x2="1000" y2="30"></line><line x1="0" y1="110" x2="1000" y2="110"></line><line x1="0" y1="190" x2="1000" y2="190"></line></g>
+            <path d="M71.4 30 L214.3 60 L357.1 92 L500.0 124 L642.9 156 L785.7 190 L928.6 224 L928.6 250 L71.4 250 Z" fill="url(#mkFallA)"></path>
+            <path d="M71.4 30 L214.3 60 L357.1 92 L500.0 124 L642.9 156 L785.7 190 L928.6 224" fill="none" stroke="url(#mkFall)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1600" vector-effect="non-scaling-stroke" style="animation:mkDraw 8s cubic-bezier(.4,0,.2,1) infinite"></path>
+          </svg>
+          <sc-for list="{{ chain }}" as="c" hint-placeholder-count="7">
+            <span style="position:absolute;left:{{ c.x }};top:{{ c.y }};width:32px;height:32px;margin:-16px 0 0 -16px;border-radius:99px;background:{{ c.col }};color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px #fff;animation:{{ c.anim }}">{{ c.n }}</span>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;border-top:1px solid #EEF1EF;padding-top:16px">
+          <sc-for list="{{ chain }}" as="c" hint-placeholder-count="7">
+            <span style="display:flex;flex-direction:column;gap:5px;text-align:center"><b style="font-size:14px;font-weight:700;line-height:1.3;color:{{ c.ink }}">{{ c.t }}</b><span style="font-size:12.5px;line-height:1.45;color:#55655E">{{ c.x2 }}</span></span>
+          </sc-for>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · WHAT IT COSTS -->
+<section data-screen-label="03 Cost" style="padding:clamp(24px,4vw,48px) clamp(12px,3vw,32px)">
+  <div data-reveal="0" style="position:relative;max-width:1240px;margin:0 auto;background:#0B2A20;border-radius:36px;padding:clamp(56px,7vw,88px) clamp(22px,5vw,64px);overflow:hidden;color:#fff">
+    <span aria-hidden="true" style="position:absolute;inset:auto auto -40% -10%;width:70%;height:90%;background:radial-gradient(closest-side,rgba(59,183,126,.22),rgba(59,183,126,0))"></span>
+    <div style="position:relative;text-align:center;max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-weight:700;font-size:clamp(30px,3.8vw,46px);line-height:1.08;letter-spacing:-.035em;color:#fff;text-wrap:balance">What a quiet list <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:#FFB800">is really costing you.</span></h2>
+    </div>
+    <div style="position:relative;margin-top:clamp(36px,4.5vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px">
+      <sc-for list="{{ costs }}" as="c" hint-placeholder-count="4">
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:10px">
+          <b style="font-size:clamp(28px,3vw,38px);font-weight:700;letter-spacing:-.03em;line-height:1;color:#FFB800">{{ c.big }}</b>
+          <b style="font-size:17px;font-weight:700;color:#fff">{{ c.t }}</b>
+          <span style="font-size:14.5px;line-height:1.55;color:#CFE3D9">{{ c.x }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · THE PLAN -->
+<section data-screen-label="04 Plan" style="padding:clamp(72px,9vw,112px) clamp(18px,4vw,40px) clamp(40px,5vw,64px)">
+  <div style="max-width:1200px;margin:0 auto">
+    <div data-reveal="0" style="text-align:center;max-width:760px;margin:0 auto clamp(40px,5vw,56px);display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-weight:700;font-size:clamp(30px,3.8vw,48px);line-height:1.08;letter-spacing:-.035em;color:#0B2A20;text-wrap:balance">Three stages <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:#23895C">to a list that sells.</span></h2>
+      <p style="margin:0;font-size:clamp(16px,1.5vw,18px);line-height:1.6;color:#3E4F48">Each stage fixes the problems above, in order.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)">
+      <sc-for list="{{ stages }}" as="s" hint-placeholder-count="3">
+        <article data-reveal="0" style="background:#fff;border:1px solid #E3EAE6;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px -44px rgba(11,42,32,.4)">
+          <div style="padding:clamp(24px,3.4vw,40px) clamp(20px,4vw,48px) 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px">
+            <span style="display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:#0B2A20"><span style="width:30px;height:30px;border-radius:10px;background:{{ s.chip }};color:{{ s.chipInk }};font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center">{{ s.num }}</span>{{ s.tag }}</span>
+            <h3 style="margin:0;font-weight:800;font-size:clamp(28px,3vw,38px);line-height:1.1;letter-spacing:-.035em;color:#0B2A20">{{ s.t }}</h3>
+            <p style="margin:0;max-width:56ch;font-size:16.5px;line-height:1.6;color:#3E4F48">{{ s.x }}</p>
+            <div style="margin-top:12px;width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px;text-align:left">
+              <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="3"><span style="background:#F4F7F5;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:3px"><b style="font-size:15px;font-weight:700;color:#0B2A20">{{ it.k }}</b><span style="font-size:13.5px;line-height:1.5;color:#55655E">{{ it.v }}</span></span></sc-for>
+            </div>
+            <sc-if value="{{ s.link }}"><a href="Deliverability.dc.html" style="margin-top:6px;display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:700;color:#0B2A20;text-decoration:none;border-bottom:2px solid #23895C;padding-bottom:2px" style-hover="color:#23895C">See how we fix inbox placement →</a></sc-if>
+          </div>
+          <div style="height:320px;box-sizing:border-box;background:{{ s.gbg }};padding:clamp(20px,3vw,32px);display:flex;align-items:center;justify-content:center">
+            <sc-if value="{{ s.g1 }}" hint-placeholder-val="{{ true }}">
+              <div style="width:100%;max-width:640px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+                <sc-for list="{{ place }}" as="p" hint-placeholder-count="2">
+                  <div style="background:#fff;border:1px solid #E3EAE6;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px">
+                    <span style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:13px;font-weight:700;color:#0B2A20">{{ p.k }}</b><span style="font-size:11.5px;font-weight:700;border-radius:99px;padding:3px 9px;background:{{ p.tagBg }};color:#fff">{{ p.tag }}</span></span>
+                    <b style="font-size:34px;font-weight:700;letter-spacing:-.03em;line-height:1;color:{{ p.c }}">{{ p.v }}</b>
+                    <span style="height:12px;border-radius:99px;background:#F1F3F2;overflow:hidden;display:flex;transform-origin:left;animation:{{ p.anim }}"><span style="width:{{ p.i }};background:#1E8E3E"></span><span style="width:{{ p.pr }};background:#E0A100"></span><span style="width:{{ p.sp }};background:#D93025"></span></span>
+                    <span style="font-size:12px;color:#6B7A74">inbox · promotions · spam</span>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ s.g2 }}">
+              <div style="width:100%;max-width:760px;display:flex;align-items:center;gap:0;position:relative">
+                <sc-for list="{{ flow }}" as="f" hint-placeholder-count="4">
+                  <span style="flex:1 1 0;min-width:0;display:flex;align-items:center">
+                    <span style="flex:1;min-width:0;background:#fff;border:1px solid #E3EAE6;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:6px;text-align:left;animation:{{ f.anim }}">
+                      <span style="width:28px;height:28px;border-radius:8px;background:{{ f.c }};display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:15px" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ f.ic }}"></path></svg></span>
+                      <b style="font-size:13px;font-weight:700;color:#0B2A20;line-height:1.25">{{ f.t }}</b>
+                      <span style="font-size:11.5px;color:#6B7A74;line-height:1.35">{{ f.s }}</span>
+                    </span>
+                    <sc-if value="{{ f.arrow }}"><span style="flex:0 0 22px;height:2px;background:#C9D6CF;position:relative;overflow:visible"><span style="position:absolute;top:-3px;width:8px;height:8px;border-radius:99px;background:#23895C;animation:{{ f.travel }}"></span></span></sc-if>
+                  </span>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ s.g3 }}">
+              <div style="width:100%;max-width:640px;background:#fff;border:1px solid #E3EAE6;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:14px;box-sizing:border-box">
+                <span style="display:flex;justify-content:space-between;align-items:center;gap:10px"><b style="font-size:13.5px;font-weight:700;color:#0B2A20">Monday report · what email made you</b><span style="font-size:12px;color:#6B7A74">last week</span></span>
+                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+                  <sc-for list="{{ report }}" as="r" hint-placeholder-count="3"><span style="background:#F4F7F5;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:3px;animation:{{ r.anim }}"><span style="font-size:12px;color:#6B7A74">{{ r.k }}</span><b style="font-size:22px;font-weight:700;letter-spacing:-.02em;color:{{ r.c }}">{{ r.v }}</b></span></sc-for>
+                </div>
+                <div style="height:60px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;align-items:end"><sc-for list="{{ week }}" as="w" hint-placeholder-count="7"><span style="height:{{ w.h }};border-radius:5px 5px 0 0;background:{{ w.c }};transform-origin:bottom;animation:{{ w.anim }}"></span></sc-for></div>
+              </div>
+            </sc-if>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · GUARANTEE -->
+<section data-screen-label="05 Guarantee" style="padding:clamp(56px,7vw,88px) clamp(18px,4vw,40px)">
+  <div data-reveal="0" style="max-width:860px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px">
+    <h2 style="margin:0;font-weight:700;font-size:clamp(30px,3.8vw,48px);line-height:1.08;letter-spacing:-.035em;color:#0B2A20;text-wrap:balance">A booked-call floor, in writing. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:#23895C">Miss it, and you don't pay.</span></h2>
+    <p style="margin:0;max-width:56ch;font-size:clamp(16px,1.5vw,18px);line-height:1.65;color:#3E4F48">From month 2: one booked call for every 300 real, engaged subscribers, every month. If we miss it, we keep working and don't bill you until we hit it. Inbox placement of 80%+ is included.</p>
+  </div>
+  <div data-reveal="120" style="max-width:820px;margin:clamp(36px,4.5vw,52px) auto 0;background:#fff;border:1px solid #E3EAE6;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px -44px rgba(11,42,32,.35)">
+    <div style="padding:clamp(20px,3vw,32px);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(12px,2.4vw,28px);background:#F7F9F8;border-bottom:1px solid #EEF1EF">
+      <span style="display:flex;flex-direction:column;align-items:center;gap:4px"><b style="font-size:clamp(30px,3.6vw,44px);font-weight:700;letter-spacing:-.04em;line-height:1;color:#0B2A20">3,000</b><span style="font-size:13px;color:#55655E">engaged subscribers</span></span>
+      <span style="font-size:28px;font-weight:500;color:#9AA5A0">÷</span>
+      <span style="display:flex;flex-direction:column;align-items:center;gap:4px"><b style="font-size:clamp(30px,3.6vw,44px);font-weight:700;letter-spacing:-.04em;line-height:1;color:#0B2A20">300</b><span style="font-size:13px;color:#55655E">per booked call</span></span>
+      <span style="font-size:28px;font-weight:500;color:#9AA5A0">=</span>
+      <span style="display:flex;flex-direction:column;align-items:center;gap:4px;background:#0B2A20;border-radius:18px;padding:14px 22px"><b style="font-size:clamp(30px,3.6vw,44px);font-weight:700;letter-spacing:-.04em;line-height:1;color:#FFB800">10 calls</b><span style="font-size:13px;color:#CFE3D9">your monthly floor</span></span>
+    </div>
+    <div style="padding:clamp(18px,2.6vw,28px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,130px),1fr));gap:10px">
+      <sc-for list="{{ floor }}" as="f" hint-placeholder-count="5">
+        <div style="border:1px solid {{ f.bd }};background:{{ f.bg }};border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:6px;animation:{{ f.anim }}">
+          <span style="font-size:12px;font-weight:700;color:#6B7A74">{{ f.m }}</span>
+          <b style="font-size:24px;font-weight:700;letter-spacing:-.03em;line-height:1;color:#0B2A20">{{ f.v }} <span style="font-size:13px;font-weight:600;color:#6B7A74">calls</span></b>
+          <span style="align-self:flex-start;font-size:11.5px;font-weight:700;border-radius:99px;padding:4px 9px;background:{{ f.tagBg }};color:{{ f.tagFg }}">{{ f.tag }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · PROOF -->
+<section data-screen-label="06 Proof" style="padding:clamp(56px,7vw,88px) clamp(18px,4vw,40px)">
+  <div style="max-width:1000px;margin:0 auto">
+    <div data-reveal="0" style="text-align:center;max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-weight:700;font-size:clamp(30px,3.8vw,48px);line-height:1.08;letter-spacing:-.035em;color:#0B2A20;text-wrap:balance">Same lists. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:#23895C">Very different months.</span></h2>
+      <p style="margin:0;font-size:clamp(16px,1.5vw,18px);line-height:1.6;color:#3E4F48">From our clients' own trackers.</p>
+    </div>
+    <article data-reveal="100" style="margin-top:clamp(40px,5vw,56px);background:#fff;border:1px solid #E3EAE6;border-radius:28px;padding:clamp(22px,3.4vw,40px);display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;box-shadow:0 30px 60px -44px rgba(11,42,32,.35)">
+      <span style="display:flex;align-items:center;gap:10px"><img src="assets/clients/pca.webp" alt="" style="width:40px;height:40px;border-radius:99px"><span style="display:flex;flex-direction:column;align-items:flex-start"><b style="font-size:15px;font-weight:700;color:#0B2A20">Product Career Accelerator</b><span style="font-size:13px;color:#6B7A74">Career coaching · $15K program</span></span></span>
+      <b style="font-size:clamp(34px,4vw,52px);font-weight:700;letter-spacing:-.04em;line-height:1;color:#0B2A20"><span style="color:#9AA5A0">10</span> → 30+ <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:.6em;letter-spacing:0;color:#23895C">booked calls a month</span></b>
+      <div style="width:100%;max-width:760px">
+        <div style="height:170px;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:clamp(6px,1.4vw,14px);align-items:end;border-bottom:1px solid #E3EAE6">
+          <sc-for list="{{ alex }}" as="a" hint-placeholder-count="9"><span style="height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px"><b style="font-size:12px;font-weight:700;color:#0B2A20">{{ a.v }}</b><span style="width:100%;max-width:40px;height:{{ a.h }};border-radius:6px 6px 0 0;background:{{ a.c }};transform-origin:bottom;animation:{{ a.anim }}"></span></span></sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:clamp(6px,1.4vw,14px);padding-top:8px;font-size:12px;color:#6B7A74"><sc-for list="{{ alex }}" as="a" hint-placeholder-count="9"><span>{{ a.m }}</span></sc-for></div>
+      </div>
+      <span style="font-size:14.5px;color:#55655E">500+ webinar registrations in 4 days. Every call UTM-tracked.</span>
+    </article>
+    <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px">
+      <sc-for list="{{ cases }}" as="c" hint-placeholder-count="3">
+        <article style="background:#fff;border:1px solid #E3EAE6;border-radius:24px;padding:26px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px">
+          <sc-if value="{{ c.logo }}"><img src="{{ c.logo }}" alt="" style="width:40px;height:40px;border-radius:12px;object-fit:cover"></sc-if>
+          <b style="font-size:15px;font-weight:700;color:#0B2A20">{{ c.who }}</b>
+          <b style="font-size:clamp(28px,2.8vw,36px);font-weight:700;letter-spacing:-.04em;line-height:1;color:#0B2A20"><span style="color:#9AA5A0">{{ c.b }}</span>{{ c.a }}</b>
+          <span style="font-size:14px;font-weight:600;color:#23895C">{{ c.k }}</span>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:#3E4F48">{{ c.x }}</p>
+        </article>
+      </sc-for>
+    </div>
+    <div style="margin-top:32px;display:flex;justify-content:center">
+      <a href="Results.dc.html" style="display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;color:#0B2A20;text-decoration:none;border-bottom:2px solid #23895C;padding-bottom:3px" style-hover="color:#23895C">See all case studies →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · CLOSE -->
+<section data-screen-label="07 Close" style="padding:clamp(24px,4vw,48px) clamp(12px,3vw,32px) clamp(72px,9vw,112px)">
+  <div data-reveal="0" style="position:relative;max-width:1240px;margin:0 auto;background:#0B2A20;border-radius:36px;padding:clamp(56px,7vw,96px) clamp(22px,5vw,64px);text-align:center;color:#fff;overflow:hidden">
+    <span aria-hidden="true" style="position:absolute;inset:-30% 20% auto;height:80%;background:radial-gradient(closest-side,rgba(59,183,126,.22),rgba(59,183,126,0))"></span>
+    <h2 style="position:relative;margin:0 auto 14px;max-width:20ch;font-weight:700;font-size:clamp(30px,4vw,50px);line-height:1.06;letter-spacing:-.035em;color:#fff;text-wrap:balance">Find out what your list <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FFB800">should be making.</span></h2>
+    <p style="position:relative;margin:0 auto;max-width:44ch;font-size:clamp(16px,1.6vw,19px);line-height:1.6;color:#CFE3D9">Thirty minutes. We look at your list, your emails and where they land.</p>
+    <a href="Contact.dc.html" style="position:relative;display:inline-flex;margin-top:28px;background:#fff;color:#0B2A20;text-decoration:none;font-weight:700;font-size:17px;padding:17px 30px;border-radius:999px" style-hover="background:#FFB800;color:#0B2A20">Book my free diagnosis</a>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,300px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { setTimeout(() => this.setupReveal(), 60); }
+  componentWillUnmount() { this._io && this._io.disconnect(); }
+  setupReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    const els = [...document.querySelectorAll('[data-reveal]')].filter(el => el.getBoundingClientRect().top > window.innerHeight * 0.9);
+    this._io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; e.target.style.opacity = '1'; e.target.style.transform = 'none'; this._io.unobserve(e.target); }), { threshold: 0.12 });
+    els.forEach(el => { const d = parseInt(el.getAttribute('data-reveal') || '0', 10); el.style.opacity = '0'; el.style.transform = 'translateY(24px)'; el.style.transition = `opacity .7s cubic-bezier(.2,.8,.2,1) ${d}ms, transform .7s cubic-bezier(.2,.8,.2,1) ${d}ms`; this._io.observe(el); });
+  }
+  renderVals() {
+    const pts = [[71.4,30],[214.3,60],[357.1,92],[500,124],[642.9,156],[785.7,190],[928.6,224]];
+    const cols = ['#1E8E3E', '#5DA03A', '#9AA83A', '#E0A100', '#E37400', '#E0522A', '#D93025'];
+    const chainTxt = [
+      ['Emails land in Promotions', 'So fewer people see them, and fewer open.'],
+      ['The offer goes stale', 'So the people who do open don\'t buy.'],
+      ['Everyone gets the same email', 'So cold subscribers report spam, and placement drops again.'],
+      ['Copy gets rushed', 'So sends get skipped the week you get busy.'],
+      ['No automations run', 'So leads who visit your booking page never hear back.'],
+      ['The list shrinks 2% a month', 'So fewer new, hot subscribers come in.'],
+      ['Nobody tracks it', 'So no one can say what email made you.']
+    ];
+    const bar = (i, base = .12) => `mkBarY 7s cubic-bezier(.2,.8,.2,1) ${(i * base).toFixed(2)}s infinite`;
+    const ic = { mail: 'M3 6h18v12H3zM3 7l9 6 9-6', clock: 'M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z', branch: 'M6 3v12M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 9a9 9 0 0 1-9 9', cal: 'M3 5h18v16H3zM3 10h18M8 3v4M16 3v4', eye: 'M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z' };
+    const flowRaw = [['Visited booking page', 'didn\'t book', '#5F6368', ic.eye], ['Wait 1 hour', 'then check', '#E0A100', ic.clock], ['Follow-up email', 'written in your voice', '#1A73E8', ic.mail], ['Call booked', 'traced to email', '#1E8E3E', ic.cal]];
+    const alexV = [10, 14, 14, 32, 31, 33, 15, 17, 18];
+    const floorV = [[0, 'M1'], [12, 'M2'], [14, 'M3'], [17, 'M4'], [19, 'M5'], [22, 'M6']];
+    return {
+      chain: pts.map(([x, y], i) => ({ n: String(i + 1), x: (x / 10) + '%', y: (y / 2.5) + '%', col: cols[i], ink: i < 3 ? '#0B2A20' : i < 5 ? '#7A4F00' : '#B3261E', t: chainTxt[i][0], x2: chainTxt[i][1], anim: `mkDot 8s cubic-bezier(.34,1.4,.64,1) ${(i * .55).toFixed(2)}s infinite` })),
+      costs: [
+        ['2×', 'You pay for leads twice', 'You already paid to get every subscriber. If email doesn\'t sell to them, you pay again in ads.'],
+        ['11+', 'Buyers forget you', 'People need many touches before they buy. Without regular email, they buy from whoever stayed in touch.'],
+        ['Cold', 'Calls start cold', 'Leads who read your emails show up warmer and close more often. Without them, every call starts from zero.'],
+        ['7–25%', 'Seats go empty', 'That\'s the show-up rate we see when nobody sends reminders before a webinar or call.']
+      ].map(([big, t, x]) => ({ big, t, x })),
+      stages: [
+        { num: '1', chip: '#0B2A20', chipInk: '#fff', gbg: 'radial-gradient(120% 90% at 50% 0%,#1C5A40 0%,#0B2A20 70%)', link: true, tag: 'Stage 1 · The foundation', t: 'Learn your buyers, then get you into the inbox', x: 'Before we write a campaign, we study your buyers and numbers, check your offer, and fix where your emails land.', g1: true, g2: false, g3: false,
+          items: [['Deep research', 'Your buyers\' own words, competitors\' emails, every win and objection.'], ['Past performance', 'What already made you money, with bots stripped out.'], ['Inbox placement', '80%+ in the inbox, and kept there.']] },
+        { num: '2', chip: '#1E5BD8', chipInk: '#fff', gbg: 'linear-gradient(160deg,#2C6BEA 0%,#1747B8 100%)', link: false, tag: 'Stage 2 · The daily machine', t: 'The right email to the right person, every day', x: 'Segments, emails written in your voice, and the flows that book calls while you sleep.', g1: false, g2: true, g3: false,
+          items: [['Priority segments', 'Hot prospects, past buyers and quiet subscribers each get their own path.'], ['Copy engine', 'Every email has one job, written from buyer language.'], ['Automations', 'Welcome, un-booked follow-up, show-up reminders, win-back.']] },
+        { num: '3', chip: '#FFB800', chipInk: '#0B2A20', gbg: 'linear-gradient(160deg,#FFC633 0%,#F0A500 100%)', link: false, tag: 'Stage 3 · The growth machine', t: 'Grow the list, and see what it made you', x: 'Opt-in pages that bring in new buyers, and a report every Monday with one answer: what email made you.', g1: false, g2: false, g3: true,
+          items: [['Opt-in pages', 'Ours have hit 23% opt-in.'], ['Tracking on every send', 'Every call and sale traced to the email behind it.'], ['Past-buyer campaigns', 'Lift lifetime value 20 to 50%.']] }
+      ].map(s => ({ ...s, items: s.items.map(([k, v]) => ({ k, v })) })),
+      place: [
+        { k: 'Before', v: '42%', c: '#B3261E', i: '42%', pr: '6%', sp: '52%', tag: 'Spam heavy', tagBg: '#D93025', anim: bar(0) },
+        { k: 'After', v: '82%', c: '#137333', i: '82%', pr: '10%', sp: '8%', tag: 'Inbox', tagBg: '#1E8E3E', anim: bar(2) }
+      ],
+      flow: flowRaw.map(([t, s, c, p], i) => ({ t, s, c, ic: p, arrow: i < flowRaw.length - 1, anim: `mkFlow 6s ease ${(i * .5).toFixed(1)}s infinite`, travel: `mkTravel 1.4s linear ${(i * .5).toFixed(1)}s infinite` })),
+      report: [['Revenue from email', '$7,840', '#0B2A20'], ['Booked calls', '17', '#137333'], ['Best email', '52.3% opens', '#1A73E8']].map(([k, v, c], i) => ({ k, v, c, anim: `mkCount 7s ease ${(i * .2).toFixed(1)}s infinite` })),
+      week: [30, 46, 38, 64, 52, 80, 70].map((h, i) => ({ h: h + '%', c: i === 5 ? '#1E8E3E' : '#BFD9CB', anim: bar(i, .08) })),
+      floor: [['Month 2', 12, 1], ['Month 3', 14, 1], ['Month 4', 9, 0], ['Month 5', 15, 1], ['Month 6', 19, 1]].map(([m, v, ok], i) => ok ? { m, v, tag: 'Floor hit · billed', tagBg: '#E6F4EA', tagFg: '#137333', bd: '#E3EAE6', bg: '#fff', anim: `mkPop .5s cubic-bezier(.34,1.4,.64,1) ${(i * .12).toFixed(2)}s both` } : { m, v, tag: 'Missed · no invoice', tagBg: '#FFB800', tagFg: '#0B2A20', bd: '#FFB800', bg: '#FFF8E5', anim: `mkPop .5s cubic-bezier(.34,1.4,.64,1) ${(i * .12).toFixed(2)}s both` }),
+      alex: alexV.map((v, i) => ({ v: String(v), m: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i], h: Math.round(v / 34 * 100) + '%', c: v >= 30 ? '#1E8E3E' : '#9ED4B9', anim: bar(i, .1) })),
+      cases: [
+        { who: 'Reimagine Love', logo: '', b: '2 → ', a: '17', k: 'booked calls a month', x: 'Inbox placement went from 42% to 82%. $15,312 closed from call-bookers in two months.' },
+        { who: 'Close With Copy', logo: 'assets/clients/logo-c.png', b: '27% → ', a: '40%', k: 'promo-sequence open rate', x: 'A smaller, cleaner list. 37 sales and 17 booked calls in one week.' },
+        { who: 'Convert to Scale', logo: '', b: '', a: '$21,536', k: 'in 14 days', x: 'From 1,200 active subscribers, a list most people would call small.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
